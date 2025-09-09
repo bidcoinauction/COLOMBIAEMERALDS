@@ -7,18 +7,9 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         :root {
-            /* Set standard, safe fallback colors by default */
+            /* Using standard, universally supported hex codes for colors */
             --color-1: #1A441F; /* Dark Green */
-            --color-2: #F1FBF0; /* Lighter, less saturated green for background */
-        }
-
-        /* Use @supports to check if the browser can handle display-p3 colors */
-        @supports (color: color(display-p3 1 1 1)) {
-            :root {
-                /* If supported, override the variables with the P3 colors */
-                --color-1: color(display-p3 0.103 0.267 0.121);
-                --color-2: color(display-p3 0.895 0.984 0.776);
-            }
+            --color-2: #F1FBF0; /* Light Green Background */
         }
 
         /* Normal theme */
@@ -48,7 +39,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
 </head>
-<body class="combo-1 font-sans antialiased">
+<body class="font-sans antialiased">
 
     <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
         <div class="container mx-auto px-6 py-5 flex justify-between items-center">
@@ -239,7 +230,78 @@
     </footer>
 
     <script>
-       // All scripts remain the same
+         document.addEventListener('DOMContentLoaded', function() {
+            const header = document.getElementById('header');
+            const headerLogo = header.querySelector('a.uppercase');
+            const headerNavLinks = header.querySelectorAll('nav.hidden a');
+            const headerButtons = header.querySelectorAll('div.flex > button');
+
+            window.addEventListener('scroll', () => {
+                const isScrolled = window.scrollY > 10;
+                header.classList.toggle('bg-stone-50/80', isScrolled);
+                header.classList.toggle('backdrop-blur-sm', isScrolled);
+                header.classList.toggle('border-b', isScrolled);
+                header.classList.toggle('border-stone-200', isScrolled);
+                headerLogo.classList.toggle('text-white', !isScrolled);
+                headerLogo.classList.toggle('[text-shadow:0_1px_2px_rgba(0,0,0,0.6)]', !isScrolled);
+                headerLogo.classList.toggle('text-stone-800', isScrolled);
+
+                headerNavLinks.forEach(link => {
+                    link.classList.toggle('text-stone-200', !isScrolled);
+                    link.classList.toggle('hover:text-white', !isScrolled);
+                    link.classList.toggle('[text-shadow:0_1px_2px_rgba(0,0,0,0.6)]', !isScrolled);
+                    link.classList.toggle('text-stone-600', isScrolled);
+                    link.classList.toggle('hover:text-stone-900', isScrolled);
+                });
+                
+                headerButtons.forEach(button => {
+                    const svg = button.querySelector('svg');
+                    button.classList.toggle('text-white', !isScrolled);
+                    button.classList.toggle('text-stone-800', isScrolled);
+                    if (svg) {
+                        svg.classList.toggle('text-stone-200', !isScrolled);
+                        svg.classList.toggle('text-stone-600', isScrolled);
+                    }
+                });
+            });
+
+            const menuToggle = document.getElementById('menu-toggle');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuIconOpen = document.getElementById('menu-icon-open');
+            const menuIconClose = document.getElementById('menu-icon-close');
+            if(menuToggle) {
+                menuToggle.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                    menuIconOpen.classList.toggle('hidden');
+                    menuIconClose.classList.toggle('hidden');
+                });
+            }
+
+            const animatedSections = document.querySelectorAll('.animated-section');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in-up');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+            animatedSections.forEach(section => observer.observe(section));
+            
+            const testimonials = document.querySelectorAll('.testimonial-item');
+            if (testimonials.length > 0) {
+                let currentTestimonialIndex = 0;
+                setInterval(() => {
+                    testimonials[currentTestimonialIndex].classList.remove('opacity-100');
+                    testimonials[currentTestimonialIndex].classList.add('opacity-0');
+                    currentTestimonialIndex = (currentTestimonialIndex + 1) % testimonials.length;
+                    testimonials[currentTestimonialIndex].classList.remove('opacity-0');
+                    testimonials[currentTestimonialIndex].classList.add('opacity-100');
+                }, 5000);
+            }
+
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+        });
     </script>
 </body>
 </html>
