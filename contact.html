@@ -1,33 +1,45 @@
-            <nav class="hidden md:flex items-<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - Canadian Emeralds</title>
+    <title>Private Consultations - Canadian Emeralds</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         :root {
-            --color-1: color(display-p3 0.135 0.351 0.129);
-            --color-2: color(display-p3 0.99 0.996 0.884);
+            --color-1: color(display-p3 0.106 0.263 0.196);
+            --color-2: color(display-p3 0.976 0.965 0.941);
+            --color-accent: color(display-p3 0.722 0.561 0.396);
             /* Fallback colors for browsers that don't support display-p3 */
-            --fallback-color-1: #225A20;
-            --fallback-color-2: #FDFEE2;
+            --fallback-color-1: #1B4332;
+            --fallback-color-2: #F8F6F1;
+            --fallback-color-accent: #B8906A;
         }
 
         /* Normal theme */
         .combo-1 {
             color: var(--fallback-color-1);
             background-color: var(--fallback-color-2);
-            color: var(--color-1);
-            background-color: var(--color-2);
+        }
+        
+        @supports (color: color(display-p3 1 1 1)) {
+            .combo-1 {
+                color: var(--color-1);
+                background-color: var(--color-2);
+            }
         }
 
         /* Inverse theme */
         .combo-2 {
             color: var(--fallback-color-2);
             background-color: var(--fallback-color-1);
-            color: var(--color-2);
-            background-color: var(--color-1);
+        }
+        
+        @supports (color: color(display-p3 1 1 1)) {
+            .combo-2 {
+                color: var(--color-2);
+                background-color: var(--color-1);
+            }
         }
 
         body {
@@ -47,14 +59,23 @@
             box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
         }
         .luxury-border {
-            border: 1px solid rgba(34, 90, 32, 0.1);
+            border: 1px solid rgba(27, 67, 50, 0.08);
+        }
+        .accent-color {
+            color: var(--fallback-color-accent) !important;
+        }
+        
+        @supports (color: color(display-p3 1 1 1)) {
+            .accent-color {
+                color: var(--color-accent) !important;
+            }
         }
         .form-input {
             transition: all 0.3s ease;
         }
         .form-input:focus {
             transform: translateY(-1px);
-            box-shadow: 0 4px 20px rgba(34, 90, 32, 0.1);
+            box-shadow: 0 4px 20px rgba(27, 67, 50, 0.1);
         }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -69,10 +90,10 @@
                 Canadian Emeralds
             </a>
             <nav class="hidden md:flex items-center space-x-10">
-                <a href="collection.html" class="text-sm uppercase tracking-wider text-stone-600 hover:text-stone-900 transition-all duration-200 font-medium">Collection</a>
-                <a href="about.html" class="text-sm uppercase tracking-wider text-stone-600 hover:text-stone-900 transition-all duration-200 font-medium">Our Story</a>
+                <a href="collection.html" class="text-sm uppercase tracking-wider text-stone-600 hover:text-stone-900 transition-all duration-200 font-medium">Private Atelier</a>
+                <a href="about.html" class="text-sm uppercase tracking-wider text-stone-600 hover:text-stone-900 transition-all duration-200 font-medium">Heritage</a>
                 <a href="bespoke.html" class="text-sm uppercase tracking-wider text-stone-600 hover:text-stone-900 transition-all duration-200 font-medium">Bespoke</a>
-                <a href="contact.html" class="text-sm uppercase tracking-wider font-semibold font-medium" style="color: var(--color-1);">Contact</a>
+                <a href="contact.html" class="text-sm uppercase tracking-wider font-semibold font-medium" style="color: var(--fallback-color-1);">Private Consultations</a>
             </nav>
             <div class="flex items-center space-x-6">
                 <button class="text-stone-600 hover:text-stone-900 transition-all duration-200 hover:scale-105">
@@ -86,10 +107,10 @@
         </div>
         <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-stone-200 subtle-shadow">
             <nav class="flex flex-col">
-                <a href="collection.html" class="mobile-nav-link py-4 px-6 text-center uppercase tracking-wider text-stone-600 hover:bg-stone-100 transition-all duration-200 font-medium">Collection</a>
-                <a href="about.html" class="mobile-nav-link py-4 px-6 text-center uppercase tracking-wider text-stone-600 hover:bg-stone-100 transition-all duration-200 font-medium">Our Story</a>
+                <a href="collection.html" class="mobile-nav-link py-4 px-6 text-center uppercase tracking-wider text-stone-600 hover:bg-stone-100 transition-all duration-200 font-medium">Private Atelier</a>
+                <a href="about.html" class="mobile-nav-link py-4 px-6 text-center uppercase tracking-wider text-stone-600 hover:bg-stone-100 transition-all duration-200 font-medium">Heritage</a>
                 <a href="bespoke.html" class="mobile-nav-link py-4 px-6 text-center uppercase tracking-wider text-stone-600 hover:bg-stone-100 transition-all duration-200 font-medium">Bespoke</a>
-                <a href="contact.html" class="mobile-nav-link py-4 px-6 text-center uppercase tracking-wider text-stone-600 hover:bg-stone-100 transition-all duration-200 font-medium">Contact</a>
+                <a href="contact.html" class="mobile-nav-link py-4 px-6 text-center uppercase tracking-wider text-stone-600 hover:bg-stone-100 transition-all duration-200 font-medium">Private Consultations</a>
             </nav>
         </div>
     </header>
@@ -97,50 +118,69 @@
     <main>
         <section class="py-24 md:py-32 bg-white">
             <div class="container mx-auto px-6 text-center">
-                <h1 class="text-4xl md:text-5xl lg:text-6xl font-serif text-stone-900 mb-4 font-medium">Get in Touch</h1>
-                <p class="text-stone-600 max-w-3xl mx-auto text-lg font-light leading-relaxed">We would love to hear from you. Whether you have a question about our collection or wish to begin a bespoke journey, please reach out.</p>
-                <div class="w-24 h-px mx-auto mt-8 luxury-border" style="background-color: var(--color-1);"></div>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-serif text-stone-900 mb-4 font-medium">Private Consultations</h1>
+                <p class="text-stone-600 max-w-3xl mx-auto text-lg font-light leading-relaxed">Schedule an exclusive consultation to explore our collection, discuss bespoke commissions, or receive investment guidance from our emerald specialists.</p>
+                <div class="text-center mt-6">
+                    <span class="accent-color font-semibold text-sm uppercase tracking-wider">Complimentary consultation • By appointment only</span>
+                </div>
+                <div class="w-24 h-px mx-auto mt-8 luxury-border" style="background-color: var(--fallback-color-1);"></div>
             </div>
         </section>
 
         <section class="py-20 md:py-24 combo-1">
             <div class="container mx-auto px-6">
                 <div class="grid lg:grid-cols-2 gap-20">
-                    <div class="space-y-10 opacity-80">
+                    <div class="space-y-10 text-stone-700">
                         <div class="hover-lift p-8 subtle-shadow luxury-border bg-white/50">
-                            <h2 class="text-2xl md:text-3xl font-serif opacity-100 mb-4 font-medium">Visit Our Atelier</h2>
-                            <p class="font-light text-lg leading-relaxed">123 Luxury Row SW<br>Calgary, AB T2P 2L7</p>
+                            <h2 class="text-2xl md:text-3xl font-serif text-stone-900 mb-4 font-medium">Private Atelier</h2>
+                            <p class="font-light text-lg leading-relaxed mb-2">123 Luxury Row SW<br>Calgary, AB T2P 2L7</p>
+                            <p class="text-sm accent-color font-semibold uppercase tracking-wider">By appointment only</p>
                         </div>
                         <div class="hover-lift p-8 subtle-shadow luxury-border bg-white/50">
-                            <h2 class="text-2xl md:text-3xl font-serif opacity-100 mb-4 font-medium">Contact Details</h2>
-                            <p class="font-light text-lg leading-relaxed">Email: inquiries@canadianemeralds.ca</p>
-                            <p class="font-light text-lg leading-relaxed">Phone: +1 (403) 555-0123</p>
+                            <h2 class="text-2xl md:text-3xl font-serif text-stone-900 mb-4 font-medium">Contact Information</h2>
+                            <p class="font-light text-lg leading-relaxed">Email: consultations@canadianemeralds.ca</p>
+                            <p class="font-light text-lg leading-relaxed mb-2">Phone: +1 (403) 555-0123</p>
+                            <p class="text-sm accent-color font-semibold uppercase tracking-wider">Secure line for high-value inquiries</p>
                         </div>
                         <div class="hover-lift p-8 subtle-shadow luxury-border bg-white/50">
-                            <h2 class="text-2xl md:text-3xl font-serif opacity-100 mb-4 font-medium">Hours</h2>
+                            <h2 class="text-2xl md:text-3xl font-serif text-stone-900 mb-4 font-medium">Consultation Hours</h2>
                             <p class="font-light text-lg leading-relaxed">Tuesday - Saturday: 10am - 6pm</p>
-                            <p class="font-light text-lg leading-relaxed">Sunday & Monday: Closed</p>
+                            <p class="font-light text-lg leading-relaxed mb-2">Sunday & Monday: Closed</p>
+                            <p class="text-sm accent-color font-semibold uppercase tracking-wider">Evening appointments available for international clients</p>
                         </div>
                     </div>
                     <div class="hover-lift">
-                         <h2 class="text-2xl md:text-3xl font-serif mb-8 font-medium">Send an Inquiry</h2>
+                         <h2 class="text-2xl md:text-3xl font-serif mb-8 font-medium text-stone-900">Schedule Consultation</h2>
                          <div id="form-container">
                              <form id="contact-form" class="space-y-6">
                                 <div>
                                     <label for="name" class="sr-only">Name</label>
-                                    <input type="text" id="name" name="name" placeholder="Your Name" required class="w-full bg-white border luxury-border px-6 py-4 text-sm focus:outline-none focus:ring-2 form-input font-light" style="--tw-ring-color: var(--color-1);"/>
+                                    <input type="text" id="name" name="name" placeholder="Full Name" required class="w-full bg-white border luxury-border px-6 py-4 text-sm focus:outline-none focus:ring-2 form-input font-light" style="--tw-ring-color: var(--fallback-color-1);"/>
                                 </div>
                                 <div>
                                     <label for="email" class="sr-only">Email</label>
-                                    <input type="email" id="email" name="email" placeholder="Your Email" required class="w-full bg-white border luxury-border px-6 py-4 text-sm focus:outline-none focus:ring-2 form-input font-light" style="--tw-ring-color: var(--color-1);"/>
+                                    <input type="email" id="email" name="email" placeholder="Email Address" required class="w-full bg-white border luxury-border px-6 py-4 text-sm focus:outline-none focus:ring-2 form-input font-light" style="--tw-ring-color: var(--fallback-color-1);"/>
+                                </div>
+                                <div>
+                                    <label for="interest" class="sr-only">Interest</label>
+                                    <select id="interest" name="interest" required class="w-full bg-white border luxury-border px-6 py-4 text-sm focus:outline-none focus:ring-2 form-input font-light" style="--tw-ring-color: var(--fallback-color-1);">
+                                        <option value="">Area of Interest</option>
+                                        <option value="collection">Private Atelier Viewing</option>
+                                        <option value="bespoke">Bespoke Commission</option>
+                                        <option value="investment">Investment Guidance</option>
+                                        <option value="appraisal">Appraisal Services</option>
+                                    </select>
                                 </div>
                                 <div>
                                     <label for="message" class="sr-only">Message</label>
-                                    <textarea id="message" name="message" rows="6" placeholder="Your Message" required class="w-full bg-white border luxury-border px-6 py-4 text-sm focus:outline-none focus:ring-2 form-input font-light resize-none" style="--tw-ring-color: var(--color-1);"></textarea>
+                                    <textarea id="message" name="message" rows="6" placeholder="Tell us about your vision or requirements..." required class="w-full bg-white border luxury-border px-6 py-4 text-sm focus:outline-none focus:ring-2 form-input font-light resize-none" style="--tw-ring-color: var(--fallback-color-1);"></textarea>
                                 </div>
                                 <button type="submit" class="w-full combo-2 text-white py-4 text-sm font-semibold tracking-wider uppercase hover:bg-opacity-90 transition-all duration-300 hover:scale-105 hover-lift">
-                                    Send Message
+                                    Request Private Consultation
                                 </button>
+                                <p class="text-xs text-center font-light opacity-70 text-stone-600">
+                                    All inquiries are handled with complete confidentiality
+                                </p>
                              </form>
                          </div>
                          <div id="form-success-message" class="hidden">
@@ -149,8 +189,8 @@
                                     <div class="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-4">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-emerald-600"><polyline points="20 6 9 17 4 12"/></svg>
                                     </div>
-                                    <h3 class="text-lg font-serif font-medium mb-2">Message Sent Successfully</h3>
-                                    <p class="text-sm font-light">Thank you for your message. We will be in touch shortly.</p>
+                                    <h3 class="text-lg font-serif font-medium mb-2">Consultation Scheduled</h3>
+                                    <p class="text-sm font-light">Thank you for your interest. Our team will contact you within 24 hours to schedule your private consultation.</p>
                                 </div>
                             </div>
                          </div>
@@ -171,10 +211,10 @@
                     <div>
                         <h3 class="text-base font-semibold text-stone-800 tracking-wider mb-6">Explore</h3>
                         <ul class="space-y-4 text-sm">
-                            <li><a href="collection.html" class="hover:text-stone-900 transition-all duration-200 font-light">Collection</a></li>
-                            <li><a href="about.html" class="hover:text-stone-900 transition-all duration-200 font-light">Our Story</a></li>
+                            <li><a href="collection.html" class="hover:text-stone-900 transition-all duration-200 font-light">Private Atelier</a></li>
+                            <li><a href="about.html" class="hover:text-stone-900 transition-all duration-200 font-light">Heritage</a></li>
                             <li><a href="bespoke.html" class="hover:text-stone-900 transition-all duration-200 font-light">Bespoke</a></li>
-                            <li><a href="#" class="hover:text-stone-900 transition-all duration-200 font-light">Journal</a></li>
+                            <li><a href="#" class="hover:text-stone-900 transition-all duration-200 font-light">Investment Guide</a></li>
                         </ul>
                     </div>
                     <div>
@@ -182,14 +222,15 @@
                         <ul class="space-y-4 text-sm">
                             <li><a href="#" class="hover:text-stone-900 transition-all duration-200 font-light">Instagram</a></li>
                             <li><a href="#" class="hover:text-stone-900 transition-all duration-200 font-light">Pinterest</a></li>
-                            <li><a href="contact.html" class="hover:text-stone-900 transition-all duration-200 font-light">Contact Us</a></li>
+                            <li><a href="contact.html" class="hover:text-stone-900 transition-all duration-200 font-light">Private Consultations</a></li>
                         </ul>
                     </div>
                     <div>
-                         <h3 class="text-base font-semibold text-stone-800 tracking-wider mb-6">Legal</h3>
+                         <h3 class="text-base font-semibold text-stone-800 tracking-wider mb-6">Services</h3>
                         <ul class="space-y-4 text-sm">
-                            <li><a href="#" class="hover:text-stone-900 transition-all duration-200 font-light">Privacy Policy</a></li>
-                            <li><a href="#" class="hover:text-stone-900 transition-all duration-200 font-light">Terms of Service</a></li>
+                            <li><a href="#" class="hover:text-stone-900 transition-all duration-200 font-light">Appraisal Services</a></li>
+                            <li><a href="#" class="hover:text-stone-900 transition-all duration-200 font-light">Insurance Documentation</a></li>
+                            <li><a href="#" class="hover:text-stone-900 transition-all duration-200 font-light">Care & Maintenance</a></li>
                         </ul>
                     </div>
                 </div>
