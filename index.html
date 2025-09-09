@@ -1,3 +1,42 @@
+
+bidcoinauction/Canadian_Emeralds
+main
+
+GITHUB
+
+we want to have more or a user react expereince, subtle luxury; we are "sactioned" "blessed" by https://josephgad.com but they are behind the scenes i want this color scheme across all pages :root {
+  --color-1: color(display-p3 0.135 0.351 0.129);
+  --color-2: color(display-p3 0.99 0.996 0.884);
+}
+/* Normal theme /
+.combo-1 {
+  color: var(--color-1);
+  background-color: var(--color-2);
+}
+/ Inverse theme */
+.combo-2 {
+  color: var(--color-2);
+  background-color: var(--color-1);
+}
+
+can you update all?
+
+I'll update all the HTML files with the new color scheme and enhance the user experience with more subtle luxury touches. Let me start with the homepage and then update each page systematically.
+
+Updated Index - Canadian Emeralds
+Interactive artifact 
+Now let me update the About page with the new color scheme and luxury enhancements:
+
+Updated About - Canadian Emeralds
+Interactive artifact 
+Continue
+
+Updated About - Canadian Emeralds
+Interactive artifact 
+
+
+
+
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
@@ -7,19 +46,25 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         :root {
-            /* Using standard, universally supported hex codes for colors */
-            --color-1: #1A441F; /* Dark Green */
-            --color-2: #F1FBF0; /* Light Green Background */
+            --color-1: color(display-p3 0.135 0.351 0.129);
+            --color-2: color(display-p3 0.99 0.996 0.884);
+            /* Fallback colors for browsers that don't support display-p3 */
+            --fallback-color-1: #225A20;
+            --fallback-color-2: #FDFEE2;
         }
 
         /* Normal theme */
         .combo-1 {
+            color: var(--fallback-color-1);
+            background-color: var(--fallback-color-2);
             color: var(--color-1);
             background-color: var(--color-2);
         }
 
         /* Inverse theme */
         .combo-2 {
+            color: var(--fallback-color-2);
+            background-color: var(--fallback-color-1);
             color: var(--color-2);
             background-color: var(--color-1);
         }
@@ -34,54 +79,67 @@
             opacity: 1 !important;
             transform: translateY(0) !important;
         }
+        .subtle-shadow {
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+        .hover-lift {
+            transition: all 0.3s ease;
+        }
+        .hover-lift:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+        }
+        .luxury-border {
+            border: 1px solid rgba(34, 90, 32, 0.1);
+        }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body class="font-sans antialiased">
 
     <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
         <div class="container mx-auto px-6 py-5 flex justify-between items-center">
-            <a href="index.html" class="text-xl font-serif tracking-widest uppercase text-white [text-shadow:0_1px_2px_rgba(0,0,0,0.6)]">
+            <a href="index.html" class="text-xl font-serif tracking-widest uppercase text-white [text-shadow:0_1px_2px_rgba(0,0,0,0.6)] font-medium">
                 Canadian Emeralds
             </a>
             <nav class="hidden md:flex items-center space-x-10">
-                <a href="collection.html" class="text-sm uppercase tracking-wider text-stone-200 hover:text-white transition-colors [text-shadow:0_1px_2px_rgba(0,0,0,0.6)]">Collection</a>
-                <a href="about.html" class="text-sm uppercase tracking-wider text-stone-200 hover:text-white transition-colors [text-shadow:0_1px_2px_rgba(0,0,0,0.6)]">Our Story</a>
-                <a href="bespoke.html" class="text-sm uppercase tracking-wider text-stone-200 hover:text-white transition-colors [text-shadow:0_1px_2px_rgba(0,0,0,0.6)]">Bespoke</a>
-                <a href="contact.html" class="text-sm uppercase tracking-wider text-stone-200 hover:text-white transition-colors [text-shadow:0_1px_2px_rgba(0,0,0,0.6)]">Contact</a>
+                <a href="collection.html" class="text-sm uppercase tracking-wider text-stone-200 hover:text-white transition-all duration-200 [text-shadow:0_1px_2px_rgba(0,0,0,0.6)] font-medium">Collection</a>
+                <a href="about.html" class="text-sm uppercase tracking-wider text-stone-200 hover:text-white transition-all duration-200 [text-shadow:0_1px_2px_rgba(0,0,0,0.6)] font-medium">Our Story</a>
+                <a href="bespoke.html" class="text-sm uppercase tracking-wider text-stone-200 hover:text-white transition-all duration-200 [text-shadow:0_1px_2px_rgba(0,0,0,0.6)] font-medium">Bespoke</a>
+                <a href="contact.html" class="text-sm uppercase tracking-wider text-stone-200 hover:text-white transition-all duration-200 [text-shadow:0_1px_2px_rgba(0,0,0,0.6)] font-medium">Contact</a>
             </nav>
             <div class="flex items-center space-x-6">
-                <button class="text-stone-200 hover:text-white transition-colors">
+                <button class="text-stone-200 hover:text-white transition-all duration-200 hover:scale-105">
                     <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
                 </button>
-                <button id="menu-toggle" class="md:hidden text-white">
+                <button id="menu-toggle" class="md:hidden text-white transition-all duration-200 hover:scale-105">
                     <svg id="menu-icon-open" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
                     <svg id="menu-icon-close" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hidden"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
                 </button>
             </div>
         </div>
-        <div id="mobile-menu" class="hidden md:hidden border-t border-stone-200 combo-1">
+        <div id="mobile-menu" class="hidden md:hidden border-t border-stone-200 combo-1 subtle-shadow">
             <nav class="flex flex-col">
-                <a href="collection.html" class="mobile-nav-link py-4 px-6 text-center uppercase tracking-wider hover:bg-black/5 transition-colors">Collection</a>
-                <a href="about.html" class="mobile-nav-link py-4 px-6 text-center uppercase tracking-wider hover:bg-black/5 transition-colors">Our Story</a>
-                <a href="bespoke.html" class="mobile-nav-link py-4 px-6 text-center uppercase tracking-wider hover:bg-black/5 transition-colors">Bespoke</a>
-                <a href="contact.html" class="mobile-nav-link py-4 px-6 text-center uppercase tracking-wider hover:bg-black/5 transition-colors">Contact</a>
+                <a href="collection.html" class="mobile-nav-link py-4 px-6 text-center uppercase tracking-wider hover:bg-black/5 transition-all duration-200 font-medium">Collection</a>
+                <a href="about.html" class="mobile-nav-link py-4 px-6 text-center uppercase tracking-wider hover:bg-black/5 transition-all duration-200 font-medium">Our Story</a>
+                <a href="bespoke.html" class="mobile-nav-link py-4 px-6 text-center uppercase tracking-wider hover:bg-black/5 transition-all duration-200 font-medium">Bespoke</a>
+                <a href="contact.html" class="mobile-nav-link py-4 px-6 text-center uppercase tracking-wider hover:bg-black/5 transition-all duration-200 font-medium">Contact</a>
             </nav>
         </div>
     </header>
 
     <main>
         <section class="relative h-screen bg-cover bg-center flex items-end" style="background-image: url('https://updatedcardscript.standard.us-east-1.oortstorages.com/Emrald_gemstone-1-800x800.webp')">
-            <div class="absolute inset-0 bg-black/30"></div>
+            <div class="absolute inset-0 bg-gradient-to-b from-black/20 via-black/30 to-black/50"></div>
             <div class="relative container mx-auto px-6 pb-20 md:pb-32">
-                <div class="max-w-lg animated-section opacity-0 translate-y-10 transition-all duration-1000">
-                    <h1 class="text-4xl md:text-6xl font-serif text-white mb-6 leading-tight [text-shadow:0_2px_4px_rgba(0,0,0,0.5)]">Where Legacy is Forged in Green</h1>
-                    <p class="text-base md:text-lg text-stone-200 max-w-md mb-8 [text-shadow:0_1px_3px_rgba(0,0,0,0.5)]">
+                <div class="max-w-2xl animated-section opacity-0 translate-y-10 transition-all duration-1000">
+                    <h1 class="text-4xl md:text-6xl lg:text-7xl font-serif text-white mb-6 leading-tight [text-shadow:0_2px_4px_rgba(0,0,0,0.5)] font-medium">Where Legacy is Forged in Green</h1>
+                    <p class="text-lg md:text-xl text-stone-200 max-w-2xl mb-8 [text-shadow:0_1px_3px_rgba(0,0,0,0.5)] font-light leading-relaxed">
                         Discover unparalleled beauty in a collection of the world's finest emeralds, ethically sourced and masterfully crafted in Canada.
                     </p>
-                    <a href="collection.html" class="group inline-flex items-center text-white uppercase tracking-widest font-semibold text-sm [text-shadow:0_1px_3px_rgba(0,0,0,0.5)]">
+                    <a href="collection.html" class="group inline-flex items-center text-white uppercase tracking-widest font-semibold text-sm [text-shadow:0_1px_3px_rgba(0,0,0,0.5)] hover:scale-105 transition-all duration-300">
                         Explore The Collection
                         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-2 transition-transform group-hover:translate-x-1"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
                     </a>
@@ -92,39 +150,40 @@
         <section id="shop" class="py-20 md:py-32 combo-1">
             <div class="container mx-auto px-6">
                 <div class="animated-section opacity-0 translate-y-10 transition-all duration-1000">
-                    <div class="text-left mb-12">
-                        <h2 class="text-3xl md:text-4xl font-serif mb-3">Signature Collection</h2>
-                        <div class="w-24 h-px" style="background-color: var(--color-1);"></div>
+                    <div class="text-left mb-16">
+                        <h2 class="text-3xl md:text-4xl lg:text-5xl font-serif mb-4 font-medium">Signature Collection</h2>
+                        <div class="w-24 h-px luxury-border" style="background-color: var(--color-1);"></div>
+                        <p class="text-stone-600 max-w-2xl mt-4 font-light">Each piece tells a story of Canadian craftsmanship and natural wonder.</p>
                     </div>
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
-                        <div class="group">
-                            <div class="overflow-hidden bg-white aspect-[4/5]">
-                                <img src="https://updatedcardscript.standard.us-east-1.oortstorages.com/canada_emeralds/The%20Moraine%20Ring.png" alt="The Moraine Ring" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                        <div class="group hover-lift">
+                            <div class="overflow-hidden bg-white aspect-[4/5] subtle-shadow luxury-border">
+                                <img src="https://updatedcardscript.standard.us-east-1.oortstorages.com/canada_emeralds/The%20Moraine%20Ring.png" alt="The Moraine Ring" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
                             </div>
-                            <div class="pt-5">
-                                <h3 class="text-lg font-serif mb-1">The Moraine Ring</h3>
-                                <p class="text-sm mb-3 opacity-70">A breathtaking 5-carat pear-cut Canadian emerald, cradled in a platinum band.</p>
-                                <a href="collection.html" class="font-semibold text-sm tracking-wider" style="color: var(--color-1);">View Details</a>
-                            </div>
-                        </div>
-                        <div class="group">
-                            <div class="overflow-hidden bg-white aspect-[4/5]">
-                                <img src="https://updatedcardscript.standard.us-east-1.oortstorages.com/canada_emeralds/The%20Rundle%20Necklace.png" alt="The Rundle Necklace" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                            </div>
-                            <div class="pt-5">
-                                <h3 class="text-lg font-serif mb-1">The Rundle Necklace</h3>
-                                <p class="text-sm mb-3 opacity-70">An exquisite pendant featuring a vibrant, round-cut emerald in 18k gold.</p>
-                                <a href="collection.html" class="font-semibold text-sm tracking-wider" style="color: var(--color-1);">View Details</a>
+                            <div class="pt-6">
+                                <h3 class="text-lg font-serif mb-2 font-medium">The Moraine Ring</h3>
+                                <p class="text-sm mb-4 opacity-70 font-light leading-relaxed">A breathtaking 5-carat pear-cut Canadian emerald, cradled in a platinum band.</p>
+                                <a href="collection.html" class="font-semibold text-sm tracking-wider hover:underline transition-all duration-200" style="color: var(--color-1);">View Details</a>
                             </div>
                         </div>
-                        <div class="group">
-                            <div class="overflow-hidden bg-white aspect-[4/5]">
-                                <img src="https://updatedcardscript.standard.us-east-1.oortstorages.com/canada_emeralds/The%20Cascade%20Earrings.png" alt="The Cascade Earrings" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                        <div class="group hover-lift">
+                            <div class="overflow-hidden bg-white aspect-[4/5] subtle-shadow luxury-border">
+                                <img src="https://updatedcardscript.standard.us-east-1.oortstorages.com/canada_emeralds/The%20Rundle%20Necklace.png" alt="The Rundle Necklace" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
                             </div>
-                            <div class="pt-5">
-                                <h3 class="text-lg font-serif mb-1">The Cascade Earrings</h3>
-                                <p class="text-sm mb-3 opacity-70">Elegant drop earrings showcasing a cascade of brilliant-cut emeralds.</p>
-                                <a href="collection.html" class="font-semibold text-sm tracking-wider" style="color: var(--color-1);">View Details</a>
+                            <div class="pt-6">
+                                <h3 class="text-lg font-serif mb-2 font-medium">The Rundle Necklace</h3>
+                                <p class="text-sm mb-4 opacity-70 font-light leading-relaxed">An exquisite pendant featuring a vibrant, round-cut emerald in 18k gold.</p>
+                                <a href="collection.html" class="font-semibold text-sm tracking-wider hover:underline transition-all duration-200" style="color: var(--color-1);">View Details</a>
+                            </div>
+                        </div>
+                        <div class="group hover-lift">
+                            <div class="overflow-hidden bg-white aspect-[4/5] subtle-shadow luxury-border">
+                                <img src="https://updatedcardscript.standard.us-east-1.oortstorages.com/canada_emeralds/The%20Cascade%20Earrings.png" alt="The Cascade Earrings" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                            </div>
+                            <div class="pt-6">
+                                <h3 class="text-lg font-serif mb-2 font-medium">The Cascade Earrings</h3>
+                                <p class="text-sm mb-4 opacity-70 font-light leading-relaxed">Elegant drop earrings showcasing a cascade of brilliant-cut emeralds.</p>
+                                <a href="collection.html" class="font-semibold text-sm tracking-wider hover:underline transition-all duration-200" style="color: var(--color-1);">View Details</a>
                             </div>
                         </div>
                     </div>
@@ -135,18 +194,18 @@
         <section id="about" class="py-20 md:py-32 bg-white text-stone-800">
             <div class="container mx-auto px-6">
                 <div class="animated-section opacity-0 translate-y-10 transition-all duration-1000">
-                    <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="grid md:grid-cols-2 gap-16 items-center">
                         <div class="md:pr-12">
-                            <h2 class="text-3xl md:text-4xl font-serif text-stone-900 mb-4">A Canadian Legacy</h2>
-                            <div class="w-24 h-px" style="background-color: var(--color-1);"></div>
-                            <div class="space-y-4 text-stone-600 leading-relaxed mt-6">
-                                <p>At Canadian Emeralds, we celebrate the raw, untamed beauty of gemstones. Each emerald is a testament to our nation's geological wonders, ethically sourced and selected for its exceptional colour and clarity.</p>
-                                <p>Our master jewellers transform these natural treasures into timeless heirlooms.</p>
-                                <a href="about.html" class="font-semibold text-sm tracking-wider inline-block mt-2" style="color: var(--color-1);">Read Our Full Story</a>
+                            <h2 class="text-3xl md:text-4xl lg:text-5xl font-serif text-stone-900 mb-4 font-medium">A Canadian Legacy</h2>
+                            <div class="w-24 h-px luxury-border" style="background-color: var(--color-1);"></div>
+                            <div class="space-y-6 text-stone-600 leading-relaxed mt-8">
+                                <p class="font-light text-lg">At Canadian Emeralds, we celebrate the raw, untamed beauty of gemstones. Each emerald is a testament to our nation's geological wonders, ethically sourced and selected for its exceptional colour and clarity.</p>
+                                <p class="font-light">Our master jewellers transform these natural treasures into timeless heirlooms, creating pieces that transcend generations.</p>
+                                <a href="about.html" class="font-semibold text-sm tracking-wider inline-block mt-4 hover:underline transition-all duration-200" style="color: var(--color-1);">Read Our Full Story</a>
                             </div>
                         </div>
-                        <div class="aspect-[4/5]">
-                            <img src="https://updatedcardscript.standard.us-east-1.oortstorages.com/canada_emeralds/jewlershands.png" alt="A jeweller's hands holding several raw emeralds up to the light for inspection" class="w-full h-full object-cover"/>
+                        <div class="aspect-[4/5] hover-lift">
+                            <img src="https://updatedcardscript.standard.us-east-1.oortstorages.com/canada_emeralds/jewlershands.png" alt="A jeweller's hands holding several raw emeralds up to the light for inspection" class="w-full h-full object-cover subtle-shadow luxury-border"/>
                         </div>
                     </div>
                 </div>
@@ -156,10 +215,11 @@
         <section class="py-20 md:py-32 combo-2">
             <div class="container mx-auto px-6 text-center">
                 <div class="animated-section opacity-0 translate-y-10 transition-all duration-1000">
-                    <h2 class="text-3xl md:text-4xl font-serif mb-4">Bespoke Creations</h2>
-                    <p class="max-w-2xl mx-auto opacity-80 mb-8">Your story is unique. Your jewelry should be too. Collaborate with our designers to bring your vision to life, crafting a one-of-a-kind piece that is exclusively yours.</p>
-                    <a href="bespoke.html" class="group inline-flex items-center uppercase tracking-widest font-semibold text-sm border px-8 py-3 transition-colors hover:bg-white hover:text-black">
+                    <h2 class="text-3xl md:text-4xl lg:text-5xl font-serif mb-6 font-medium">Bespoke Creations</h2>
+                    <p class="max-w-3xl mx-auto opacity-90 mb-10 text-lg font-light leading-relaxed">Your story is unique. Your jewelry should be too. Collaborate with our designers to bring your vision to life, crafting a one-of-a-kind piece that is exclusively yours.</p>
+                    <a href="bespoke.html" class="group inline-flex items-center uppercase tracking-widest font-semibold text-sm border px-10 py-4 transition-all duration-300 hover:bg-white hover:text-black hover:scale-105 hover-lift">
                         Discover The Process
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-2 transition-transform group-hover:translate-x-1"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
                     </a>
                 </div>
             </div>
@@ -168,20 +228,20 @@
         <section class="py-20 md:py-32 combo-1">
             <div class="container mx-auto px-6 text-center">
                 <div class="animated-section opacity-0 translate-y-10 transition-all duration-1000">
-                    <h2 class="text-3xl md:text-4xl font-serif mb-3">Words of Esteem</h2>
-                    <div class="w-24 h-px mx-auto mb-12" style="background-color: var(--color-1);"></div>
-                    <div class="relative h-40">
+                    <h2 class="text-3xl md:text-4xl lg:text-5xl font-serif mb-4 font-medium">Words of Esteem</h2>
+                    <div class="w-24 h-px mx-auto mb-16 luxury-border" style="background-color: var(--color-1);"></div>
+                    <div class="relative h-48">
                          <div class="testimonial-item absolute inset-0 transition-opacity duration-1000 ease-in-out opacity-100">
-                            <p class="text-xl md:text-2xl font-serif mb-4">"The bespoke ring created for our anniversary is beyond anything I could have imagined. A true work of art."</p>
-                            <p class="text-sm uppercase tracking-wider opacity-70">- Eleanor Vance</p>
+                            <p class="text-xl md:text-2xl lg:text-3xl font-serif mb-6 font-light leading-relaxed">"The bespoke ring created for our anniversary is beyond anything I could have imagined. A true work of art."</p>
+                            <p class="text-sm uppercase tracking-wider opacity-70 font-medium">- Eleanor Vance</p>
                         </div>
                         <div class="testimonial-item absolute inset-0 transition-opacity duration-1000 ease-in-out opacity-0">
-                            <p class="text-xl md:text-2xl font-serif mb-4">"From the initial consultation to the final reveal, the process was seamless and deeply personal."</p>
-                            <p class="text-sm uppercase tracking-wider opacity-70">- James McGregor</p>
+                            <p class="text-xl md:text-2xl lg:text-3xl font-serif mb-6 font-light leading-relaxed">"From the initial consultation to the final reveal, the process was seamless and deeply personal."</p>
+                            <p class="text-sm uppercase tracking-wider opacity-70 font-medium">- James McGregor</p>
                         </div>
                         <div class="testimonial-item absolute inset-0 transition-opacity duration-1000 ease-in-out opacity-0">
-                            <p class="text-xl md:text-2xl font-serif mb-4">"My emerald necklace is a statement of elegance and craftsmanship. I receive compliments every time I wear it."</p>
-                            <p class="text-sm uppercase tracking-wider opacity-70">- Sophia Chen</p>
+                            <p class="text-xl md:text-2xl lg:text-3xl font-serif mb-6 font-light leading-relaxed">"My emerald necklace is a statement of elegance and craftsmanship. I receive compliments every time I wear it."</p>
+                            <p class="text-sm uppercase tracking-wider opacity-70 font-medium">- Sophia Chen</p>
                         </div>
                     </div>
                 </div>
@@ -189,42 +249,42 @@
         </section>
     </main>
     
-    <footer class="bg-white text-stone-600 border-t border-stone-200">
-        <div class="container mx-auto px-6 py-16">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 text-center md:text-left">
+    <footer class="bg-white text-stone-600 border-t border-stone-200 subtle-shadow">
+        <div class="container mx-auto px-6 py-20">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center md:text-left">
                 <div class="md:col-span-1">
-                    <h3 class="text-lg font-serif text-stone-800 tracking-widest mb-4">CANADIAN EMERALDS</h3>
-                    <p class="text-sm">123 Luxury Row SW<br/>Calgary, AB T2P 2L7</p>
+                    <h3 class="text-lg font-serif text-stone-800 tracking-widest mb-6 font-medium">CANADIAN EMERALDS</h3>
+                    <p class="text-sm font-light leading-relaxed">123 Luxury Row SW<br/>Calgary, AB T2P 2L7</p>
                 </div>
-                <div class="md:col-span-2 grid grid-cols-2 md:grid-cols-3 gap-8">
+                <div class="md:col-span-2 grid grid-cols-2 md:grid-cols-3 gap-10">
                     <div>
-                        <h3 class="text-base font-semibold text-stone-800 tracking-wider mb-4">Explore</h3>
-                        <ul class="space-y-3 text-sm">
-                            <li><a href="collection.html" class="hover:text-stone-900 transition-colors">Collection</a></li>
-                            <li><a href="about.html" class="hover:text-stone-900 transition-colors">Our Story</a></li>
-                            <li><a href="bespoke.html" class="hover:text-stone-900 transition-colors">Bespoke</a></li>
-                            <li><a href="#" class="hover:text-stone-900 transition-colors">Journal</a></li>
+                        <h3 class="text-base font-semibold text-stone-800 tracking-wider mb-6">Explore</h3>
+                        <ul class="space-y-4 text-sm">
+                            <li><a href="collection.html" class="hover:text-stone-900 transition-all duration-200 font-light">Collection</a></li>
+                            <li><a href="about.html" class="hover:text-stone-900 transition-all duration-200 font-light">Our Story</a></li>
+                            <li><a href="bespoke.html" class="hover:text-stone-900 transition-all duration-200 font-light">Bespoke</a></li>
+                            <li><a href="#" class="hover:text-stone-900 transition-all duration-200 font-light">Journal</a></li>
                         </ul>
                     </div>
                     <div>
-                        <h3 class="text-base font-semibold text-stone-800 tracking-wider mb-4">Connect</h3>
-                        <ul class="space-y-3 text-sm">
-                            <li><a href="#" class="hover:text-stone-900 transition-colors">Instagram</a></li>
-                            <li><a href="#" class="hover:text-stone-900 transition-colors">Pinterest</a></li>
-                            <li><a href="contact.html" class="hover:text-stone-900 transition-colors">Contact Us</a></li>
+                        <h3 class="text-base font-semibold text-stone-800 tracking-wider mb-6">Connect</h3>
+                        <ul class="space-y-4 text-sm">
+                            <li><a href="#" class="hover:text-stone-900 transition-all duration-200 font-light">Instagram</a></li>
+                            <li><a href="#" class="hover:text-stone-900 transition-all duration-200 font-light">Pinterest</a></li>
+                            <li><a href="contact.html" class="hover:text-stone-900 transition-all duration-200 font-light">Contact Us</a></li>
                         </ul>
                     </div>
                     <div>
-                         <h3 class="text-base font-semibold text-stone-800 tracking-wider mb-4">Legal</h3>
-                        <ul class="space-y-3 text-sm">
-                            <li><a href="#" class="hover:text-stone-900 transition-colors">Privacy Policy</a></li>
-                            <li><a href="#" class="hover:text-stone-900 transition-colors">Terms of Service</a></li>
+                         <h3 class="text-base font-semibold text-stone-800 tracking-wider mb-6">Legal</h3>
+                        <ul class="space-y-4 text-sm">
+                            <li><a href="#" class="hover:text-stone-900 transition-all duration-200 font-light">Privacy Policy</a></li>
+                            <li><a href="#" class="hover:text-stone-900 transition-all duration-200 font-light">Terms of Service</a></li>
                         </ul>
                     </div>
                 </div>
             </div>
-            <div class="mt-16 border-t border-stone-200 pt-8 text-center text-xs text-stone-400">
-                <p>&copy; <span id="current-year"></span> Canadian Emeralds. A Canadian Jeweller.</p>
+            <div class="mt-20 border-t border-stone-200 pt-10 text-center text-xs text-stone-400">
+                <p class="font-light">&copy; <span id="current-year"></span> Canadian Emeralds. A Canadian Jeweller.</p>
             </div>
         </div>
     </footer>
@@ -238,10 +298,12 @@
 
             window.addEventListener('scroll', () => {
                 const isScrolled = window.scrollY > 10;
-                header.classList.toggle('bg-stone-50/80', isScrolled);
-                header.classList.toggle('backdrop-blur-sm', isScrolled);
+                header.classList.toggle('bg-stone-50/90', isScrolled);
+                header.classList.toggle('backdrop-blur-md', isScrolled);
                 header.classList.toggle('border-b', isScrolled);
                 header.classList.toggle('border-stone-200', isScrolled);
+                header.classList.toggle('subtle-shadow', isScrolled);
+                
                 headerLogo.classList.toggle('text-white', !isScrolled);
                 headerLogo.classList.toggle('[text-shadow:0_1px_2px_rgba(0,0,0,0.6)]', !isScrolled);
                 headerLogo.classList.toggle('text-stone-800', isScrolled);
@@ -269,13 +331,21 @@
             const mobileMenu = document.getElementById('mobile-menu');
             const menuIconOpen = document.getElementById('menu-icon-open');
             const menuIconClose = document.getElementById('menu-icon-close');
+            const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+            
+            const toggleMenu = () => {
+                mobileMenu.classList.toggle('hidden');
+                menuIconOpen.classList.toggle('hidden');
+                menuIconClose.classList.toggle('hidden');
+            };
+            
             if(menuToggle) {
-                menuToggle.addEventListener('click', () => {
-                    mobileMenu.classList.toggle('hidden');
-                    menuIconOpen.classList.toggle('hidden');
-                    menuIconClose.classList.toggle('hidden');
-                });
+                menuToggle.addEventListener('click', toggleMenu);
             }
+            
+            mobileNavLinks.forEach(link => {
+                link.addEventListener('click', toggleMenu);
+            });
 
             const animatedSections = document.querySelectorAll('.animated-section');
             const observer = new IntersectionObserver((entries) => {
@@ -304,4 +374,6 @@
         });
     </script>
 </body>
+</html>
+
 </html>
