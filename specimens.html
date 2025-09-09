@@ -1,4 +1,4 @@
-COLOMBIAEMERALDS.CA<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
@@ -14,316 +14,218 @@ COLOMBIAEMERALDS.CA<!DOCTYPE html>
             --gold-accent: #D4AF37;
             --platinum: #E5E4E2;
         }
-
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            font-weight: 200;
+            font-weight: 300;
+            background-color: var(--cream-luxury);
+            color: var(--emerald-deep);
         }
-
         .font-display {
             font-family: 'Playfair Display', serif;
-            font-weight: 300;
+            font-weight: 400;
         }
-
         .hero-text {
             font-size: clamp(3rem, 8vw, 8rem);
             line-height: 0.9;
             letter-spacing: -0.02em;
         }
-
-        .luxury-gradient {
-            background: linear-gradient(135deg, var(--emerald-deep) 0%, var(--emerald-rich) 50%, var(--emerald-soft) 100%);
-        }
-
         .specimen-card {
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(0, 0, 0, 0.05);
             transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
         }
-
         .specimen-card:hover {
-            transform: translateY(-12px) scale(1.03);
-            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
+            transform: translateY(-12px);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.1);
         }
-
-        .parallax-bg {
-            background-attachment: fixed;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
-
         .fade-in-up {
-            opacity: 1 !important;
-            transform: translateY(0) !important;
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 1s cubic-bezier(0.4, 0, 0.2, 1), transform 1s cubic-bezier(0.4, 0, 0.2, 1);
         }
-
-        .text-shadow-luxury {
-            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        .fade-in-up.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
-
         .investment-badge {
             background: linear-gradient(135deg, var(--gold-accent), #B8860B);
             box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
         }
-
         .geological-data {
             font-family: 'SF Mono', 'Monaco', 'Inconsolata', monospace;
-            font-size: 0.75rem;
+            font-size: 0.8rem;
             letter-spacing: 0.5px;
         }
-
         .luxury-border {
             border: 1px solid rgba(212, 175, 55, 0.2);
-        }
-
-        .filter-btn {
-            transition: all 0.3s ease;
-        }
-
-        .filter-btn.active {
-            background-color: var(--gold-accent);
-            color: var(--emerald-deep);
-        }
-
-        .specimen-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 2rem;
-        }
-
-        @media (max-width: 768px) {
-            .specimen-grid {
-                grid-template-columns: 1fr;
-            }
-            .hero-text {
-                font-size: clamp(2rem, 12vw, 4rem);
-            }
-        }
-
-        .rarity-indicator {
-            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
-        }
-
-        .museum-indicator {
-            background: linear-gradient(45deg, #a55eea, #8b5cf6);
-        }
-
-        .investment-indicator {
-            background: linear-gradient(45deg, var(--gold-accent), #f39c12);
         }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800;900&family=Playfair+Display:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
 </head>
-<body class="antialiased" style="background-color: var(--cream-luxury); color: var(--emerald-deep);">
+<body class="antialiased">
 
     <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 bg-white/95 backdrop-blur-md border-b border-gray-200">
         <div class="container mx-auto px-8 py-6 flex justify-between items-center">
-            <a href="index.html" class="font-display text-2xl tracking-[0.2em] font-light" style="color: var(--emerald-deep);">
+            <a href="index.html" class="font-display text-xl tracking-[0.2em] font-light" style="color: var(--emerald-deep);">
                 COLOMBIAEMERALDS.CA
-                <div class="text-xs tracking-[0.3em] opacity-60 mt-1 font-light">EST. 1952</div>
             </a>
             <nav class="hidden md:flex items-center space-x-12">
-                <a href="index.html" class="text-sm tracking-[0.15em] opacity-70 hover:opacity-100 transition-all duration-300 font-light">THE HOUSE</a>
                 <a href="collection.html" class="text-sm tracking-[0.15em] font-medium" style="color: var(--gold-accent);">SPECIMENS</a>
-                <a href="#investment" class="text-sm tracking-[0.15em] opacity-70 hover:opacity-100 transition-all duration-300 font-light">INVESTMENT</a>
                 <a href="about.html" class="text-sm tracking-[0.15em] opacity-70 hover:opacity-100 transition-all duration-300 font-light">SAVOIR-FAIRE</a>
                 <a href="contact.html" class="text-sm tracking-[0.15em] opacity-70 hover:opacity-100 transition-all duration-300 font-light">ATELIER PRIVÉ</a>
             </nav>
-            <div class="flex items-center space-x-4">
-                 <button id="cart-toggle" class="relative">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
-                    <span id="cart-count" class="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center hidden">0</span>
-                </button>
-                <button id="menu-toggle" class="md:hidden" style="color: var(--emerald-deep);">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-                </button>
-            </div>
+            <button class="md:hidden" style="color: var(--emerald-deep);">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+            </button>
         </div>
     </header>
 
-    <main class="pt-32">
+    <main class="pt-24">
         <!-- Hero Section -->
-        <section class="py-24 text-center">
+        <section class="py-20 text-center">
             <div class="container mx-auto px-8">
-                <div class="animated-section opacity-0 translate-y-20 transition-all duration-1000">
-                    <div class="investment-badge text-white px-6 py-3 rounded-full text-sm tracking-[0.2em] font-light mb-12 inline-block">
-                        ANNUAL RELEASE • LIMITED TO 24 SPECIMENS
-                    </div>
-                    <h1 class="hero-text font-display mb-8">
-                        GEOLOGICAL<br>
+                <div class="fade-in-up">
+                    <h1 class="hero-text font-display mb-8" style="color: var(--emerald-rich);">
+                        RARE GEOLOGICAL<br>
                         <span style="color: var(--gold-accent);">SPECIMENS</span>
                     </h1>
-                    <p class="text-xl md:text-2xl opacity-80 max-w-4xl mx-auto mb-16 font-light leading-relaxed">
-                        Exceptional Colombian emerald crystals with complete scientific documentation, certified provenance, and investment-grade authentication.
+                    <p class="text-lg md:text-xl opacity-80 max-w-4xl mx-auto font-light leading-relaxed">
+                        Each specimen represents millions of years of geological formation, certified with complete scientific documentation and investment-grade provenance.
                     </p>
                 </div>
             </div>
         </section>
 
-        <!-- Video Gallery Section -->
-        <section class="py-20 bg-white">
-             <!-- ... Video Gallery content ... -->
-        </section>
-
-        <!-- Filter Section -->
-        <section id="specimens" class="py-12" style="background-color: var(--emerald-deep);">
-            <div class="container mx-auto px-8">
-                <div class="flex flex-wrap justify-center gap-4">
-                    <button class="filter-btn active px-6 py-3 text-sm tracking-[0.15em] font-light text-white border border-white/30 hover:bg-white/10" data-filter="all">ALL SPECIMENS</button>
-                    <button class="filter-btn px-6 py-3 text-sm tracking-[0.15em] font-light text-white border border-white/30 hover:bg-white/10" data-filter="investment">INVESTMENT GRADE</button>
-                    <button class="filter-btn px-6 py-3 text-sm tracking-[0.15em] font-light text-white border border-white/30 hover:bg-white/10" data-filter="museum">MUSEUM QUALITY</button>
-                    <button class="filter-btn px-6 py-3 text-sm tracking-[0.15em] font-light text-white border border-white/30 hover:bg-white/10" data-filter="rare">EXTREME RARITY</button>
-                </div>
-            </div>
-        </section>
-
         <!-- Specimens Grid -->
-        <section class="py-24">
+        <section class="py-20">
             <div class="container mx-auto px-8">
-                <div class="specimen-grid">
-                    <!-- Specimen cards go here -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+                    
+                    <!-- Specimen 1: Muzo Formation Crystal -->
+                    <div class="specimen-card bg-white p-6 shadow-lg fade-in-up">
+                        <div class="aspect-w-4 aspect-h-5 mb-6 overflow-hidden"><img src="https://updatedcardscript.standard.us-east-1.oortstorages.com/canada_emeralds/muzo-emerald-crystal.jpg" alt="Muzo Formation Crystal" class="w-full h-full object-cover"/></div>
+                        <div class="space-y-4">
+                            <div class="flex justify-between items-start"><h3 class="text-2xl font-display">Muzo Formation Crystal</h3><span class="investment-badge text-white px-3 py-1 rounded-full text-xs tracking-wider font-medium whitespace-nowrap">INVESTMENT GRADE</span></div>
+                            <div class="geological-data space-y-2 p-4 bg-gray-50 luxury-border text-xs">
+                                <div class="grid grid-cols-2 gap-x-4 gap-y-2">
+                                    <strong class="opacity-60">CARAT WEIGHT:</strong><span class="font-medium text-right">23.47 ct</span>
+                                    <strong class="opacity-60">FORMATION AGE:</strong><span class="font-medium text-right">65M years</span>
+                                    <strong class="opacity-60">MINE SOURCE:</strong><span class="font-medium text-right">Muzo, Colombia</span>
+                                    <strong class="opacity-60">CLARITY TYPE:</strong><span class="font-medium text-right">Type I (Minor inclusions)</span>
+                                    <strong class="opacity-60">SPECIFIC GRAVITY:</strong><span class="font-medium text-right">2.70-2.78</span>
+                                    <strong class="opacity-60">HARDNESS:</strong><span class="font-medium text-right">7.5-8 Mohs</span>
+                                    <strong class="opacity-60">CRYSTAL SYSTEM:</strong><span class="font-medium text-right">Hexagonal</span>
+                                    <strong class="opacity-60">COMPOSITION:</strong><span class="font-medium text-right">Be₃Al₂(SiO₃)₆</span>
+                                </div>
+                            </div>
+                             <div class="space-y-2 text-xs border-t pt-4"><div class="flex justify-between"><strong style="color: var(--gold-accent);">CERTIFIED PROVENANCE</strong><span>GIA • SSEF</span></div><div class="flex justify-between"><strong style="color: var(--gold-accent);">10-YEAR APPRECIATION</strong><span class="font-medium text-green-600">+187%</span></div></div>
+                            <div class="pt-2">
+                                <div class="flex justify-between items-center mb-4"><span class="text-3xl font-display font-light">$89,500</span></div>
+                                <button class="w-full text-sm tracking-wider py-3 text-white transition-all duration-300 hover:opacity-90" style="background-color: var(--emerald-rich);">PRIVATE VIEWING</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Specimen 2: Chivor Trapiche -->
+                    <div class="specimen-card bg-white p-6 shadow-lg fade-in-up" style="transition-delay: 150ms;">
+                         <div class="aspect-w-4 aspect-h-5 mb-6 overflow-hidden"><img src="https://updatedcardscript.standard.us-east-1.oortstorages.com/canada_emeralds/chivor-trapiche-emerald.jpg" alt="Chivor Trapiche Specimen" class="w-full h-full object-cover"/></div>
+                        <div class="space-y-4">
+                            <div class="flex justify-between items-start"><h3 class="text-2xl font-display">Chivor Trapiche Specimen</h3><span class="investment-badge text-white px-3 py-1 rounded-full text-xs tracking-wider font-medium whitespace-nowrap" style="background: linear-gradient(45deg, #a55eea, #8b5cf6);">MUSEUM QUALITY</span></div>
+                            <div class="geological-data space-y-2 p-4 bg-gray-50 luxury-border text-xs">
+                                <div class="grid grid-cols-2 gap-x-4 gap-y-2">
+                                    <strong class="opacity-60">CARAT WEIGHT:</strong><span class="font-medium text-right">18.92 ct</span>
+                                    <strong class="opacity-60">FORMATION AGE:</strong><span class="font-medium text-right">38M years</span>
+                                    <strong class="opacity-60">MINE SOURCE:</strong><span class="font-medium text-right">Chivor, Colombia</span>
+                                    <strong class="opacity-60">CLARITY TYPE:</strong><span class="font-medium text-right">Trapiche Formation</span>
+                                    <strong class="opacity-60">RAY PATTERN:</strong><span class="font-medium text-right">Six-ray star</span>
+                                    <strong class="opacity-60">CARBON CONTENT:</strong><span class="font-medium text-right">0.003% (Rare)</span>
+                                    <strong class="opacity-60">CHROMOPHORE:</strong><span class="font-medium text-right">Chromium/Vanadium</span>
+                                    <strong class="opacity-60">RARITY INDEX:</strong><span class="font-medium text-right">1:10,000</span>
+                                </div>
+                            </div>
+                             <div class="space-y-2 text-xs border-t pt-4"><div class="flex justify-between"><strong style="color: var(--gold-accent);">CERTIFIED PROVENANCE</strong><span>Gübelin • AGL</span></div><div class="flex justify-between"><strong style="color: var(--gold-accent);">COLLECTOR PREMIUM</strong><span class="font-medium text-green-600">+240%</span></div></div>
+                            <div class="pt-2">
+                                <div class="flex justify-between items-center mb-4"><span class="text-3xl font-display font-light">$156,000</span></div>
+                                <button class="w-full text-sm tracking-wider py-3 text-white transition-all duration-300 hover:opacity-90" style="background-color: var(--emerald-rich);">PRIVATE VIEWING</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Specimen 3: Coscuez Matrix -->
+                    <div class="specimen-card bg-white p-6 shadow-lg fade-in-up" style="transition-delay: 300ms;">
+                        <div class="aspect-w-4 aspect-h-5 mb-6 overflow-hidden"><img src="https://updatedcardscript.standard.us-east-1.oortstorages.com/canada_emeralds/coscuez-emerald-matrix.jpg" alt="Coscuez Matrix Specimen" class="w-full h-full object-cover"/></div>
+                        <div class="space-y-4">
+                            <div class="flex justify-between items-start"><h3 class="text-2xl font-display">Coscuez Matrix Specimen</h3><span class="investment-badge text-white px-3 py-1 rounded-full text-xs tracking-wider font-medium whitespace-nowrap" style="background: linear-gradient(45deg, #4c51bf, #667eea);">EXHIBITION GRADE</span></div>
+                            <div class="geological-data space-y-2 p-4 bg-gray-50 luxury-border text-xs">
+                                <div class="grid grid-cols-2 gap-x-4 gap-y-2">
+                                    <strong class="opacity-60">CARAT WEIGHT:</strong><span class="font-medium text-right">31.25 ct</span>
+                                    <strong class="opacity-60">FORMATION AGE:</strong><span class="font-medium text-right">45M years</span>
+                                    <strong class="opacity-60">MINE SOURCE:</strong><span class="font-medium text-right">Coscuez, Colombia</span>
+                                    <strong class="opacity-60">MATRIX TYPE:</strong><span class="font-medium text-right">Calcite/Pyrite</span>
+                                    <strong class="opacity-60">CRYSTAL QUALITY:</strong><span class="font-medium text-right">Exceptional</span>
+                                    <strong class="opacity-60">FLUORESCENCE:</strong><span class="font-medium text-right">Moderate Red</span>
+                                    <strong class="opacity-60">PLEOCHROISM:</strong><span class="font-medium text-right">Weak to Distinct</span>
+                                    <strong class="opacity-60">ORIGIN MARKERS:</strong><span class="font-medium text-right">Jagged inclusions</span>
+                                </div>
+                            </div>
+                             <div class="space-y-2 text-xs border-t pt-4"><div class="flex justify-between"><strong style="color: var(--gold-accent);">CERTIFIED PROVENANCE</strong><span>SSEF • Lotus</span></div><div class="flex justify-between"><strong style="color: var(--gold-accent);">HERITAGE PREMIUM</strong><span class="font-medium text-green-600">+312%</span></div></div>
+                            <div class="pt-2">
+                                <div class="flex justify-between items-center mb-4"><span class="text-3xl font-display font-light">$312,000</span></div>
+                                <button class="w-full text-sm tracking-wider py-3 text-white transition-all duration-300 hover:opacity-90" style="background-color: var(--emerald-rich);">PRIVATE VIEWING</button>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </section>
-
-        <!-- Investment Performance Section -->
-        <section id="investment" class="py-24 luxury-gradient">
-            <!-- ... Investment Performance content ... -->
-        </section>
-
     </main>
 
     <footer class="py-20" style="background-color: var(--emerald-deep); color: white;">
-        <!-- ... Footer content ... -->
-    </footer>
-
-    <!-- Cart Sidebar -->
-    <div id="cart-overlay" class="fixed inset-0 bg-black/50 z-50 hidden transition-opacity duration-500"></div>
-    <div id="cart-sidebar" class="fixed top-0 right-0 h-full w-full max-w-md bg-white z-50 transform translate-x-full transition-transform duration-500 shadow-2xl">
-        <div class="flex flex-col h-full">
-            <div class="flex justify-between items-center p-6 border-b">
-                <h2 class="text-2xl font-display" style="color: var(--emerald-deep);">Your Selections</h2>
-                <button id="close-cart"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
-            </div>
-            <div id="cart-items" class="flex-grow p-6 overflow-y-auto">
-                <p class="text-center text-gray-500 mt-20">Your cart is empty</p>
-            </div>
-            <div class="p-6 border-t bg-gray-50">
-                <div class="flex justify-between items-center mb-4 text-lg">
-                    <span class="font-light">Subtotal</span>
-                    <span id="cart-total" class="font-display" style="color: var(--emerald-rich);">$0.00</span>
+        <div class="container mx-auto px-8">
+            <div class="grid md:grid-cols-4 gap-12">
+                <div class="md:col-span-2">
+                    <div class="font-display text-2xl tracking-[0.2em] mb-4 font-light">COLOMBIAEMERALDS.CA</div>
+                    <div class="text-sm text-white/60 mb-6 font-light">Est. 1952 • Calgary, Alberta</div>
+                    <p class="text-white/80 font-light leading-relaxed">Where geological rarity meets generational mastery. Three generations of emerald expertise, bringing the world's finest Colombian specimens to discerning collectors.</p>
                 </div>
-                <button class="w-full py-4 text-white text-sm tracking-widest font-medium transition-opacity hover:opacity-90" style="background-color: var(--emerald-rich);">PROCEED TO ACQUISITION</button>
+                <div>
+                    <h4 class="text-sm tracking-[0.15em] mb-6 font-medium">COLLECTIONS</h4>
+                    <ul class="space-y-3 text-sm text-white/70 font-light">
+                        <li><a href="#" class="hover:text-white transition-colors">Geological Specimens</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Investment Grade</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Museum Quality</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-sm tracking-[0.15em] mb-6 font-medium">SERVICES</h4>
+                    <ul class="space-y-3 text-sm text-white/70 font-light">
+                        <li><a href="contact.html" class="hover:text-white transition-colors">Private Consultations</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Investment Analysis</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Certification Services</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-white/20 mt-16 pt-8 text-center">
+                <p class="text-white/50 text-sm font-light">© 2025 COLOMBIAEMERALDS.CA. All rights reserved.</p>
             </div>
         </div>
-    </div>
-    
+    </footer>
+
     <script>
-        let cart = [];
-        let wishlist = [];
-
         document.addEventListener('DOMContentLoaded', function() {
-            // ... (observer and filter code remains the same) ...
-
-            // Shopping cart functionality
-            const cartToggle = document.getElementById('cart-toggle');
-            const cartSidebar = document.getElementById('cart-sidebar');
-            const cartOverlay = document.getElementById('cart-overlay');
-            const closeCart = document.getElementById('close-cart');
-            const cartCount = document.getElementById('cart-count');
-            const cartTotal = document.getElementById('cart-total');
-            const cartItems = document.getElementById('cart-items');
-
-            // Toggle cart
-            cartToggle.addEventListener('click', () => {
-                cartSidebar.classList.remove('translate-x-full');
-                cartOverlay.classList.remove('hidden');
-                document.body.style.overflow = 'hidden';
-            });
-
-            // Close cart
-            function closeCartSidebar() {
-                cartSidebar.classList.add('translate-x-full');
-                cartOverlay.classList.add('hidden');
-                document.body.style.overflow = 'auto';
-            }
-
-            closeCart.addEventListener('click', closeCartSidebar);
-            cartOverlay.addEventListener('click', closeCartSidebar);
-
-            // Add to cart functionality
-            document.addEventListener('click', function(e) {
-                if (e.target.closest('.add-to-cart-btn')) {
-                    const specimenCard = e.target.closest('.specimen-item');
-                    const name = specimenCard.dataset.name;
-                    const price = parseInt(specimenCard.dataset.price);
-                    const image = specimenCard.dataset.image;
-                    
-                    const existingItem = cart.find(item => item.name === name);
-                    if (!existingItem) {
-                        cart.push({ name, price, image, quantity: 1 });
-                    } else {
-                        showNotification(`${name} is already in your selections.`);
-                        return;
+            const animatedSections = document.querySelectorAll('.fade-in-up');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
                     }
-                    
-                    updateCartDisplay();
-                    showNotification('Added to your selections!');
-                }
-            });
+                });
+            }, { threshold: 0.1 });
             
-            // Update cart display
-            function updateCartDisplay() {
-                const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
-                const totalPrice = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-                
-                cartCount.textContent = totalItems;
-                cartCount.classList.toggle('hidden', totalItems === 0);
-                cartTotal.textContent = '$' + totalPrice.toLocaleString();
-                
-                if (cart.length === 0) {
-                    cartItems.innerHTML = '<p class="text-center text-gray-500 mt-20">Your selections are empty</p>';
-                } else {
-                    cartItems.innerHTML = cart.map(item => `
-                        <div class="flex items-center py-4 border-b">
-                            <img src="${item.image}" alt="${item.name}" class="w-20 h-24 object-cover mr-4 luxury-border">
-                            <div class="flex-grow">
-                                <div class="font-display text-lg">${item.name}</div>
-                                <div class="text-sm opacity-70 geological-data">1 specimen</div>
-                            </div>
-                            <div class="text-right">
-                                <div class="font-medium" style="color: var(--emerald-rich);">$${item.price.toLocaleString()}</div>
-                                <button class="text-xs text-red-500 hover:underline mt-1" onclick="removeFromCart('${item.name}')">Remove</button>
-                            </div>
-                        </div>
-                    `).join('');
-                }
-            }
-
-            // Remove from cart
-            window.removeFromCart = function(name) {
-                cart = cart.filter(item => item.name !== name);
-                updateCartDisplay();
-                showNotification('Removed from your selections.');
-            }
-
-            // Show notification
-            function showNotification(message) {
-                const notification = document.createElement('div');
-                notification.className = 'fixed top-24 right-4 z-[100] px-6 py-3 rounded shadow-lg transition-all duration-300 transform translate-x-full text-white';
-                notification.style.backgroundColor = 'var(--emerald-rich)';
-                notification.textContent = message;
-                document.body.appendChild(notification);
-                
-                setTimeout(() => notification.classList.remove('translate-x-full'), 10);
-                setTimeout(() => {
-                    notification.classList.add('translate-x-full');
-                    setTimeout(() => document.body.removeChild(notification), 300);
-                }, 3000);
-            }
+            animatedSections.forEach(section => observer.observe(section));
         });
     </script>
 </body>
