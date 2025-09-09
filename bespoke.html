@@ -88,7 +88,7 @@
                 <div class="max-w-4xl mx-auto">
                     <div class="flex flex-col md:flex-row items-center gap-12 mb-20">
                         <div class="md:w-1/2">
-                            <img src="https://placehold.co/800x900/EAE8E1/333333?text=Consultation" alt="A personal consultation for a bespoke ring" class="">
+                            <img src="https://updatedcardscript.standard.us-east-1.oortstorages.com/canada_emeralds/consultation.png" alt="A personal consultation for a bespoke ring" class="">
                         </div>
                         <div class="md:w-1/2 md:pl-12">
                             <span class="text-sm uppercase tracking-widest font-semibold" style="color: var(--color-1);">Step One</span>
@@ -98,7 +98,7 @@
                     </div>
                     <div class="flex flex-col md:flex-row-reverse items-center gap-12 mb-20">
                         <div class="md:w-1/2">
-                            <img src="https://placehold.co/800x900/F0F0E0/333333?text=Design" alt="Hand-drawn sketches of a jewelry design" class="">
+                            <img src="https://updatedcardscript.standard.us-east-1.oortstorages.com/canada_emeralds/design_approval.png" alt="Hand-drawn sketches of a jewelry design" class="">
                         </div>
                         <div class="md:w-1/2 md:pr-12">
                             <span class="text-sm uppercase tracking-widest font-semibold" style="color: var(--color-1);">Step Two</span>
@@ -108,7 +108,7 @@
                     </div>
                     <div class="flex flex-col md:flex-row items-center gap-12">
                         <div class="md:w-1/2">
-                            <img src="https://placehold.co/800x900/111111/FFFFFF?text=Creation" alt="A master jeweller crafting the piece at a workbench" class="">
+                            <img src="https://updatedcardscript.standard.us-east-1.oortstorages.com/canada_emeralds/creation.png" alt="A master jeweller crafting the piece at a workbench" class="">
                         </div>
                         <div class="md:w-1/2 md:pl-12">
                             <span class="text-sm uppercase tracking-widest font-semibold" style="color: var(--color-1);">Step Three</span>
@@ -138,7 +138,26 @@
         </footer>
 
     <script>
-        // Script content is consistent with other pages
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.getElementById('menu-toggle');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuIconOpen = document.getElementById('menu-icon-open');
+            const menuIconClose = document.getElementById('menu-icon-close');
+            const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+            const toggleMenu = () => {
+                mobileMenu.classList.toggle('hidden');
+                menuIconOpen.classList.toggle('hidden');
+                menuIconClose.classList.toggle('hidden');
+            };
+            
+            if(menuToggle){
+                menuToggle.addEventListener('click', toggleMenu);
+            }
+            mobileNavLinks.forEach(link => {
+                link.addEventListener('click', toggleMenu);
+            });
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+        });
     </script>
 </body>
 </html>
