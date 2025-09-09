@@ -1,4 +1,10 @@
-<!DOCTYPE html>
+                        <div class="pt-6 text-center">
+                            <h3 class="text-xl font-serif text-stone-800 mb-2 font-medium">The Rundle Necklace</h3>
+                            <p class="text-xs uppercase tracking-wider accent-color font-semibold mb-3">3.8ct Chivor Trapiche • 18k Gold • SSEF Certified</p>
+                            <p class="text-stone-500 text-sm mb-4 font-light leading-relaxed">Rare trapiche formation from Chivor mine, displaying exceptional six-ray pattern in museum-quality clarity.</p>
+                            <div class="flex justify-between items-center">
+                                <a href="#" class="font-semibold text-sm tracking-wider hover:underline transition-all duration-200" style="color: var(--color-1);">Private Viewing</a>
+                                <span class="text-xs font-medium text-stone-500">From $45,000</span<!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
@@ -7,11 +13,11 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         :root {
-            --color-1: color(display-p3 0.103 0.267 0.121);
-            --color-2: color(display-p3 0.895 0.984 0.776);
+            --color-1: color(display-p3 0.135 0.351 0.129);
+            --color-2: color(display-p3 0.99 0.996 0.884);
             /* Fallback colors for browsers that don't support display-p3 */
-            --fallback-color-1: #1A441F;
-            --fallback-color-2: #E4FAE0;
+            --fallback-color-1: #225A20;
+            --fallback-color-2: #FDFEE2;
         }
 
         /* Normal theme */
@@ -36,26 +42,45 @@
         .font-serif {
             font-family: 'Playfair Display', serif;
         }
+        .subtle-shadow {
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+        .hover-lift {
+            transition: all 0.3s ease;
+        }
+        .hover-lift:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+        }
+        .luxury-border {
+            border: 1px solid rgba(34, 90, 32, 0.1);
+        }
+        .collection-item {
+            transition: all 0.4s ease;
+        }
+        .collection-item:hover {
+            transform: translateY(-4px) scale(1.02);
+        }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body class="bg-white font-sans text-stone-800 antialiased">
 
-    <header id="header" class="sticky top-0 z-50 transition-all duration-300 bg-white/80 backdrop-blur-sm border-b border-stone-200">
+    <header id="header" class="sticky top-0 z-50 transition-all duration-300 bg-white/90 backdrop-blur-md border-b border-stone-200 subtle-shadow">
         <div class="container mx-auto px-6 py-5 flex justify-between items-center">
-            <a href="index.html" class="text-xl font-serif tracking-widest uppercase text-stone-800">
+            <a href="index.html" class="text-xl font-serif tracking-widest uppercase text-stone-800 font-medium">
                 Canadian Emeralds
             </a>
             <nav class="hidden md:flex items-center space-x-10">
-                <a href="collection.html" class="text-sm uppercase tracking-wider font-semibold" style="color: var(--color-1);">Collection</a>
-                <a href="about.html" class="text-sm uppercase tracking-wider text-stone-600 hover:text-stone-900 transition-colors">Our Story</a>
-                <a href="bespoke.html" class="text-sm uppercase tracking-wider text-stone-600 hover:text-stone-900 transition-colors">Bespoke</a>
-                <a href="contact.html" class="text-sm uppercase tracking-wider text-stone-600 hover:text-stone-900 transition-colors">Contact</a>
+                <a href="collection.html" class="text-sm uppercase tracking-wider font-semibold font-medium" style="color: var(--color-1);">Collection</a>
+                <a href="about.html" class="text-sm uppercase tracking-wider text-stone-600 hover:text-stone-900 transition-all duration-200 font-medium">Our Story</a>
+                <a href="bespoke.html" class="text-sm uppercase tracking-wider text-stone-600 hover:text-stone-900 transition-all duration-200 font-medium">Bespoke</a>
+                <a href="contact.html" class="text-sm uppercase tracking-wider text-stone-600 hover:text-stone-900 transition-all duration-200 font-medium">Contact</a>
             </nav>
             <div class="flex items-center space-x-6">
-                <button class="text-stone-600 hover:text-stone-900 transition-colors">
+                <button class="text-stone-600 hover:text-stone-900 transition-all duration-200 hover:scale-105">
                     <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
                 </button>
                 <button id="menu-toggle" class="md:hidden text-stone-800">
@@ -64,12 +89,12 @@
                 </button>
             </div>
         </div>
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-stone-200">
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-stone-200 subtle-shadow">
             <nav class="flex flex-col">
-                <a href="collection.html" class="mobile-nav-link py-4 px-6 text-center uppercase tracking-wider text-stone-600 hover:bg-stone-100 transition-colors">Collection</a>
-                <a href="about.html" class="mobile-nav-link py-4 px-6 text-center uppercase tracking-wider text-stone-600 hover:bg-stone-100 transition-colors">Our Story</a>
-                <a href="bespoke.html" class="mobile-nav-link py-4 px-6 text-center uppercase tracking-wider text-stone-600 hover:bg-stone-100 transition-colors">Bespoke</a>
-                <a href="contact.html" class="mobile-nav-link py-4 px-6 text-center uppercase tracking-wider text-stone-600 hover:bg-stone-100 transition-colors">Contact</a>
+                <a href="collection.html" class="mobile-nav-link py-4 px-6 text-center uppercase tracking-wider text-stone-600 hover:bg-stone-100 transition-all duration-200 font-medium">Collection</a>
+                <a href="about.html" class="mobile-nav-link py-4 px-6 text-center uppercase tracking-wider text-stone-600 hover:bg-stone-100 transition-all duration-200 font-medium">Our Story</a>
+                <a href="bespoke.html" class="mobile-nav-link py-4 px-6 text-center uppercase tracking-wider text-stone-600 hover:bg-stone-100 transition-all duration-200 font-medium">Bespoke</a>
+                <a href="contact.html" class="mobile-nav-link py-4 px-6 text-center uppercase tracking-wider text-stone-600 hover:bg-stone-100 transition-all duration-200 font-medium">Contact</a>
             </nav>
         </div>
     </header>
@@ -77,138 +102,99 @@
     <main>
         <section id="shop" class="py-24 md:py-32 bg-white">
             <div class="container mx-auto px-6">
-                <div class="text-center mb-16">
-                    <h1 class="text-4xl md:text-5xl font-serif text-stone-900 mb-3">Signature Collection</h1>
-                    <p class="text-stone-600 max-w-xl mx-auto">Explore our curated selection of fine emerald jewelry, each piece a testament to nature's artistry and our dedication to craftsmanship.</p>
-                    <div class="w-24 h-px mx-auto mt-6" style="background-color: var(--color-1);"></div>
+                <div class="text-center mb-20">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-serif text-stone-900 mb-4 font-medium">Signature Collection</h1>
+                    <p class="text-stone-600 max-w-3xl mx-auto text-lg font-light leading-relaxed">Explore our curated selection of fine emerald jewelry, each piece a testament to nature's artistry and our dedication to craftsmanship.</p>
+                    <div class="w-24 h-px mx-auto mt-8 luxury-border" style="background-color: var(--color-1);"></div>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
-                    <div class="group">
-                        <div class="overflow-hidden bg-stone-100 aspect-[4/5]">
-                            <img src="https://updatedcardscript.standard.us-east-1.oortstorages.com/canada_emeralds/The%20Moraine%20Ring.png" alt="The Moraine Ring" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                    <div class="group collection-item">
+                        <div class="overflow-hidden bg-stone-100 aspect-[4/5] subtle-shadow luxury-border">
+                            <img src="https://updatedcardscript.standard.us-east-1.oortstorages.com/canada_emeralds/The%20Moraine%20Ring.png" alt="The Moraine Ring" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
                         </div>
-                        <div class="pt-5 text-center">
-                            <h3 class="text-lg font-serif text-stone-800 mb-1">The Moraine Ring</h3>
-                            <p class="text-stone-500 text-sm mb-3">A breathtaking 5-carat pear-cut Canadian emerald.</p>
-                            <a href="#" class="font-semibold text-sm tracking-wider" style="color: var(--color-1);">View Details</a>
-                        </div>
-                    </div>
-                    <div class="group">
-                        <div class="overflow-hidden bg-stone-100 aspect-[4/5]">
-                            <img src="https://updatedcardscript.standard.us-east-1.oortstorages.com/canada_emeralds/The%20Rundle%20Necklace.png" alt="The Rundle Necklace" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                        </div>
-                        <div class="pt-5 text-center">
-                            <h3 class="text-lg font-serif text-stone-800 mb-1">The Rundle Necklace</h3>
-                            <p class="text-stone-500 text-sm mb-3">Vibrant, round-cut emerald in 18k gold.</p>
-                             <a href="#" class="font-semibold text-sm tracking-wider" style="color: var(--color-1);">View Details</a>
-                        </div>
-                    </div>
-                    <div class="group">
-                        <div class="overflow-hidden bg-stone-100 aspect-[4/5]">
-                            <img src="https://updatedcardscript.standard.us-east-1.oortstorages.com/canada_emeralds/The%20Cascade%20Earrings.png" alt="The Cascade Earrings" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                        </div>
-                        <div class="pt-5 text-center">
-                            <h3 class="text-lg font-serif text-stone-800 mb-1">The Cascade Earrings</h3>
-                            <p class="text-stone-500 text-sm mb-3">A cascade of brilliant-cut emeralds.</p>
-                             <a href="#" class="font-semibold text-sm tracking-wider" style="color: var(--color-1);">View Details</a>
-                        </div>
-                    </div>
-                    <div class="group">
-                        <div class="overflow-hidden bg-stone-100 aspect-[4/5]">
-                            <img src="https://updatedcardscript.standard.us-east-1.oortstorages.com/canada_emeralds/The%20Solitude%20Pendant.png" alt="The Solitude Pendant" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                        </div>
-                        <div class="pt-5 text-center">
-                            <h3 class="text-lg font-serif text-stone-800 mb-1">The Solitude Pendant</h3>
-                            <p class="text-stone-500 text-sm mb-3">A single, magnificent emerald-cut stone.</p>
-                             <a href="#" class="font-semibold text-sm tracking-wider" style="color: var(--color-1);">View Details</a>
-                        </div>
-                    </div>
-                    <div class="group">
-                        <div class="overflow-hidden bg-stone-100 aspect-[4/5]">
-                            <img src="https://updatedcardscript.standard.us-east-1.oortstorages.com/canada_emeralds/The%20Glacier%20Bracelet.png" alt="The Glacier Bracelet" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                        </div>
-                        <div class="pt-5 text-center">
-                            <h3 class="text-lg font-serif text-stone-800 mb-1">The Glacier Bracelet</h3>
-                            <p class="text-stone-500 text-sm mb-3">An eternity band of perfectly matched emeralds.</p>
-                             <a href="#" class="font-semibold text-sm tracking-wider" style="color: var(--color-1);">View Details</a>
-                        </div>
-                    </div>
-                    <div class="group">
-                        <div class="overflow-hidden bg-stone-100 aspect-[4/5]">
-                            <img src="https://updatedcardscript.standard.us-east-1.oortstorages.com/canada_emeralds/The%20Aurora%20Studs.png" alt="The Aurora Studs" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                        </div>
-                        <div class="pt-5 text-center">
-                            <h3 class="text-lg font-serif text-stone-800 mb-1">The Aurora Studs</h3>
-                            <p class="text-stone-500 text-sm mb-3">Classic studs with deep green, ethical emeralds.</p>
-                             <a href="#" class="font-semibold text-sm tracking-wider" style="color: var(--color-1);">View Details</a>
+                        <div class="pt-6 text-center">
+                            <h3 class="text-xl font-serif text-stone-800 mb-2 font-medium">The Moraine Ring</h3>
+                            <p class="text-stone-500 text-sm mb-4 font-light leading-relaxed">Classic studs with deep green, ethically sourced emeralds.</p>
+                             <a href="#" class="font-semibold text-sm tracking-wider hover:underline transition-all duration-200" style="color: var(--color-1);">View Details</a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+
+        <section class="py-20 md:py-24 combo-2">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-serif mb-6 font-medium">Bespoke Commissions</h2>
+                <p class="max-w-3xl mx-auto opacity-90 mb-6 text-lg font-light leading-relaxed">
+                    Create an heirloom piece with direct access to our Colombian mine partnerships and three generations of craftsmanship expertise.
+                </p>
+                <p class="text-sm accent-color font-semibold uppercase tracking-wider mb-10">Commissions from $25,000 • Private consultation required</p>
+                <a href="bespoke.html" class="group inline-flex items-center uppercase tracking-widest font-semibold text-sm border px-10 py-4 transition-all duration-300 hover:bg-white hover:text-black hover:scale-105 hover-lift">
+                    Schedule Private Consultation
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-2 transition-transform group-hover:translate-x-1"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </a>
+            </div>
+        </section>
     </main>
     
-    <footer id="contact" class="bg-white text-stone-600 border-t border-stone-200">
-         <div class="container mx-auto px-6 py-16">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 text-center md:text-left">
+    <footer id="contact" class="bg-white text-stone-600 border-t border-stone-200 subtle-shadow">
+         <div class="container mx-auto px-6 py-20">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center md:text-left">
                 <div class="md:col-span-1">
-                    <h3 class="text-lg font-serif text-stone-800 tracking-widest mb-4">CANADIAN EMERALDS</h3>
-                    <p class="text-sm">123 Luxury Row SW<br/>Calgary, AB T2P 2L7</p>
+                    <h3 class="text-lg font-serif text-stone-800 tracking-widest mb-6 font-medium">CANADIAN EMERALDS</h3>
+                    <p class="text-sm font-light leading-relaxed">123 Luxury Row SW<br/>Calgary, AB T2P 2L7</p>
                 </div>
-                <div class="md:col-span-2 grid grid-cols-2 md:grid-cols-3 gap-8">
+                <div class="md:col-span-2 grid grid-cols-2 md:grid-cols-3 gap-10">
                     <div>
-                        <h3 class="text-base font-semibold text-stone-800 tracking-wider mb-4">Explore</h3>
-                        <ul class="space-y-3 text-sm">
-                            <li><a href="collection.html" class="hover:text-stone-900 transition-colors">Collection</a></li>
-                            <li><a href="about.html" class="hover:text-stone-900 transition-colors">Our Story</a></li>
-                            <li><a href="bespoke.html" class="hover:text-stone-900 transition-colors">Bespoke</a></li>
-                            <li><a href="#" class="hover:text-stone-900 transition-colors">Journal</a></li>
+                        <h3 class="text-base font-semibold text-stone-800 tracking-wider mb-6">Explore</h3>
+                        <ul class="space-y-4 text-sm">
+                            <li><a href="collection.html" class="hover:text-stone-900 transition-all duration-200 font-light">Collection</a></li>
+                            <li><a href="about.html" class="hover:text-stone-900 transition-all duration-200 font-light">Our Story</a></li>
+                            <li><a href="bespoke.html" class="hover:text-stone-900 transition-all duration-200 font-light">Bespoke</a></li>
+                            <li><a href="#" class="hover:text-stone-900 transition-all duration-200 font-light">Journal</a></li>
                         </ul>
                     </div>
                     <div>
-                        <h3 class="text-base font-semibold text-stone-800 tracking-wider mb-4">Connect</h3>
-                        <ul class="space-y-3 text-sm">
-                            <li><a href="#" class="hover:text-stone-900 transition-colors">Instagram</a></li>
-                            <li><a href="#" class="hover:text-stone-900 transition-colors">Pinterest</a></li>
-                            <li><a href="contact.html" class="hover:text-stone-900 transition-colors">Contact Us</a></li>
+                        <h3 class="text-base font-semibold text-stone-800 tracking-wider mb-6">Connect</h3>
+                        <ul class="space-y-4 text-sm">
+                            <li><a href="#" class="hover:text-stone-900 transition-all duration-200 font-light">Instagram</a></li>
+                            <li><a href="#" class="hover:text-stone-900 transition-all duration-200 font-light">Pinterest</a></li>
+                            <li><a href="contact.html" class="hover:text-stone-900 transition-all duration-200 font-light">Contact Us</a></li>
                         </ul>
                     </div>
                     <div>
-                         <h3 class="text-base font-semibold text-stone-800 tracking-wider mb-4">Legal</h3>
-                        <ul class="space-y-3 text-sm">
-                            <li><a href="#" class="hover:text-stone-900 transition-colors">Privacy Policy</a></li>
-                            <li><a href="#" class="hover:text-stone-900 transition-colors">Terms of Service</a></li>
+                         <h3 class="text-base font-semibold text-stone-800 tracking-wider mb-6">Legal</h3>
+                        <ul class="space-y-4 text-sm">
+                            <li><a href="#" class="hover:text-stone-900 transition-all duration-200 font-light">Privacy Policy</a></li>
+                            <li><a href="#" class="hover:text-stone-900 transition-all duration-200 font-light">Terms of Service</a></li>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
         <div class="border-t border-stone-200">
-            <div class="container mx-auto px-6 py-8 text-center text-xs text-stone-400">
-                 <p>&copy; <span id="current-year"></span> Canadian Emeralds. A Canadian Jeweller.</p>
+            <div class="container mx-auto px-6 py-10 text-center text-xs text-stone-400">
+                 <p class="font-light">&copy; <span id="current-year"></span> Canadian Emeralds. A Canadian Jeweller.</p>
             </div>
         </div>
     </footer>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // --- Mobile Menu Toggle ---
-            const menuToggle = document.getElementById('menu-toggle');
-            // ... rest of script remains the same
-            document.addEventListener('DOMContentLoaded', function() {
             const menuToggle = document.getElementById('menu-toggle');
             const mobileMenu = document.getElementById('mobile-menu');
             const menuIconOpen = document.getElementById('menu-icon-open');
             const menuIconClose = document.getElementById('menu-icon-close');
             const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+            
             const toggleMenu = () => {
                 mobileMenu.classList.toggle('hidden');
                 menuIconOpen.classList.toggle('hidden');
                 menuIconClose.classList.toggle('hidden');
             };
             
-            if(menuToggle) {
+            if(menuToggle){
                 menuToggle.addEventListener('click', toggleMenu);
             }
             mobileNavLinks.forEach(link => {
@@ -216,7 +202,56 @@
             });
             document.getElementById('current-year').textContent = new Date().getFullYear();
         });
-        });
     </script>
 </body>
-</html>
+</html>ed">A breathtaking 5-carat pear-cut Canadian emerald, cradled in platinum.</p>
+                            <a href="#" class="font-semibold text-sm tracking-wider hover:underline transition-all duration-200" style="color: var(--color-1);">View Details</a>
+                        </div>
+                    </div>
+                    <div class="group collection-item">
+                        <div class="overflow-hidden bg-stone-100 aspect-[4/5] subtle-shadow luxury-border">
+                            <img src="https://updatedcardscript.standard.us-east-1.oortstorages.com/canada_emeralds/The%20Rundle%20Necklace.png" alt="The Rundle Necklace" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                        </div>
+                        <div class="pt-6 text-center">
+                            <h3 class="text-xl font-serif text-stone-800 mb-2 font-medium">The Rundle Necklace</h3>
+                            <p class="text-stone-500 text-sm mb-4 font-light leading-relaxed">Vibrant, round-cut emerald in 18k gold, elegantly suspended.</p>
+                             <a href="#" class="font-semibold text-sm tracking-wider hover:underline transition-all duration-200" style="color: var(--color-1);">View Details</a>
+                        </div>
+                    </div>
+                    <div class="group collection-item">
+                        <div class="overflow-hidden bg-stone-100 aspect-[4/5] subtle-shadow luxury-border">
+                            <img src="https://updatedcardscript.standard.us-east-1.oortstorages.com/canada_emeralds/The%20Cascade%20Earrings.png" alt="The Cascade Earrings" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                        </div>
+                        <div class="pt-6 text-center">
+                            <h3 class="text-xl font-serif text-stone-800 mb-2 font-medium">The Cascade Earrings</h3>
+                            <p class="text-stone-500 text-sm mb-4 font-light leading-relaxed">A cascade of brilliant-cut emeralds in descending harmony.</p>
+                             <a href="#" class="font-semibold text-sm tracking-wider hover:underline transition-all duration-200" style="color: var(--color-1);">View Details</a>
+                        </div>
+                    </div>
+                    <div class="group collection-item">
+                        <div class="overflow-hidden bg-stone-100 aspect-[4/5] subtle-shadow luxury-border">
+                            <img src="https://updatedcardscript.standard.us-east-1.oortstorages.com/canada_emeralds/The%20Solitude%20Pendant.png" alt="The Solitude Pendant" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                        </div>
+                        <div class="pt-6 text-center">
+                            <h3 class="text-xl font-serif text-stone-800 mb-2 font-medium">The Solitude Pendant</h3>
+                            <p class="text-stone-500 text-sm mb-4 font-light leading-relaxed">A single, magnificent emerald-cut stone of exceptional clarity.</p>
+                             <a href="#" class="font-semibold text-sm tracking-wider hover:underline transition-all duration-200" style="color: var(--color-1);">View Details</a>
+                        </div>
+                    </div>
+                    <div class="group collection-item">
+                        <div class="overflow-hidden bg-stone-100 aspect-[4/5] subtle-shadow luxury-border">
+                            <img src="https://updatedcardscript.standard.us-east-1.oortstorages.com/canada_emeralds/The%20Glacier%20Bracelet.png" alt="The Glacier Bracelet" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                        </div>
+                        <div class="pt-6 text-center">
+                            <h3 class="text-xl font-serif text-stone-800 mb-2 font-medium">The Glacier Bracelet</h3>
+                            <p class="text-stone-500 text-sm mb-4 font-light leading-relaxed">An eternity band of perfectly matched emeralds in flowing unity.</p>
+                             <a href="#" class="font-semibold text-sm tracking-wider hover:underline transition-all duration-200" style="color: var(--color-1);">View Details</a>
+                        </div>
+                    </div>
+                    <div class="group collection-item">
+                        <div class="overflow-hidden bg-stone-100 aspect-[4/5] subtle-shadow luxury-border">
+                            <img src="https://updatedcardscript.standard.us-east-1.oortstorages.com/canada_emeralds/The%20Aurora%20Studs.png" alt="The Aurora Studs" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                        </div>
+                        <div class="pt-6 text-center">
+                            <h3 class="text-xl font-serif text-stone-800 mb-2 font-medium">The Aurora Studs</h3>
+                            <p class="text-stone-500 text-sm mb-4 font-light leading-relax
