@@ -1,3 +1,46 @@
+
+bidcoinauction/Canadian_Emeralds
+main
+
+GITHUB
+
+we want to have more or a user react expereince, subtle luxury; we are "sactioned" "blessed" by https://josephgad.com but they are behind the scenes i want this color scheme across all pages :root {
+  --color-1: color(display-p3 0.135 0.351 0.129);
+  --color-2: color(display-p3 0.99 0.996 0.884);
+}
+/* Normal theme /
+.combo-1 {
+  color: var(--color-1);
+  background-color: var(--color-2);
+}
+/ Inverse theme */
+.combo-2 {
+  color: var(--color-2);
+  background-color: var(--color-1);
+}
+
+can you update all?
+
+I'll update all the HTML files with the new color scheme and enhance the user experience with more subtle luxury touches. Let me start with the homepage and then update each page systematically.
+
+Updated Index - Canadian Emeralds
+Interactive artifact 
+Now let me update the About page with the new color scheme and luxury enhancements:
+
+Updated About - Canadian Emeralds
+Interactive artifact 
+Continue
+
+Updated About - Canadian Emeralds
+Interactive artifact 
+Now let me create the updated Collection page:
+
+Updated Collection - Canadian Emeralds
+Interactive artifact 
+
+
+
+
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
@@ -7,11 +50,11 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         :root {
-            --color-1: color(display-p3 0.103 0.267 0.121);
-            --color-2: color(display-p3 0.895 0.984 0.776);
+            --color-1: color(display-p3 0.135 0.351 0.129);
+            --color-2: color(display-p3 0.99 0.996 0.884);
             /* Fallback colors for browsers that don't support display-p3 */
-            --fallback-color-1: #1A441F;
-            --fallback-color-2: #E4FAE0;
+            --fallback-color-1: #225A20;
+            --fallback-color-2: #FDFEE2;
         }
 
         /* Normal theme */
@@ -36,135 +79,26 @@
         .font-serif {
             font-family: 'Playfair Display', serif;
         }
+        .subtle-shadow {
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+        .hover-lift {
+            transition: all 0.3s ease;
+        }
+        .hover-lift:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+        }
+        .luxury-border {
+            border: 1px solid rgba(34, 90, 32, 0.1);
+        }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body class="bg-white font-sans text-stone-800 antialiased">
 
-    <header id="header" class="sticky top-0 z-50 transition-all duration-300 bg-white/80 backdrop-blur-sm border-b border-stone-200">
+    <header id="header" class="sticky top-0 z-50 transition-all duration-300 bg-white/90 backdrop-blur-md border-b border-stone-200 subtle-shadow">
         <div class="container mx-auto px-6 py-5 flex justify-between items-center">
-            <a href="index.html" class="text-xl font-serif tracking-widest uppercase text-stone-800">
-                Canadian Emeralds
-            </a>
-            <nav class="hidden md:flex items-center space-x-10">
-                <a href="collection.html" class="text-sm uppercase tracking-wider text-stone-600 hover:text-stone-900 transition-colors">Collection</a>
-                <a href="about.html" class="text-sm uppercase tracking-wider font-semibold" style="color: var(--color-1);">Our Story</a>
-                <a href="bespoke.html" class="text-sm uppercase tracking-wider text-stone-600 hover:text-stone-900 transition-colors">Bespoke</a>
-                <a href="contact.html" class="text-sm uppercase tracking-wider text-stone-600 hover:text-stone-900 transition-colors">Contact</a>
-            </nav>
-            <div class="flex items-center space-x-6">
-                <button class="text-stone-600 hover:text-stone-900 transition-colors">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
-                </button>
-                <button id="menu-toggle" class="md:hidden text-stone-800">
-                    <svg id="menu-icon-open" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-                    <svg id="menu-icon-close" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hidden"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-                </button>
-            </div>
-        </div>
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-stone-200">
-            <nav class="flex flex-col">
-                <a href="collection.html" class="mobile-nav-link py-4 px-6 text-center uppercase tracking-wider text-stone-600 hover:bg-stone-100 transition-colors">Collection</a>
-                <a href="about.html" class="mobile-nav-link py-4 px-6 text-center uppercase tracking-wider text-stone-600 hover:bg-stone-100 transition-colors">Our Story</a>
-                <a href="bespoke.html" class="mobile-nav-link py-4 px-6 text-center uppercase tracking-wider text-stone-600 hover:bg-stone-100 transition-colors">Bespoke</a>
-                <a href="contact.html" class="mobile-nav-link py-4 px-6 text-center uppercase tracking-wider text-stone-600 hover:bg-stone-100 transition-colors">Contact</a>
-            </nav>
-        </div>
-    </header>
-
-    <main>
-        <section class="py-24 md:py-32 bg-white">
-            <div class="container mx-auto px-6 text-center">
-                <h1 class="text-4xl md:text-5xl font-serif text-stone-900 mb-3">A Legacy of Excellence</h1>
-                <p class="text-stone-600 max-w-2xl mx-auto">Uniting generations of emerald mastery with a modern vision to bring the world's finest emeralds to Canada.</p>
-                <div class="w-24 h-px mx-auto mt-6" style="background-color: var(--color-1);"></div>
-            </div>
-        </section>
-
-        <section class="py-20 md:py-24 combo-1">
-            <div class="container mx-auto px-6">
-                <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-16 items-center">
-                    <div class="md:pr-8">
-                        <h2 class="text-3xl font-serif mb-4">Tradition Meets Innovation</h2>
-                        <div class="space-y-4 leading-relaxed opacity-80">
-                            <p>At Canadian Emeralds, we unite the heritage of world-class emerald expertise with the future of innovation. Naftalia Gad, a third-generation member of the renowned Gad family, partners with Alistair Ewart, a Canadian entrepreneur and leader in artificial intelligence.</p>
-                            <p>This collaboration blends generations of emerald mastery with modern vision, creating an unprecedented gateway for Canadians to experience, trust, and invest in the finest emeralds the world has to offer.</p>
-                        </div>
-                    </div>
-                    <div class="aspect-[4/5]">
-                        <img src="https://updatedcardscript.standard.us-east-1.oortstorages.com/istockphoto-1349202956-612x612.jpg" alt="A master jeweller inspecting a rough emerald gemstone" class="w-full h-full object-cover">
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="py-20 md:py-24 bg-white">
-            <div class="container mx-auto px-6">
-                <div class="max-w-4xl mx-auto">
-                    <div class="flex flex-col md:flex-row items-center gap-12 mb-20">
-                        <div class="md:w-1/2 aspect-[4/5]">
-                            <img src="https://placehold.co/800x1000/EAE8E1/333333?text=Naftalia+Gad" alt="Portrait of Naftalia Gad" class="w-full h-full object-cover">
-                        </div>
-                        <div class="md:w-1/2 md:pl-12">
-                            <h2 class="text-3xl font-serif text-stone-900 mt-2 mb-4">The Gad Family Legacy</h2>
-                            <p class="text-stone-600 leading-relaxed">As the third generation of a family deeply rooted in the emerald trade, Naftalia carries forward a legacy built through his father and grandfather, who established the Gad family as one of the premier global sources of fine Colombian emeralds. With direct ownership and partnerships in Colombia’s most celebrated mines, the Gad family has unrivaled access to stones of extraordinary quality and provenance. The Gad name has become synonymous with authenticity, excellence, and ethical sourcing—values that Naftalia continues to champion.</p>
-                        </div>
-                    </div>
-                    <div class="flex flex-col md:flex-row-reverse items-center gap-12">
-                        <div class="md:w-1/2 aspect-[4/5]">
-                            <img src="https://placehold.co/800x1000/F0F0E0/333333?text=Alistair+Ewart" alt="Portrait of Alistair Ewart" class="w-full h-full object-cover">
-                        </div>
-                        <div class="md:w-1/2 md:pr-12">
-                            <h2 class="text-3xl font-serif text-stone-900 mt-2 mb-4">A Vision for the Future</h2>
-                            <p class="text-stone-600 leading-relaxed">As a founder of Koat.ai, Alistair has already proven himself a global leader in AI and data innovation, building platforms that power decision-making for high-profile clients within competitive industries. His expertise in leveraging technology and data-driven strategy ensures that Canadian Emeralds not only brings the world’s finest emeralds to Canada but also introduces them to the market in a modern, intelligent, and impactful way.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-         <section class="py-20 md:py-24 combo-2">
-            <div class="container mx-auto px-6 text-center">
-                <h2 class="text-3xl md:text-4xl font-serif mb-4">Discover Our Collection</h2>
-                <p class="max-w-xl mx-auto opacity-80 mb-8">
-                    Each piece in our collection is a testament to our commitment to quality, heritage, and innovation.
-                </p>
-                <a href="collection.html" class="group inline-flex items-center uppercase tracking-widest font-semibold text-sm border px-8 py-3 transition-colors hover:bg-white hover:text-black">
-                    Explore Now
-                </a>
-            </div>
-        </section>
-
-    </main>
-    
-    <footer id="contact" class="bg-white text-stone-600 border-t border-stone-200">
-        </footer>
-
-    <script>
-       document.addEventListener('DOMContentLoaded', function() {
-            const menuToggle = document.getElementById('menu-toggle');
-            const mobileMenu = document.getElementById('mobile-menu');
-            const menuIconOpen = document.getElementById('menu-icon-open');
-            const menuIconClose = document.getElementById('menu-icon-close');
-            const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
-
-            const toggleMenu = () => {
-                mobileMenu.classList.toggle('hidden');
-                menuIconOpen.classList.toggle('hidden');
-                menuIconClose.classList.toggle('hidden');
-            };
-            
-            if(menuToggle) {
-                menuToggle.addEventListener('click', toggleMenu);
-            }
-            mobileNavLinks.forEach(link => {
-                link.addEventListener('click', toggleMenu);
-            });
-
-            document.getElementById('current-year').textContent = new Date().getFullYear();
-        });
-    </script>
-</body>
-</html>
+            <a href
