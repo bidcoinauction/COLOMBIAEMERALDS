@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Geological Specimens - COLOMBIAEMERALDS.CA</title>
+    <title>Geological Specimens - COLOMBIAEMERLDS.CA</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         :root {
@@ -32,10 +32,21 @@
         .specimen-card {
             border: 1px solid rgba(0, 0, 0, 0.05);
             transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
         }
         .specimen-card:hover {
             transform: translateY(-12px);
             box-shadow: 0 30px 60px rgba(0, 0, 0, 0.1);
+        }
+        .specimen-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .specimen-details {
+            flex: 1;
         }
         .fade-in-up {
             opacity: 0;
@@ -50,6 +61,15 @@
             background: linear-gradient(135deg, var(--gold-accent), #B8860B);
             box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
         }
+        .museum-badge {
+            background: linear-gradient(45deg, #a55eea, #8b5cf6);
+        }
+        .exhibition-badge {
+            background: linear-gradient(45deg, #4c51bf, #667eea);
+        }
+        .heritage-badge {
+            background: linear-gradient(45deg, #c53030, #e53e3e);
+        }
         .geological-data {
             font-family: 'SF Mono', 'Monaco', 'Inconsolata', monospace;
             font-size: 0.8rem;
@@ -57,6 +77,17 @@
         }
         .luxury-border {
             border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+        .media-container {
+            aspect-ratio: 4/5;
+            overflow: hidden;
+            border-radius: 4px;
+        }
+        .media-container video,
+        .media-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -68,22 +99,29 @@
     <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 bg-white/95 backdrop-blur-md border-b border-gray-200">
         <div class="container mx-auto px-8 py-6 flex justify-between items-center">
             <a href="index.html" class="font-display text-xl tracking-[0.2em] font-light" style="color: var(--emerald-deep);">
-                COLOMBIAEMERALDS.CA
+                COLOMBIAEMERLDS.CA
             </a>
             <nav class="hidden md:flex items-center space-x-12">
-                <a href="index.html" class="text-sm tracking-[0.15em] text-white/90 hover:text-white transition-all duration-300 font-light">THE HOUSE</a>
+                <a href="index.html" class="text-sm tracking-[0.15em] opacity-70 hover:opacity-100 transition-all duration-300 font-light">THE HOUSE</a>
                 <a href="specimens.html" class="text-sm tracking-[0.15em] font-medium" style="color: var(--gold-accent);">SPECIMENS</a>
                 <a href="about.html" class="text-sm tracking-[0.15em] opacity-70 hover:opacity-100 transition-all duration-300 font-light">HERITAGE</a>
                 <a href="contact.html" class="text-sm tracking-[0.15em] opacity-70 hover:opacity-100 transition-all duration-300 font-light">PRIVATE CONSULTATIONS</a>
             </nav>
-            <button class="md:hidden" style="color: var(--emerald-deep);">
+            <button id="menu-toggle-btn" class="md:hidden" style="color: var(--emerald-deep);">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
             </button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-white/95 border-t border-gray-200">
+            <nav class="flex flex-col p-4">
+                <a href="index.html" class="py-3 px-4 text-center tracking-wider opacity-80">THE HOUSE</a>
+                <a href="specimens.html" class="py-3 px-4 text-center tracking-wider" style="color: var(--gold-accent);">SPECIMENS</a>
+                <a href="about.html" class="py-3 px-4 text-center tracking-wider opacity-80">HERITAGE</a>
+                <a href="contact.html" class="py-3 px-4 text-center tracking-wider opacity-80">PRIVATE CONSULTATIONS</a>
+            </nav>
         </div>
     </header>
 
     <main class="pt-24">
-        <!-- Hero Section -->
         <section class="py-20 text-center">
             <div class="container mx-auto px-8">
                 <div class="fade-in-up">
@@ -98,82 +136,114 @@
             </div>
         </section>
 
-        <!-- Specimens Grid -->
         <section class="py-20">
             <div class="container mx-auto px-8">
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     
-                    <!-- Specimen 1: Muzo Formation Crystal -->
                     <div class="specimen-card bg-white p-6 shadow-lg fade-in-up">
-                        <div class="aspect-w-4 aspect-h-5 mb-6 overflow-hidden"><img src="https://updatedcardscript.standard.us-east-1.oortstorages.com/canada_emeralds/2025-09-09%2018.29.39.jpg" alt="Muzo Formation Crystal" class="w-full h-full object-cover"/></div>
-                        <div class="space-y-4">
-                            <div class="flex justify-between items-start"><h3 class="text-2xl font-display">Muzo Formation Crystal</h3><span class="investment-badge text-white px-3 py-1 rounded-full text-xs tracking-wider font-medium whitespace-nowrap">INVESTMENT GRADE</span></div>
-                            <div class="geological-data space-y-2 p-4 bg-gray-50 luxury-border text-xs">
-                                <div class="grid grid-cols-2 gap-x-4 gap-y-2">
-                                    <strong class="opacity-60">CARAT WEIGHT:</strong><span class="font-medium text-right">23.47 ct</span>
-                                    <strong class="opacity-60">FORMATION AGE:</strong><span class="font-medium text-right">65M years</span>
-                                    <strong class="opacity-60">MINE SOURCE:</strong><span class="font-medium text-right">Muzo, Colombia</span>
-                                    <strong class="opacity-60">CLARITY TYPE:</strong><span class="font-medium text-right">Type I (Minor inclusions)</span>
-                                    <strong class="opacity-60">SPECIFIC GRAVITY:</strong><span class="font-medium text-right">2.70-2.78</span>
-                                    <strong class="opacity-60">HARDNESS:</strong><span class="font-medium text-right">7.5-8 Mohs</span>
-                                    <strong class="opacity-60">CRYSTAL SYSTEM:</strong><span class="font-medium text-right">Hexagonal</span>
-                                    <strong class="opacity-60">COMPOSITION:</strong><span class="font-medium text-right">Be₃Al₂(SiO₃)₆</span>
+                        <div class="specimen-content">
+                            <div class="media-container mb-6">
+                                <img src="https://updatedcardscript.standard.us-east-1.oortstorages.com/canada_emeralds/2025-09-09%2018.29.39.jpg" alt="Muzo Formation Crystal"/>
+                            </div>
+                            <div class="specimen-details">
+                                <div class="flex justify-between items-start mb-4">
+                                    <h3 class="text-2xl font-display">Muzo Formation Crystal</h3>
+                                    <span class="investment-badge text-white px-3 py-1 rounded-full text-xs tracking-wider font-medium whitespace-nowrap">INVESTMENT GRADE</span>
+                                </div>
+                                <div class="geological-data space-y-2 p-4 bg-gray-50 luxury-border text-xs mb-4">
+                                    <div class="grid grid-cols-2 gap-x-4 gap-y-2">
+                                        <strong class="opacity-60">CARAT WEIGHT:</strong><span class="font-medium text-right">23.47 ct</span>
+                                        <strong class="opacity-60">FORMATION AGE:</strong><span class="font-medium text-right">65M years</span>
+                                        <strong class="opacity-60">MINE SOURCE:</strong><span class="font-medium text-right">Muzo, Colombia</span>
+                                        <strong class="opacity-60">CLARITY TYPE:</strong><span class="font-medium text-right">Type I (Minor inclusions)</span>
+                                        <strong class="opacity-60">SPECIFIC GRAVITY:</strong><span class="font-medium text-right">2.70-2.78</span>
+                                        <strong class="opacity-60">HARDNESS:</strong><span class="font-medium text-right">7.5-8 Mohs</span>
+                                        <strong class="opacity-60">CRYSTAL SYSTEM:</strong><span class="font-medium text-right">Hexagonal</span>
+                                        <strong class="opacity-60">COMPOSITION:</strong><span class="font-medium text-right">Be₃Al₂(SiO₃)₆</span>
+                                    </div>
+                                </div>
+                                <div class="space-y-2 text-xs border-t pt-4 mb-4">
+                                    <div class="flex justify-between"><strong style="color: var(--gold-accent);">CERTIFIED PROVENANCE</strong><span>GIA • SSEF</span></div>
+                                    <div class="flex justify-between"><strong style="color: var(--gold-accent);">10-YEAR APPRECIATION</strong><span class="font-medium text-green-600">+187%</span></div>
                                 </div>
                             </div>
-                             <div class="space-y-2 text-xs border-t pt-4"><div class="flex justify-between"><strong style="color: var(--gold-accent);">CERTIFIED PROVENANCE</strong><span>GIA • SSEF</span></div><div class="flex justify-between"><strong style="color: var(--gold-accent);">10-YEAR APPRECIATION</strong><span class="font-medium text-green-600">+187%</span></div></div>
-                            <div class="pt-2">
-                                <div class="flex justify-between items-center mb-4"><span class="text-3xl font-display font-light">$89,500</span></div>
-                                <button class="w-full text-sm tracking-wider py-3 text-white transition-all duration-300 hover:opacity-90" style="background-color: var(--emerald-rich);">PRIVATE VIEWING</button>
+                            <div class="mt-auto">
+                                <div class="flex justify-between items-center mb-4">
+                                    <span class="text-3xl font-display font-light">$89,500</span>
+                                </div>
+                                <button class="private-viewing-btn w-full text-sm tracking-wider py-3 text-white transition-all duration-300 hover:opacity-90" style="background-color: var(--emerald-rich);">PRIVATE VIEWING</button>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Specimen 2: Chivor Trapiche -->
                     <div class="specimen-card bg-white p-6 shadow-lg fade-in-up" style="transition-delay: 150ms;">
-                         <div class="aspect-w-4 aspect-h-5 mb-6 overflow-hidden"><img src="https://updatedcardscript.standard.us-east-1.oortstorages.com/canada_emeralds/2025-09-09%2016.19.32.jpg" alt="Chivor Trapiche Specimen" class="w-full h-full object-cover"/></div>
-                        <div class="space-y-4">
-                            <div class="flex justify-between items-start"><h3 class="text-2xl font-display">Chivor Trapiche Specimen</h3><span class="investment-badge text-white px-3 py-1 rounded-full text-xs tracking-wider font-medium whitespace-nowrap" style="background: linear-gradient(45deg, #a55eea, #8b5cf6);">MUSEUM QUALITY</span></div>
-                            <div class="geological-data space-y-2 p-4 bg-gray-50 luxury-border text-xs">
-                                <div class="grid grid-cols-2 gap-x-4 gap-y-2">
-                                    <strong class="opacity-60">CARAT WEIGHT:</strong><span class="font-medium text-right">18.92 ct</span>
-                                    <strong class="opacity-60">FORMATION AGE:</strong><span class="font-medium text-right">38M years</span>
-                                    <strong class="opacity-60">MINE SOURCE:</strong><span class="font-medium text-right">Chivor, Colombia</span>
-                                    <strong class="opacity-60">CLARITY TYPE:</strong><span class="font-medium text-right">Trapiche Formation</span>
-                                    <strong class="opacity-60">RAY PATTERN:</strong><span class="font-medium text-right">Six-ray star</span>
-                                    <strong class="opacity-60">CARBON CONTENT:</strong><span class="font-medium text-right">0.003% (Rare)</span>
-                                    <strong class="opacity-60">CHROMOPHORE:</strong><span class="font-medium text-right">Chromium/Vanadium</span>
-                                    <strong class="opacity-60">RARITY INDEX:</strong><span class="font-medium text-right">1:10,000</span>
+                        <div class="specimen-content">
+                            <div class="media-container mb-6">
+                                <img src="https://updatedcardscript.standard.us-east-1.oortstorages.com/canada_emeralds/2025-09-09%2016.19.32.jpg" alt="Chivor Trapiche Specimen"/>
+                            </div>
+                            <div class="specimen-details">
+                                <div class="flex justify-between items-start mb-4">
+                                    <h3 class="text-2xl font-display">Chivor Trapiche Specimen</h3>
+                                    <span class="museum-badge text-white px-3 py-1 rounded-full text-xs tracking-wider font-medium whitespace-nowrap">MUSEUM QUALITY</span>
+                                </div>
+                                <div class="geological-data space-y-2 p-4 bg-gray-50 luxury-border text-xs mb-4">
+                                    <div class="grid grid-cols-2 gap-x-4 gap-y-2">
+                                        <strong class="opacity-60">CARAT WEIGHT:</strong><span class="font-medium text-right">18.92 ct</span>
+                                        <strong class="opacity-60">FORMATION AGE:</strong><span class="font-medium text-right">38M years</span>
+                                        <strong class="opacity-60">MINE SOURCE:</strong><span class="font-medium text-right">Chivor, Colombia</span>
+                                        <strong class="opacity-60">CLARITY TYPE:</strong><span class="font-medium text-right">Trapiche Formation</span>
+                                        <strong class="opacity-60">RAY PATTERN:</strong><span class="font-medium text-right">Six-ray star</span>
+                                        <strong class="opacity-60">CARBON CONTENT:</strong><span class="font-medium text-right">0.003% (Rare)</span>
+                                        <strong class="opacity-60">CHROMOPHORE:</strong><span class="font-medium text-right">Chromium/Vanadium</span>
+                                        <strong class="opacity-60">RARITY INDEX:</strong><span class="font-medium text-right">1:10,000</span>
+                                    </div>
+                                </div>
+                                <div class="space-y-2 text-xs border-t pt-4 mb-4">
+                                    <div class="flex justify-between"><strong style="color: var(--gold-accent);">CERTIFIED PROVENANCE</strong><span>Gübelin • AGL</span></div>
+                                    <div class="flex justify-between"><strong style="color: var(--gold-accent);">COLLECTOR PREMIUM</strong><span class="font-medium text-green-600">+240%</span></div>
                                 </div>
                             </div>
-                             <div class="space-y-2 text-xs border-t pt-4"><div class="flex justify-between"><strong style="color: var(--gold-accent);">CERTIFIED PROVENANCE</strong><span>Gübelin • AGL</span></div><div class="flex justify-between"><strong style="color: var(--gold-accent);">COLLECTOR PREMIUM</strong><span class="font-medium text-green-600">+240%</span></div></div>
-                            <div class="pt-2">
-                                <div class="flex justify-between items-center mb-4"><span class="text-3xl font-display font-light">$156,000</span></div>
-                                <button class="w-full text-sm tracking-wider py-3 text-white transition-all duration-300 hover:opacity-90" style="background-color: var(--emerald-rich);">PRIVATE VIEWING</button>
+                            <div class="mt-auto">
+                                <div class="flex justify-between items-center mb-4">
+                                    <span class="text-3xl font-display font-light">$156,000</span>
+                                </div>
+                                <button class="private-viewing-btn w-full text-sm tracking-wider py-3 text-white transition-all duration-300 hover:opacity-90" style="background-color: var(--emerald-rich);">PRIVATE VIEWING</button>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Specimen 3: Coscuez Matrix -->
                     <div class="specimen-card bg-white p-6 shadow-lg fade-in-up" style="transition-delay: 300ms;">
-                        <div class="aspect-w-4 aspect-h-5 mb-6 overflow-hidden"><img src="https://updatedcardscript.standard.us-east-1.oortstorages.com/canada_emeralds/2025-09-09%2016.17.02.jpg" alt="Coscuez Matrix Specimen" class="w-full h-full object-cover"/></div>
-                        <div class="space-y-4">
-                            <div class="flex justify-between items-start"><h3 class="text-2xl font-display">Coscuez Matrix Specimen</h3><span class="investment-badge text-white px-3 py-1 rounded-full text-xs tracking-wider font-medium whitespace-nowrap" style="background: linear-gradient(45deg, #4c51bf, #667eea);">EXHIBITION GRADE</span></div>
-                            <div class="geological-data space-y-2 p-4 bg-gray-50 luxury-border text-xs">
-                                <div class="grid grid-cols-2 gap-x-4 gap-y-2">
-                                    <strong class="opacity-60">CARAT WEIGHT:</strong><span class="font-medium text-right">31.25 ct</span>
-                                    <strong class="opacity-60">FORMATION AGE:</strong><span class="font-medium text-right">45M years</span>
-                                    <strong class="opacity-60">MINE SOURCE:</strong><span class="font-medium text-right">Coscuez, Colombia</span>
-                                    <strong class="opacity-60">MATRIX TYPE:</strong><span class="font-medium text-right">Calcite/Pyrite</span>
-                                    <strong class="opacity-60">CRYSTAL QUALITY:</strong><span class="font-medium text-right">Exceptional</span>
-                                    <strong class="opacity-60">FLUORESCENCE:</strong><span class="font-medium text-right">Moderate Red</span>
-                                    <strong class="opacity-60">PLEOCHROISM:</strong><span class="font-medium text-right">Weak to Distinct</span>
-                                    <strong class="opacity-60">ORIGIN MARKERS:</strong><span class="font-medium text-right">Jagged inclusions</span>
+                        <div class="specimen-content">
+                            <div class="media-container mb-6">
+                                <img src="https://updatedcardscript.standard.us-east-1.oortstorages.com/canada_emeralds/2025-09-09%2016.17.02.jpg" alt="Coscuez Matrix Specimen"/>
+                            </div>
+                            <div class="specimen-details">
+                                <div class="flex justify-between items-start mb-4">
+                                    <h3 class="text-2xl font-display">Coscuez Matrix Specimen</h3>
+                                    <span class="exhibition-badge text-white px-3 py-1 rounded-full text-xs tracking-wider font-medium whitespace-nowrap">EXHIBITION GRADE</span>
+                                </div>
+                                <div class="geological-data space-y-2 p-4 bg-gray-50 luxury-border text-xs mb-4">
+                                    <div class="grid grid-cols-2 gap-x-4 gap-y-2">
+                                        <strong class="opacity-60">CARAT WEIGHT:</strong><span class="font-medium text-right">31.25 ct</span>
+                                        <strong class="opacity-60">FORMATION AGE:</strong><span class="font-medium text-right">45M years</span>
+                                        <strong class="opacity-60">MINE SOURCE:</strong><span class="font-medium text-right">Coscuez, Colombia</span>
+                                        <strong class="opacity-60">MATRIX TYPE:</strong><span class="font-medium text-right">Calcite/Pyrite</span>
+                                        <strong class="opacity-60">CRYSTAL QUALITY:</strong><span class="font-medium text-right">Exceptional</span>
+                                        <strong class="opacity-60">FLUORESCENCE:</strong><span class="font-medium text-right">Moderate Red</span>
+                                        <strong class="opacity-60">PLEOCHROISM:</strong><span class="font-medium text-right">Weak to Distinct</span>
+                                        <strong class="opacity-60">ORIGIN MARKERS:</strong><span class="font-medium text-right">Jagged inclusions</span>
+                                    </div>
+                                </div>
+                                <div class="space-y-2 text-xs border-t pt-4 mb-4">
+                                    <div class="flex justify-between"><strong style="color: var(--gold-accent);">CERTIFIED PROVENANCE</strong><span>SSEF • Lotus</span></div>
+                                    <div class="flex justify-between"><strong style="color: var(--gold-accent);">HERITAGE PREMIUM</strong><span class="font-medium text-green-600">+312%</span></div>
                                 </div>
                             </div>
-                             <div class="space-y-2 text-xs border-t pt-4"><div class="flex justify-between"><strong style="color: var(--gold-accent);">CERTIFIED PROVENANCE</strong><span>SSEF • Lotus</span></div><div class="flex justify-between"><strong style="color: var(--gold-accent);">HERITAGE PREMIUM</strong><span class="font-medium text-green-600">+312%</span></div></div>
-                            <div class="pt-2">
-                                <div class="flex justify-between items-center mb-4"><span class="text-3xl font-display font-light">$312,000</span></div>
-                                <button class="w-full text-sm tracking-wider py-3 text-white transition-all duration-300 hover:opacity-90" style="background-color: var(--emerald-rich);">PRIVATE VIEWING</button>
+                            <div class="mt-auto">
+                                <div class="flex justify-between items-center mb-4">
+                                    <span class="text-3xl font-display font-light">$312,000</span>
+                                </div>
+                                <button class="private-viewing-btn w-full text-sm tracking-wider py-3 text-white transition-all duration-300 hover:opacity-90" style="background-color: var(--emerald-rich);">PRIVATE VIEWING</button>
                             </div>
                         </div>
                     </div>
@@ -187,7 +257,7 @@
         <div class="container mx-auto px-8">
             <div class="grid md:grid-cols-4 gap-12">
                 <div class="md:col-span-2">
-                    <div class="font-display text-2xl tracking-[0.2em] mb-4 font-light">COLOMBIAEMERALDS.CA</div>
+                    <div class="font-display text-2xl tracking-[0.2em] mb-4 font-light">COLOMBIAEMERLDS.CA</div>
                     <div class="text-sm text-white/60 mb-6 font-light">Est. 1952 • Calgary, Alberta</div>
                     <p class="text-white/80 font-light leading-relaxed">Where geological rarity meets generational mastery. Three generations of emerald expertise, bringing the world's finest Colombian specimens to discerning collectors.</p>
                 </div>
@@ -209,13 +279,14 @@
                 </div>
             </div>
             <div class="border-t border-white/20 mt-16 pt-8 text-center">
-                <p class="text-white/50 text-sm font-light">© 2025 COLOMBIAEMERALDS.CA. All rights reserved.</p>
+                <p class="text-white/50 text-sm font-light">© 2025 COLOMBIAEMERLDS.CA. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            // Animated sections on scroll
             const animatedSections = document.querySelectorAll('.fade-in-up');
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
@@ -227,6 +298,21 @@
             }, { threshold: 0.1 });
             
             animatedSections.forEach(section => observer.observe(section));
+
+            // Mobile menu toggle
+            const menuToggleBtn = document.getElementById('menu-toggle-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            menuToggleBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // "Private Viewing" button functionality
+            const viewingButtons = document.querySelectorAll('.private-viewing-btn');
+            viewingButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    window.location.href = 'contact.html';
+                });
+            });
         });
     </script>
 </body>
