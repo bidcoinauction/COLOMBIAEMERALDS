@@ -3,54 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Private Consultations - Canadian Emeralds</title>
+    <title>Heritage - COLOMBIAEMERLDS.CA</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         :root {
-            --color-1: color(display-p3 0.106 0.263 0.196);
-            --color-2: color(display-p3 0.976 0.965 0.941);
-            --color-accent: color(display-p3 0.722 0.561 0.396);
-            /* Fallback colors for browsers that don't support display-p3 */
-            --fallback-color-1: #1B4332;
-            --fallback-color-2: #F8F6F1;
-            --fallback-color-accent: #B8906A;
-        }
-
-        /* Normal theme */
-        .combo-1 {
-            color: var(--fallback-color-1);
-            background-color: var(--fallback-color-2);
-        }
-        
-        @supports (color: color(display-p3 1 1 1)) {
-            .combo-1 {
-                color: var(--color-1);
-                background-color: var(--color-2);
-            }
-        }
-
-        /* Inverse theme */
-        .combo-2 {
-            color: var(--fallback-color-2);
-            background-color: var(--fallback-color-1);
-        }
-        
-        @supports (color: color(display-p3 1 1 1)) {
-            .combo-2 {
-                color: var(--color-2);
-                background-color: var(--color-1);
-            }
+            --emerald-deep: #0A2E1B;
+            --emerald-rich: #1B4332;
+            --emerald-soft: #2D5A3D;
+            --cream-luxury: #FAF9F5;
+            --gold-accent: #D4AF37;
+            --platinum: #E5E4E2;
         }
 
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-weight: 200;
         }
-        .font-serif {
+
+        .font-display {
             font-family: 'Playfair Display', serif;
+            font-weight: 300;
         }
-        .subtle-shadow {
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+
+        .hero-text {
+            font-size: clamp(3rem, 8vw, 8rem);
+            line-height: 0.9;
+            letter-spacing: -0.02em;
         }
+
+        .luxury-gradient {
+            background: linear-gradient(135deg, var(--emerald-deep) 0%, var(--emerald-rich) 50%, var(--emerald-soft) 100%);
+        }
+
+        .fade-in-up {
+            opacity: 1 !important;
+            transform: translateY(0) !important;
+        }
+
+        .text-shadow-luxury {
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .investment-badge {
+            background: linear-gradient(135deg, var(--gold-accent), #B8860B);
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+        }
+
+        .luxury-border {
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
         .hover-lift {
             transition: all 0.3s ease;
         }
@@ -58,227 +60,341 @@
             transform: translateY(-2px);
             box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
         }
-        .luxury-border {
-            border: 1px solid rgba(27, 67, 50, 0.08);
-        }
-        .accent-color {
-            color: var(--fallback-color-accent) !important;
-        }
-        
-        @supports (color: color(display-p3 1 1 1)) {
-            .accent-color {
-                color: var(--color-accent) !important;
+
+        @media (max-width: 768px) {
+            .hero-text {
+                font-size: clamp(2rem, 12vw, 4rem);
             }
-        }
-        .form-input {
-            transition: all 0.3s ease;
-        }
-        .form-input:focus {
-            transform: translateY(-1px);
-            box-shadow: 0 4px 20px rgba(27, 67, 50, 0.1);
         }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800;900&family=Playfair+Display:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
-<body class="bg-white font-sans text-stone-800 antialiased">
+<body class="antialiased" style="background-color: var(--cream-luxury); color: var(--emerald-deep);">
 
-    <header id="header" class="sticky top-0 z-50 transition-all duration-300 bg-white/90 backdrop-blur-md border-b border-stone-200 subtle-shadow">
-        <div class="container mx-auto px-6 py-5 flex justify-between items-center">
-            <a href="index.html" class="text-xl font-serif tracking-widest uppercase text-stone-800 font-medium">
-                Canadian Emeralds
+    <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 bg-white/95 backdrop-blur-md border-b border-gray-200">
+        <div class="container mx-auto px-8 py-6 flex justify-between items-center">
+            <a href="index.html" class="font-display text-2xl tracking-[0.2em] font-light" style="color: var(--emerald-deep);">
+                COLOMBIAEMERLDS.CA
+                <div class="text-xs tracking-[0.3em] opacity-60 mt-1 font-light">EST. 1952</div>
             </a>
-            <nav class="hidden md:flex items-center space-x-10">
-                <a href="collection.html" class="text-sm uppercase tracking-wider text-stone-600 hover:text-stone-900 transition-all duration-200 font-medium">Private Atelier</a>
-                <a href="about.html" class="text-sm uppercase tracking-wider text-stone-600 hover:text-stone-900 transition-all duration-200 font-medium">Heritage</a>
-                <a href="bespoke.html" class="text-sm uppercase tracking-wider text-stone-600 hover:text-stone-900 transition-all duration-200 font-medium">Bespoke</a>
-                <a href="contact.html" class="text-sm uppercase tracking-wider font-semibold font-medium" style="color: var(--fallback-color-1);">Private Consultations</a>
+            <nav class="hidden md:flex items-center space-x-12">
+                <a href="index.html" class="text-sm tracking-[0.15em] opacity-70 hover:opacity-100 transition-all duration-300 font-light">HOME</a>
+                <a href="collection.html" class="text-sm tracking-[0.15em] opacity-70 hover:opacity-100 transition-all duration-300 font-light">SHOP</a>
+                <a href="about.html" class="text-sm tracking-[0.15em] font-medium" style="color: var(--gold-accent);">HERITAGE</a>
+                <a href="bespoke.html" class="text-sm tracking-[0.15em] opacity-70 hover:opacity-100 transition-all duration-300 font-light">BESPOKE</a>
+                <a href="contact.html" class="text-sm tracking-[0.15em] opacity-70 hover:opacity-100 transition-all duration-300 font-light">CONTACT</a>
             </nav>
             <div class="flex items-center space-x-6">
+                <!-- Search -->
                 <button class="text-stone-600 hover:text-stone-900 transition-all duration-200 hover:scale-105">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <circle cx="11" cy="11" r="8"/>
+                        <path d="m21 21-4.35-4.35"/>
+                    </svg>
                 </button>
-                <button id="menu-toggle" class="md:hidden text-stone-800">
-                    <svg id="menu-icon-open" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-                    <svg id="menu-icon-close" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hidden"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                <!-- Wishlist -->
+                <button class="text-stone-600 hover:text-stone-900 transition-all duration-200 hover:scale-105 relative">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                    </svg>
+                    <span class="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center hidden">0</span>
+                </button>
+                <!-- Shopping Cart -->
+                <button class="text-stone-600 hover:text-stone-900 transition-all duration-200 hover:scale-105 relative">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+                        <line x1="3" y1="6" x2="21" y2="6"/>
+                        <path d="M16 10a4 4 0 0 1-8 0"/>
+                    </svg>
+                    <span class="absolute -top-2 -right-2 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center hidden" style="background-color: var(--gold-accent);">0</span>
+                </button>
+                <!-- Mobile menu -->
+                <button class="md:hidden" style="color: var(--emerald-deep);">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="3" y1="6" x2="21" y2="6"/>
+                        <line x1="3" y1="12" x2="21" y2="12"/>
+                        <line x1="3" y1="18" x2="21" y2="18"/>
+                    </svg>
                 </button>
             </div>
-        </div>
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-stone-200 subtle-shadow">
-            <nav class="flex flex-col">
-                <a href="collection.html" class="mobile-nav-link py-4 px-6 text-center uppercase tracking-wider text-stone-600 hover:bg-stone-100 transition-all duration-200 font-medium">Private Atelier</a>
-                <a href="about.html" class="mobile-nav-link py-4 px-6 text-center uppercase tracking-wider text-stone-600 hover:bg-stone-100 transition-all duration-200 font-medium">Heritage</a>
-                <a href="bespoke.html" class="mobile-nav-link py-4 px-6 text-center uppercase tracking-wider text-stone-600 hover:bg-stone-100 transition-all duration-200 font-medium">Bespoke</a>
-                <a href="contact.html" class="mobile-nav-link py-4 px-6 text-center uppercase tracking-wider text-stone-600 hover:bg-stone-100 transition-all duration-200 font-medium">Private Consultations</a>
-            </nav>
         </div>
     </header>
 
-    <main>
-        <section class="py-24 md:py-32 bg-white">
-            <div class="container mx-auto px-6 text-center">
-                <h1 class="text-4xl md:text-5xl lg:text-6xl font-serif text-stone-900 mb-4 font-medium">Private Consultations</h1>
-                <p class="text-stone-600 max-w-3xl mx-auto text-lg font-light leading-relaxed">Schedule an exclusive consultation to explore our collection, discuss bespoke commissions, or receive investment guidance from our emerald specialists.</p>
-                <div class="text-center mt-6">
-                    <span class="accent-color font-semibold text-sm uppercase tracking-wider">Complimentary consultation • By appointment only</span>
+    <main class="pt-32">
+        <!-- Hero Section -->
+        <section class="py-24 text-center">
+            <div class="container mx-auto px-8">
+                <div class="animated-section opacity-0 translate-y-20 transition-all duration-1000">
+                    <div class="investment-badge text-white px-6 py-3 rounded-full text-sm tracking-[0.2em] font-light mb-12 inline-block">
+                        THREE GENERATIONS OF EMERALD MASTERY
+                    </div>
+                    <h1 class="hero-text font-display mb-8">
+                        OUR<br>
+                        <span style="color: var(--gold-accent);">HERITAGE</span>
+                    </h1>
+                    <p class="text-xl md:text-2xl opacity-80 max-w-4xl mx-auto mb-16 font-light leading-relaxed">
+                        From the legendary mines of Colombia to the discerning collectors of Canada, discover the remarkable journey of the Gad family legacy and our commitment to geological excellence.
+                    </p>
                 </div>
-                <div class="w-24 h-px mx-auto mt-8 luxury-border" style="background-color: var(--fallback-color-1);"></div>
             </div>
         </section>
 
-        <section class="py-20 md:py-24 combo-1">
-            <div class="container mx-auto px-6">
-                <div class="grid lg:grid-cols-2 gap-20">
-                    <div class="space-y-10 text-stone-700">
-                        <div class="hover-lift p-8 subtle-shadow luxury-border bg-white/50">
-                            <h2 class="text-2xl md:text-3xl font-serif text-stone-900 mb-4 font-medium">Private Atelier</h2>
-                            <p class="font-light text-lg leading-relaxed mb-2">123 Luxury Row SW<br>Calgary, AB T2P 2L7</p>
-                            <p class="text-sm accent-color font-semibold uppercase tracking-wider">By appointment only</p>
+        <!-- Timeline Section -->
+        <section class="py-20">
+            <div class="container mx-auto px-8">
+                <div class="animated-section opacity-0 translate-y-20 transition-all duration-1000">
+                    <div class="text-center mb-16">
+                        <h2 class="text-4xl md:text-5xl font-display font-light mb-6">A LEGACY OF EXCELLENCE</h2>
+                        <div class="w-32 h-px mx-auto mb-8" style="background-color: var(--gold-accent);"></div>
+                        <p class="text-lg max-w-3xl mx-auto opacity-80 font-light leading-relaxed">
+                            Seven decades of expertise in sourcing, evaluating, and presenting the world's finest emerald specimens.
+                        </p>
+                    </div>
+
+                    <div class="max-w-4xl mx-auto space-y-16">
+                        <!-- 1952 -->
+                        <div class="flex flex-col md:flex-row items-center gap-12">
+                            <div class="md:w-1/3 text-center md:text-right">
+                                <div class="text-5xl font-display font-light mb-2" style="color: var(--gold-accent);">1952</div>
+                                <div class="text-sm tracking-wider opacity-60">THE BEGINNING</div>
+                            </div>
+                            <div class="md:w-2/3 bg-white p-8 luxury-border hover-lift">
+                                <h3 class="text-2xl font-display font-light mb-4">Foundation in Colombia</h3>
+                                <p class="font-light leading-relaxed opacity-80">
+                                    The Gad family establishes direct relationships with the legendary emerald mines of Muzo, Chivor, and Coscuez. Three generations of expertise begin with a commitment to ethical sourcing and geological authenticity.
+                                </p>
+                            </div>
                         </div>
-                        <div class="hover-lift p-8 subtle-shadow luxury-border bg-white/50">
-                            <h2 class="text-2xl md:text-3xl font-serif text-stone-900 mb-4 font-medium">Contact Information</h2>
-                            <p class="font-light text-lg leading-relaxed">Email: consultations@canadianemeralds.ca</p>
-                            <p class="font-light text-lg leading-relaxed mb-2">Phone: +1 (403) 555-0123</p>
-                            <p class="text-sm accent-color font-semibold uppercase tracking-wider">Secure line for high-value inquiries</p>
+
+                        <!-- 1975 -->
+                        <div class="flex flex-col md:flex-row-reverse items-center gap-12">
+                            <div class="md:w-1/3 text-center md:text-left">
+                                <div class="text-5xl font-display font-light mb-2" style="color: var(--gold-accent);">1975</div>
+                                <div class="text-sm tracking-wider opacity-60">EXPANSION</div>
+                            </div>
+                            <div class="md:w-2/3 bg-white p-8 luxury-border hover-lift">
+                                <h3 class="text-2xl font-display font-light mb-4">International Recognition</h3>
+                                <p class="font-light leading-relaxed opacity-80">
+                                    Second generation leadership expands the family's reputation beyond Colombia, establishing partnerships with leading gemological institutes and museums worldwide for specimen certification and documentation.
+                                </p>
+                            </div>
                         </div>
-                        <div class="hover-lift p-8 subtle-shadow luxury-border bg-white/50">
-                            <h2 class="text-2xl md:text-3xl font-serif text-stone-900 mb-4 font-medium">Consultation Hours</h2>
-                            <p class="font-light text-lg leading-relaxed">Tuesday - Saturday: 10am - 6pm</p>
-                            <p class="font-light text-lg leading-relaxed mb-2">Sunday & Monday: Closed</p>
-                            <p class="text-sm accent-color font-semibold uppercase tracking-wider">Evening appointments available for international clients</p>
+
+                        <!-- 1998 -->
+                        <div class="flex flex-col md:flex-row items-center gap-12">
+                            <div class="md:w-1/3 text-center md:text-right">
+                                <div class="text-5xl font-display font-light mb-2" style="color: var(--gold-accent);">1998</div>
+                                <div class="text-sm tracking-wider opacity-60">INNOVATION</div>
+                            </div>
+                            <div class="md:w-2/3 bg-white p-8 luxury-border hover-lift">
+                                <h3 class="text-2xl font-display font-light mb-4">Scientific Documentation</h3>
+                                <p class="font-light leading-relaxed opacity-80">
+                                    Pioneering comprehensive geological documentation for each specimen, including formation analysis, mineral composition studies, and investment-grade certification protocols that set industry standards.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- 2020 -->
+                        <div class="flex flex-col md:flex-row-reverse items-center gap-12">
+                            <div class="md:w-1/3 text-center md:text-left">
+                                <div class="text-5xl font-display font-light mb-2" style="color: var(--gold-accent);">2020</div>
+                                <div class="text-sm tracking-wider opacity-60">DIGITAL TRANSFORMATION</div>
+                            </div>
+                            <div class="md:w-2/3 bg-white p-8 luxury-border hover-lift">
+                                <h3 class="text-2xl font-display font-light mb-4">Canadian Partnership</h3>
+                                <p class="font-light leading-relaxed opacity-80">
+                                    Third generation expertise meets Canadian innovation through the partnership with Alistair Ewart, bringing decades of emerald mastery to the digital age with data-driven investment analysis.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Today -->
+                        <div class="flex flex-col md:flex-row items-center gap-12">
+                            <div class="md:w-1/3 text-center md:text-right">
+                                <div class="text-5xl font-display font-light mb-2" style="color: var(--gold-accent);">2025</div>
+                                <div class="text-sm tracking-wider opacity-60">TODAY</div>
+                            </div>
+                            <div class="md:w-2/3 bg-white p-8 luxury-border hover-lift">
+                                <h3 class="text-2xl font-display font-light mb-4">COLOMBIAEMERLDS.CA</h3>
+                                <p class="font-light leading-relaxed opacity-80">
+                                    The culmination of 70+ years of expertise, offering Canadian collectors unprecedented access to investment-grade Colombian emerald specimens with complete scientific documentation and geological provenance.
+                                </p>
+                            </div>
                         </div>
                     </div>
-                    <div class="hover-lift">
-                         <h2 class="text-2xl md:text-3xl font-serif mb-8 font-medium text-stone-900">Schedule Consultation</h2>
-                         <div id="form-container">
-                             <form id="contact-form" class="space-y-6">
-                                <div>
-                                    <label for="name" class="sr-only">Name</label>
-                                    <input type="text" id="name" name="name" placeholder="Full Name" required class="w-full bg-white border luxury-border px-6 py-4 text-sm focus:outline-none focus:ring-2 form-input font-light" style="--tw-ring-color: var(--fallback-color-1);"/>
-                                </div>
-                                <div>
-                                    <label for="email" class="sr-only">Email</label>
-                                    <input type="email" id="email" name="email" placeholder="Email Address" required class="w-full bg-white border luxury-border px-6 py-4 text-sm focus:outline-none focus:ring-2 form-input font-light" style="--tw-ring-color: var(--fallback-color-1);"/>
-                                </div>
-                                <div>
-                                    <label for="interest" class="sr-only">Interest</label>
-                                    <select id="interest" name="interest" required class="w-full bg-white border luxury-border px-6 py-4 text-sm focus:outline-none focus:ring-2 form-input font-light" style="--tw-ring-color: var(--fallback-color-1);">
-                                        <option value="">Area of Interest</option>
-                                        <option value="collection">Private Atelier Viewing</option>
-                                        <option value="bespoke">Bespoke Commission</option>
-                                        <option value="investment">Investment Guidance</option>
-                                        <option value="appraisal">Appraisal Services</option>
-                                    </select>
-                                </div>
-                                <div>
-                                    <label for="message" class="sr-only">Message</label>
-                                    <textarea id="message" name="message" rows="6" placeholder="Tell us about your vision or requirements..." required class="w-full bg-white border luxury-border px-6 py-4 text-sm focus:outline-none focus:ring-2 form-input font-light resize-none" style="--tw-ring-color: var(--fallback-color-1);"></textarea>
-                                </div>
-                                <button type="submit" class="w-full combo-2 text-white py-4 text-sm font-semibold tracking-wider uppercase hover:bg-opacity-90 transition-all duration-300 hover:scale-105 hover-lift">
-                                    Request Private Consultation
-                                </button>
-                                <p class="text-xs text-center font-light opacity-70 text-stone-600">
-                                    All inquiries are handled with complete confidentiality
-                                </p>
-                             </form>
-                         </div>
-                         <div id="form-success-message" class="hidden">
-                            <div class="h-full flex items-center justify-center text-center p-12 bg-emerald-50 border border-emerald-200 luxury-border subtle-shadow">
-                                <div>
-                                    <div class="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-emerald-600"><polyline points="20 6 9 17 4 12"/></svg>
-                                    </div>
-                                    <h3 class="text-lg font-serif font-medium mb-2">Consultation Scheduled</h3>
-                                    <p class="text-sm font-light">Thank you for your interest. Our team will contact you within 24 hours to schedule your private consultation.</p>
-                                </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- The Team Section -->
+        <section class="py-20 luxury-gradient">
+            <div class="container mx-auto px-8">
+                <div class="animated-section opacity-0 translate-y-20 transition-all duration-1000">
+                    <div class="text-center mb-16">
+                        <h2 class="text-4xl md:text-5xl font-display font-light text-white mb-6">EXPERTISE MEETS INNOVATION</h2>
+                        <div class="w-32 h-px mx-auto mb-8" style="background-color: var(--gold-accent);"></div>
+                        <p class="text-lg max-w-3xl mx-auto text-white/90 font-light leading-relaxed">
+                            Where three generations of emerald mastery meets cutting-edge Canadian innovation.
+                        </p>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-16 max-w-6xl mx-auto">
+                        <!-- Naftalia Gad -->
+                        <div class="text-center">
+                            <div class="aspect-square bg-white/10 rounded-full mb-8 mx-auto w-64 overflow-hidden">
+                                <img src="https://updatedcardscript.standard.us-east-1.oortstorages.com/canada_emeralds/naftali_gad.webp" alt="Naftalia Gad" class="w-full h-full object-cover"/>
                             </div>
-                         </div>
+                            <h3 class="text-3xl font-display font-light text-white mb-4">Naftalia Gad</h3>
+                            <div class="text-sm tracking-wider text-white/70 mb-6">THIRD GENERATION EMERALD EXPERT</div>
+                            <p class="text-white/80 font-light leading-relaxed">
+                                Representing three generations of the renowned Gad family emerald legacy, Naftalia brings unparalleled access to Colombia's most prestigious mines and decades of expertise in geological specimen evaluation and certification.
+                            </p>
+                        </div>
+
+                        <!-- Alistair Ewart -->
+                        <div class="text-center">
+                            <div class="aspect-square bg-white/10 rounded-full mb-8 mx-auto w-64 overflow-hidden">
+                                <img src="https://updatedcardscript.standard.us-east-1.oortstorages.com/canada_emeralds/alistair.jpg" alt="Alistair Ewart" class="w-full h-full object-cover"/>
+                            </div>
+                            <h3 class="text-3xl font-display font-light text-white mb-4">Alistair Ewart</h3>
+                            <div class="text-sm tracking-wider text-white/70 mb-6">FOUNDER • KOAT.AI</div>
+                            <p class="text-white/80 font-light leading-relaxed">
+                                Canadian entrepreneur and AI innovation leader, bringing data-driven investment analysis and modern digital infrastructure to the emerald market while maintaining the highest standards of geological authenticity.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Values Section -->
+        <section class="py-20">
+            <div class="container mx-auto px-8">
+                <div class="animated-section opacity-0 translate-y-20 transition-all duration-1000">
+                    <div class="text-center mb-16">
+                        <h2 class="text-4xl md:text-5xl font-display font-light mb-6">OUR COMMITMENT</h2>
+                        <div class="w-32 h-px mx-auto mb-8" style="background-color: var(--gold-accent);"></div>
+                    </div>
+
+                    <div class="grid md:grid-cols-3 gap-12">
+                        <div class="text-center hover-lift bg-white p-8 luxury-border">
+                            <div class="w-16 h-16 mx-auto mb-6 rounded-full flex items-center justify-center" style="background-color: var(--gold-accent);">
+                                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-display font-light mb-4">Authenticity</h3>
+                            <p class="font-light opacity-80 leading-relaxed">
+                                Every specimen comes with complete geological documentation, certified provenance, and third-party authentication from leading gemological institutes.
+                            </p>
+                        </div>
+
+                        <div class="text-center hover-lift bg-white p-8 luxury-border">
+                            <div class="w-16 h-16 mx-auto mb-6 rounded-full flex items-center justify-center" style="background-color: var(--gold-accent);">
+                                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-display font-light mb-4">Ethical Sourcing</h3>
+                            <p class="font-light opacity-80 leading-relaxed">
+                                Direct partnerships with Colombian mines ensure ethical extraction practices, fair compensation, and environmental responsibility throughout our supply chain.
+                            </p>
+                        </div>
+
+                        <div class="text-center hover-lift bg-white p-8 luxury-border">
+                            <div class="w-16 h-16 mx-auto mb-6 rounded-full flex items-center justify-center" style="background-color: var(--gold-accent);">
+                                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-display font-light mb-4">Innovation</h3>
+                            <p class="font-light opacity-80 leading-relaxed">
+                                Combining traditional geological expertise with modern data analysis and digital technology to provide unprecedented transparency and investment insight.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="py-20 luxury-gradient">
+            <div class="container mx-auto px-8 text-center">
+                <div class="animated-section opacity-0 translate-y-20 transition-all duration-1000">
+                    <h2 class="text-4xl md:text-5xl font-display font-light text-white mb-6">DISCOVER OUR COLLECTION</h2>
+                    <p class="max-w-3xl mx-auto text-white/90 mb-10 text-lg font-light leading-relaxed">
+                        Experience seven decades of emerald expertise through our carefully curated collection of investment-grade Colombian specimens.
+                    </p>
+                    <div class="flex flex-col md:flex-row items-center justify-center gap-6">
+                        <a href="collection.html" class="inline-flex items-center bg-white text-black px-12 py-4 text-sm tracking-[0.15em] font-medium hover:bg-opacity-90 transition-all duration-300">
+                            SHOP EMERALDS
+                            <svg class="ml-3 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                            </svg>
+                        </a>
+                        <a href="contact.html" class="text-white/90 hover:text-white text-sm tracking-[0.15em] font-light transition-all duration-300 underline underline-offset-4">
+                            SCHEDULE CONSULTATION
+                        </a>
                     </div>
                 </div>
             </div>
         </section>
     </main>
-    
-    <footer class="bg-white text-stone-600 border-t border-stone-200 subtle-shadow">
-        <div class="container mx-auto px-6 py-20">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center md:text-left">
-                <div class="md:col-span-1">
-                    <h3 class="text-lg font-serif text-stone-800 tracking-widest mb-6 font-medium">CANADIAN EMERALDS</h3>
-                    <p class="text-sm font-light leading-relaxed">123 Luxury Row SW<br/>Calgary, AB T2P 2L7</p>
+
+    <!-- Footer -->
+    <footer class="py-20" style="background-color: var(--emerald-deep); color: white;">
+        <div class="container mx-auto px-8">
+            <div class="grid md:grid-cols-4 gap-12">
+                <div class="md:col-span-2">
+                    <div class="font-display text-2xl tracking-[0.2em] mb-4 font-light">
+                        COLOMBIAEMERLDS.CA
+                    </div>
+                    <div class="text-sm text-white/60 mb-6 font-light">Est. 1952 • Calgary, Alberta</div>
+                    <p class="text-white/80 font-light leading-relaxed">
+                        Where geological rarity meets generational mastery. Three generations of emerald expertise, bringing the world's finest Colombian specimens to discerning collectors.
+                    </p>
                 </div>
-                <div class="md:col-span-2 grid grid-cols-2 md:grid-cols-3 gap-10">
-                    <div>
-                        <h3 class="text-base font-semibold text-stone-800 tracking-wider mb-6">Explore</h3>
-                        <ul class="space-y-4 text-sm">
-                            <li><a href="collection.html" class="hover:text-stone-900 transition-all duration-200 font-light">Private Atelier</a></li>
-                            <li><a href="about.html" class="hover:text-stone-900 transition-all duration-200 font-light">Heritage</a></li>
-                            <li><a href="bespoke.html" class="hover:text-stone-900 transition-all duration-200 font-light">Bespoke</a></li>
-                            <li><a href="#" class="hover:text-stone-900 transition-all duration-200 font-light">Investment Guide</a></li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h3 class="text-base font-semibold text-stone-800 tracking-wider mb-6">Connect</h3>
-                        <ul class="space-y-4 text-sm">
-                            <li><a href="#" class="hover:text-stone-900 transition-all duration-200 font-light">Instagram</a></li>
-                            <li><a href="#" class="hover:text-stone-900 transition-all duration-200 font-light">Pinterest</a></li>
-                            <li><a href="contact.html" class="hover:text-stone-900 transition-all duration-200 font-light">Private Consultations</a></li>
-                        </ul>
-                    </div>
-                    <div>
-                         <h3 class="text-base font-semibold text-stone-800 tracking-wider mb-6">Services</h3>
-                        <ul class="space-y-4 text-sm">
-                            <li><a href="#" class="hover:text-stone-900 transition-all duration-200 font-light">Appraisal Services</a></li>
-                            <li><a href="#" class="hover:text-stone-900 transition-all duration-200 font-light">Insurance Documentation</a></li>
-                            <li><a href="#" class="hover:text-stone-900 transition-all duration-200 font-light">Care & Maintenance</a></li>
-                        </ul>
-                    </div>
+                <div>
+                    <h4 class="text-sm tracking-[0.15em] mb-6 font-medium">SHOP</h4>
+                    <ul class="space-y-3 text-sm text-white/70 font-light">
+                        <li><a href="collection.html" class="hover:text-white transition-colors">All Emeralds</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Investment Grade</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Museum Quality</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Raw Specimens</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-sm tracking-[0.15em] mb-6 font-medium">SERVICES</h4>
+                    <ul class="space-y-3 text-sm text-white/70 font-light">
+                        <li><a href="contact.html" class="hover:text-white transition-colors">Private Consultations</a></li>
+                        <li><a href="bespoke.html" class="hover:text-white transition-colors">Custom Design</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Investment Analysis</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Certification</a></li>
+                    </ul>
                 </div>
             </div>
-            <div class="mt-20 border-t border-stone-200 pt-10 text-center text-xs text-stone-400">
-                <p class="font-light">&copy; <span id="current-year"></span> Canadian Emeralds. A Canadian Jeweller.</p>
+            <div class="border-t border-white/20 mt-16 pt-8 text-center">
+                <p class="text-white/50 text-sm font-light">© 2025 COLOMBIAEMERLDS.CA. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const menuToggle = document.getElementById('menu-toggle');
-            const mobileMenu = document.getElementById('mobile-menu');
-            const menuIconOpen = document.getElementById('menu-icon-open');
-            const menuIconClose = document.getElementById('menu-icon-close');
-            const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
-            const contactForm = document.getElementById('contact-form');
-            const formContainer = document.getElementById('form-container');
-            const successMessage = document.getElementById('form-success-message');
-            
-            const toggleMenu = () => {
-                mobileMenu.classList.toggle('hidden');
-                menuIconOpen.classList.toggle('hidden');
-                menuIconClose.classList.toggle('hidden');
-            };
-            
-            if(menuToggle){
-                menuToggle.addEventListener('click', toggleMenu);
-            }
-            mobileNavLinks.forEach(link => {
-                link.addEventListener('click', toggleMenu);
-            });
-
-            // Form submission handler
-            if(contactForm) {
-                contactForm.addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    
-                    // Simulate form submission
-                    setTimeout(() => {
-                        formContainer.classList.add('hidden');
-                        successMessage.classList.remove('hidden');
-                    }, 500);
+            // Animated sections on scroll
+            const animatedSections = document.querySelectorAll('.animated-section');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in-up');
+                        observer.unobserve(entry.target);
+                    }
                 });
-            }
-
-            document.getElementById('current-year').textContent = new Date().getFullYear();
+            }, { threshold: 0.1 });
+            
+            animatedSections.forEach(section => observer.observe(section));
         });
     </script>
 </body>
