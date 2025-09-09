@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Collection - Calgary Emeralds</title>
+    <title>Our Collection - Canadian Emeralds</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body {
@@ -19,44 +19,38 @@
 </head>
 <body class="bg-stone-50 font-sans text-stone-800 antialiased">
 
-    <!-- Header -->
     <header id="header" class="sticky top-0 z-50 transition-all duration-300 bg-stone-50/80 backdrop-blur-sm border-b border-stone-200">
         <div class="container mx-auto px-6 py-5 flex justify-between items-center">
             <a href="index.html" class="text-xl font-serif tracking-widest uppercase text-stone-800">
-                Calgary Emeralds
+                Canadian Emeralds
             </a>
             <nav class="hidden md:flex items-center space-x-10">
                 <a href="collection.html" class="text-sm uppercase tracking-wider text-stone-900 font-semibold">Collection</a>
-                <a href="index.html#about" class="text-sm uppercase tracking-wider text-stone-600 hover:text-stone-900 transition-colors">Our Story</a>
-                <a href="index.html#bespoke" class="text-sm uppercase tracking-wider text-stone-600 hover:text-stone-900 transition-colors">Bespoke</a>
-                <a href="index.html#contact" class="text-sm uppercase tracking-wider text-stone-600 hover:text-stone-900 transition-colors">Contact</a>
+                <a href="about.html" class="text-sm uppercase tracking-wider text-stone-600 hover:text-stone-900 transition-colors">Our Story</a>
+                <a href="bespoke.html" class="text-sm uppercase tracking-wider text-stone-600 hover:text-stone-900 transition-colors">Bespoke</a>
+                <a href="contact.html" class="text-sm uppercase tracking-wider text-stone-600 hover:text-stone-900 transition-colors">Contact</a>
             </nav>
             <div class="flex items-center space-x-6">
                 <button class="text-stone-600 hover:text-stone-900 transition-colors">
-                    <!-- ShoppingBag Icon -->
                     <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
                 </button>
                 <button id="menu-toggle" class="md:hidden text-stone-800">
-                    <!-- Menu Icon -->
                     <svg id="menu-icon-open" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-                    <!-- X Icon (hidden by default) -->
                     <svg id="menu-icon-close" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hidden"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
                 </button>
             </div>
         </div>
-        <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden bg-stone-50 border-t border-stone-200">
             <nav class="flex flex-col">
                 <a href="collection.html" class="mobile-nav-link py-4 px-6 text-center uppercase tracking-wider text-stone-600 hover:bg-stone-100 transition-colors">Collection</a>
-                <a href="index.html#about" class="mobile-nav-link py-4 px-6 text-center uppercase tracking-wider text-stone-600 hover:bg-stone-100 transition-colors">Our Story</a>
-                <a href="index.html#bespoke" class="mobile-nav-link py-4 px-6 text-center uppercase tracking-wider text-stone-600 hover:bg-stone-100 transition-colors">Bespoke</a>
-                <a href="index.html#contact" class="mobile-nav-link py-4 px-6 text-center uppercase tracking-wider text-stone-600 hover:bg-stone-100 transition-colors">Contact</a>
+                <a href="about.html" class="mobile-nav-link py-4 px-6 text-center uppercase tracking-wider text-stone-600 hover:bg-stone-100 transition-colors">Our Story</a>
+                <a href="bespoke.html" class="mobile-nav-link py-4 px-6 text-center uppercase tracking-wider text-stone-600 hover:bg-stone-100 transition-colors">Bespoke</a>
+                <a href="contact.html" class="mobile-nav-link py-4 px-6 text-center uppercase tracking-wider text-stone-600 hover:bg-stone-100 transition-colors">Contact</a>
             </nav>
         </div>
     </header>
 
     <main>
-        <!-- Collection Section -->
         <section id="shop" class="py-24 md:py-32 bg-white">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-16">
@@ -65,12 +59,10 @@
                     <div class="w-24 h-px bg-emerald-700 mx-auto mt-6"></div>
                 </div>
 
-                <!-- Product Grid -->
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
-                    <!-- Product 1 -->
                     <div class="group">
-                        <div class="overflow-hidden bg-stone-100">
-                            <img src="https://placehold.co/800x1000/F0F0E0/333333?text=The+Moraine+Ring" alt="The Moraine Ring with a large pear-cut emerald" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500" />
+                        <div class="overflow-hidden bg-stone-100 aspect-[4/5]">
+                            <img src="https://images.unsplash.com/photo-1614631323573-3d1326553255?q=80&w=1974&auto=format&fit=crop" alt="The Moraine Ring with a large pear-cut emerald" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                         </div>
                         <div class="pt-5 text-center">
                             <h3 class="text-lg font-serif text-stone-800 mb-1">The Moraine Ring</h3>
@@ -78,10 +70,9 @@
                             <a href="#" class="text-emerald-800 font-semibold text-sm tracking-wider">View Details</a>
                         </div>
                     </div>
-                    <!-- Product 2 -->
                     <div class="group">
-                        <div class="overflow-hidden bg-stone-100">
-                            <img src="https://placehold.co/800x1000/F0F0E0/333333?text=The+Rundle+Necklace" alt="The Rundle Necklace with a round-cut emerald" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500" />
+                        <div class="overflow-hidden bg-stone-100 aspect-[4/5]">
+                            <img src="https://images.unsplash.com/photo-1614631323313-21fac3f7528e?q=80&w=1974&auto=format&fit=crop" alt="The Rundle Necklace with a round-cut emerald" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                         </div>
                         <div class="pt-5 text-center">
                             <h3 class="text-lg font-serif text-stone-800 mb-1">The Rundle Necklace</h3>
@@ -89,10 +80,9 @@
                             <a href="#" class="text-emerald-800 font-semibold text-sm tracking-wider">View Details</a>
                         </div>
                     </div>
-                    <!-- Product 3 -->
                     <div class="group">
-                        <div class="overflow-hidden bg-stone-100">
-                            <img src="https://placehold.co/800x1000/F0F0E0/333333?text=The+Cascade+Earrings" alt="The Cascade Earrings" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500" />
+                        <div class="overflow-hidden bg-stone-100 aspect-[4/5]">
+                            <img src="https://images.unsplash.com/photo-1614631323287-c10b45877caf?q=80&w=1974&auto=format&fit=crop" alt="The Cascade Earrings" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                         </div>
                         <div class="pt-5 text-center">
                             <h3 class="text-lg font-serif text-stone-800 mb-1">The Cascade Earrings</h3>
@@ -100,10 +90,9 @@
                             <a href="#" class="text-emerald-800 font-semibold text-sm tracking-wider">View Details</a>
                         </div>
                     </div>
-                    <!-- Product 4 -->
                     <div class="group">
-                        <div class="overflow-hidden bg-stone-100">
-                            <img src="https://placehold.co/800x1000/F0F0E0/333333?text=The+Solitude+Pendant" alt="The Solitude Pendant" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500" />
+                        <div class="overflow-hidden bg-stone-100 aspect-[4/5]">
+                            <img src="https://images.unsplash.com/photo-1614631323428-f8e9a65b9f7a?q=80&w=1974&auto=format&fit=crop" alt="The Solitude Pendant" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                         </div>
                         <div class="pt-5 text-center">
                             <h3 class="text-lg font-serif text-stone-800 mb-1">The Solitude Pendant</h3>
@@ -111,10 +100,9 @@
                             <a href="#" class="text-emerald-800 font-semibold text-sm tracking-wider">View Details</a>
                         </div>
                     </div>
-                    <!-- Product 5 -->
                     <div class="group">
-                        <div class="overflow-hidden bg-stone-100">
-                            <img src="https://placehold.co/800x1000/F0F0E0/333333?text=The+Glacier+Bracelet" alt="The Glacier Bracelet" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500" />
+                        <div class="overflow-hidden bg-stone-100 aspect-[4/5]">
+                            <img src="https://images.unsplash.com/photo-1598715685264-c684534927f9?q=80&w=1964&auto=format&fit=crop" alt="The Glacier Bracelet" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                         </div>
                         <div class="pt-5 text-center">
                             <h3 class="text-lg font-serif text-stone-800 mb-1">The Glacier Bracelet</h3>
@@ -122,10 +110,9 @@
                             <a href="#" class="text-emerald-800 font-semibold text-sm tracking-wider">View Details</a>
                         </div>
                     </div>
-                    <!-- Product 6 -->
                     <div class="group">
-                        <div class="overflow-hidden bg-stone-100">
-                            <img src="https://placehold.co/800x1000/F0F0E0/333333?text=The+Aurora+Studs" alt="The Aurora Studs" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500" />
+                        <div class="overflow-hidden bg-stone-100 aspect-[4/5]">
+                            <img src="https://images.unsplash.com/photo-1614631323363-263a2173f443?q=80&w=1974&auto=format&fit=crop" alt="The Aurora Studs" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                         </div>
                         <div class="pt-5 text-center">
                             <h3 class="text-lg font-serif text-stone-800 mb-1">The Aurora Studs</h3>
@@ -138,60 +125,44 @@
         </section>
     </main>
     
-    <!-- Footer -->
     <footer id="contact" class="bg-white text-stone-600 border-t border-stone-200">
         <div class="container mx-auto px-6 py-16">
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
-                <div class="lg:col-span-1">
-                     <h3 class="text-base font-semibold text-stone-800 tracking-wider mb-4">INQUIRE</h3>
-                     <div id="form-container">
-                         <form id="contact-form" class="space-y-4">
-                            <div>
-                                <label for="email" class="sr-only">Email</label>
-                                <input type="email" id="email" name="email" placeholder="Your Email" required class="w-full bg-stone-50 border border-stone-200 px-4 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-emerald-700 transition-colors"/>
-                            </div>
-                            <div>
-                                <label for="message" class="sr-only">Message</label>
-                                <textarea id="message" name="message" rows="4" placeholder="Your Message" required class="w-full bg-stone-50 border border-stone-200 px-4 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-emerald-700 transition-colors"></textarea>
-                            </div>
-                            <button type="submit" class="w-full bg-stone-800 text-white py-3 text-sm font-semibold tracking-wider uppercase hover:bg-emerald-700 transition-colors">
-                                Send Inquiry
-                            </button>
-                         </form>
-                     </div>
-                     <div id="form-success-message" class="hidden">
-                        <p class="text-emerald-700 h-full flex items-center">Thank you for your message. We will be in touch shortly.</p>
-                     </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 text-center md:text-left">
+                <div class="md:col-span-1">
+                    <h3 class="text-lg font-serif text-stone-800 tracking-widest mb-4">CANADIAN EMERALDS</h3>
+                    <p class="text-sm">123 Luxury Row SW<br/>Calgary, AB T2P 2L7</p>
                 </div>
-
-                <div class="lg:col-span-2 grid grid-cols-2 md:grid-cols-3 gap-8">
+                <div class="md:col-span-2 grid grid-cols-2 md:grid-cols-3 gap-8">
                     <div>
-                        <h3 class="text-base font-semibold text-stone-800 tracking-wider mb-4">EXPLORE</h3>
+                        <h3 class="text-base font-semibold text-stone-800 tracking-wider mb-4">Explore</h3>
                         <ul class="space-y-3 text-sm">
                             <li><a href="collection.html" class="hover:text-stone-900 transition-colors">Collection</a></li>
-                            <li><a href="index.html#about" class="hover:text-stone-900 transition-colors">Our Story</a></li>
-                            <li><a href="index.html#bespoke" class="hover:text-stone-900 transition-colors">Bespoke</a></li>
+                            <li><a href="about.html" class="hover:text-stone-900 transition-colors">Our Story</a></li>
+                            <li><a href="bespoke.html" class="hover:text-stone-900 transition-colors">Bespoke</a></li>
                             <li><a href="#" class="hover:text-stone-900 transition-colors">Journal</a></li>
                         </ul>
                     </div>
                     <div>
-                        <h3 class="text-base font-semibold text-stone-800 tracking-wider mb-4">CONNECT</h3>
+                        <h3 class="text-base font-semibold text-stone-800 tracking-wider mb-4">Connect</h3>
                         <ul class="space-y-3 text-sm">
                             <li><a href="#" class="hover:text-stone-900 transition-colors">Instagram</a></li>
                             <li><a href="#" class="hover:text-stone-900 transition-colors">Pinterest</a></li>
-                            <li><a href="#" class="hover:text-stone-900 transition-colors">Contact Us</a></li>
+                            <li><a href="contact.html" class="hover:text-stone-900 transition-colors">Contact Us</a></li>
                         </ul>
                     </div>
                     <div>
-                         <h3 class="text-base font-semibold text-stone-800 tracking-wider mb-4">VISIT US</h3>
-                         <p class="text-sm">123 Luxury Row SW<br/>Calgary, AB T2P 2L7</p>
+                         <h3 class="text-base font-semibold text-stone-800 tracking-wider mb-4">Legal</h3>
+                        <ul class="space-y-3 text-sm">
+                            <li><a href="#" class="hover:text-stone-900 transition-colors">Privacy Policy</a></li>
+                            <li><a href="#" class="hover:text-stone-900 transition-colors">Terms of Service</a></li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
         <div class="border-t border-stone-200">
             <div class="container mx-auto px-6 py-8 text-center text-xs text-stone-400">
-                 <p>&copy; <span id="current-year"></span> Calgary Emeralds. A Canadian Jeweller.</p>
+                 <p>&copy; <span id="current-year"></span> Canadian Emeralds. A Canadian Jeweller.</p>
             </div>
         </div>
     </footer>
@@ -211,29 +182,12 @@
                 menuIconClose.classList.toggle('hidden');
             };
             
-            menuToggle.addEventListener('click', toggleMenu);
+            if(menuToggle) {
+                menuToggle.addEventListener('click', toggleMenu);
+            }
             mobileNavLinks.forEach(link => {
                 link.addEventListener('click', toggleMenu);
             });
-
-            // --- Footer Form Submission ---
-            const contactForm = document.getElementById('contact-form');
-            const formContainer = document.getElementById('form-container');
-            const successMessage = document.getElementById('form-success-message');
-
-            if(contactForm) {
-                contactForm.addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    formContainer.classList.add('hidden');
-                    successMessage.classList.remove('hidden');
-
-                    setTimeout(() => {
-                        successMessage.classList.add('hidden');
-                        formContainer.classList.remove('hidden');
-                        contactForm.reset();
-                    }, 4000);
-                });
-            }
 
             // --- Dynamic Year in Footer ---
             document.getElementById('current-year').textContent = new Date().getFullYear();
@@ -241,4 +195,3 @@
     </script>
 </body>
 </html>
-
