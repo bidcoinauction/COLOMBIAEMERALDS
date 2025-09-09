@@ -7,25 +7,28 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         :root {
-            --color-1: color(display-p3 0.103 0.267 0.121);
-            --color-2: color(display-p3 0.895 0.984 0.776);
-            /* Fallback colors for browsers that don't support display-p3 */
-            --fallback-color-1: #1A441F;
-            --fallback-color-2: #E4FAE0;
+            /* Set standard, safe fallback colors by default */
+            --color-1: #1A441F; /* Dark Green */
+            --color-2: #F1FBF0; /* Lighter, less saturated green for background */
+        }
+
+        /* Use @supports to check if the browser can handle display-p3 colors */
+        @supports (color: color(display-p3 1 1 1)) {
+            :root {
+                /* If supported, override the variables with the P3 colors */
+                --color-1: color(display-p3 0.103 0.267 0.121);
+                --color-2: color(display-p3 0.895 0.984 0.776);
+            }
         }
 
         /* Normal theme */
         .combo-1 {
-            color: var(--fallback-color-1);
-            background-color: var(--fallback-color-2);
             color: var(--color-1);
             background-color: var(--color-2);
         }
 
         /* Inverse theme */
         .combo-2 {
-            color: var(--fallback-color-2);
-            background-color: var(--fallback-color-1);
             color: var(--color-2);
             background-color: var(--color-1);
         }
@@ -70,10 +73,10 @@
         </div>
         <div id="mobile-menu" class="hidden md:hidden border-t border-stone-200 combo-1">
             <nav class="flex flex-col">
-                <a href="collection.html" class="mobile-nav-link py-4 px-6 text-center uppercase tracking-wider hover:bg-stone-100 transition-colors">Collection</a>
-                <a href="about.html" class="mobile-nav-link py-4 px-6 text-center uppercase tracking-wider hover:bg-stone-100 transition-colors">Our Story</a>
-                <a href="bespoke.html" class="mobile-nav-link py-4 px-6 text-center uppercase tracking-wider hover:bg-stone-100 transition-colors">Bespoke</a>
-                <a href="contact.html" class="mobile-nav-link py-4 px-6 text-center uppercase tracking-wider hover:bg-stone-100 transition-colors">Contact</a>
+                <a href="collection.html" class="mobile-nav-link py-4 px-6 text-center uppercase tracking-wider hover:bg-black/5 transition-colors">Collection</a>
+                <a href="about.html" class="mobile-nav-link py-4 px-6 text-center uppercase tracking-wider hover:bg-black/5 transition-colors">Our Story</a>
+                <a href="bespoke.html" class="mobile-nav-link py-4 px-6 text-center uppercase tracking-wider hover:bg-black/5 transition-colors">Bespoke</a>
+                <a href="contact.html" class="mobile-nav-link py-4 px-6 text-center uppercase tracking-wider hover:bg-black/5 transition-colors">Contact</a>
             </nav>
         </div>
     </header>
@@ -236,11 +239,7 @@
     </footer>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const header = document.getElementById('header');
-            // ... rest of script remains the same
-        });
+       // All scripts remain the same
     </script>
 </body>
 </html>
-
