@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calgary Emeralds - Luxury Canadian Jewellers</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+        .fade-in-up {
+            opacity: 1 !important;
+            transform: translateY(0) !important;
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-stone-50 font-sans text-stone-800 antialiased">
+
+    <!-- Header -->
+    <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+        <div class="container mx-auto px-6 py-5 flex justify-between items-center">
+            <a href="index.html" class="text-xl font-serif tracking-widest uppercase text-white [text-shadow:0_1px_2px_rgba(0,0,0,0.6)]">
+                Calgary Emeralds
+            </a>
+            <nav class="hidden md:flex items-center space-x-10">
+                <a href="collection.html" class="text-sm uppercase tracking-wider text-stone-200 hover:text-white transition-colors [text-shadow:0_1px_2px_rgba(0,0,0,0.6)]">Collection</a>
+                <a href="about.html" class="text-sm uppercase tracking-wider text-stone-200 hover:text-white transition-colors [text-shadow:0_1px_2px_rgba(0,0,0,0.6)]">Our Story</a>
+                <a href="bespoke.html" class="text-sm uppercase tracking-wider text-stone-200 hover:text-white transition-colors [text-shadow:0_1px_2px_rgba(0,0,0,0.6)]">Bespoke</a>
+                <a href="contact.html" class="text-sm uppercase tracking-wider text-stone-200 hover:text-white transition-colors [text-shadow:0_1px_2px_rgba(0,0,0,0.6)]">Contact</a>
+            </nav>
+            <div class="flex items-center space-x-6">
+                <button class="text-stone-200 hover:text-white transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+                </button>
+                <button id="menu-toggle" class="md:hidden text-white">
+                    <svg id="menu-icon-open" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+                    <svg id="menu-icon-close" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hidden"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-stone-50 border-t border-stone-200">
+            <nav class="flex flex-col">
+                <a href="collection.html" class="mobile-nav-link py-4 px-6 text-center uppercase tracking-wider text-stone-600 hover:bg-stone-100 transition-colors">Collection</a>
+                <a href="about.html" class="mobile-nav-link py-4 px-6 text-center uppercase tracking-wider text-stone-600 hover:bg-stone-100 transition-colors">Our Story</a>
+                <a href="bespoke.html" class="mobile-nav-link py-4 px-6 text-center uppercase tracking-wider text-stone-600 hover:bg-stone-100 transition-colors">Bespoke</a>
+                <a href="contact.html" class="mobile-nav-link py-4 px-6 text-center uppercase tracking-wider text-stone-600 hover:bg-stone-100 transition-colors">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="relative h-screen bg-cover bg-center flex items-end" style="background-image: url('https://updatedcardscript.standard.us-east-1.oortstorages.com/Emrald_gemstone-1-800x800.webp')">
+            <div class="absolute inset-0 bg-black/30"></div>
+            <div class="relative container mx-auto px-6 pb-20 md:pb-32">
+                <div class="max-w-lg animated-section opacity-0 translate-y-10 transition-all duration-1000">
+                    <h1 class="text-4xl md:text-6xl font-serif text-white mb-6 leading-tight [text-shadow:0_2px_4px_rgba(0,0,0,0.5)]">Where Legacy is Forged in Green</h1>
+                    <p class="text-base md:text-lg text-stone-200 max-w-md mb-8 [text-shadow:0_1px_3px_rgba(0,0,0,0.5)]">
+                        Discover unparalleled beauty in a collection of the world's finest emeralds, ethically sourced and masterfully crafted in Calgary.
+                    </p>
+                    <a href="collection.html" class="group inline-flex items-center text-white uppercase tracking-widest font-semibold text-sm [text-shadow:0_1px_3px_rgba(0,0,0,0.5)]">
+                        Explore The Collection
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-2 transition-transform group-hover:translate-x-1"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="shop" class="py-20 md:py-32 bg-stone-50">
+            <div class="container mx-auto px-6">
+                <div class="animated-section opacity-0 translate-y-10 transition-all duration-1000">
+                    <div class="text-left mb-12">
+                        <h2 class="text-3xl md:text-4xl font-serif text-stone-900 mb-3">Signature Collection</h2>
+                        <div class="w-24 h-px bg-emerald-700"></div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
+                        <div class="group">
+                            <div class="overflow-hidden bg-stone-100">
+                                <img src="https://placehold.co/800x1000/F0F0E0/333333?text=The+Moraine+Ring" alt="The Moraine Ring" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500" />
+                            </div>
+                            <div class="pt-5">
+                                <h3 class="text-lg font-serif text-stone-800 mb-1">The Moraine Ring</h3>
+                                <p class="text-stone-500 text-sm mb-3">A breathtaking 5-carat pear-cut Canadian emerald, cradled in a platinum band.</p>
+                                <a href="collection.html" class="text-emerald-800 font-semibold text-sm tracking-wider">View Details</a>
+                            </div>
+                        </div>
+                        <div class="group">
+                            <div class="overflow-hidden bg-stone-100">
+                                <img src="https://placehold.co/800x1000/F0F0E0/333333?text=The+Rundle+Necklace" alt="The Rundle Necklace" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500" />
+                            </div>
+                            <div class="pt-5">
+                                <h3 class="text-lg font-serif text-stone-800 mb-1">The Rundle Necklace</h3>
+                                <p class="text-stone-500 text-sm mb-3">An exquisite pendant featuring a vibrant, round-cut emerald in 18k gold.</p>
+                                <a href="collection.html" class="text-emerald-800 font-semibold text-sm tracking-wider">View Details</a>
+                            </div>
+                        </div>
+                        <div class="group">
+                            <div class="overflow-hidden bg-stone-100">
+                                <img src="https://placehold.co/800x1000/F0F0E0/333333?text=The+Cascade+Earrings" alt="The Cascade Earrings" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500" />
+                            </div>
+                            <div class="pt-5">
+                                <h3 class="text-lg font-serif text-stone-800 mb-1">The Cascade Earrings</h3>
+                                <p class="text-stone-500 text-sm mb-3">Elegant drop earrings showcasing a cascade of brilliant-cut emeralds.</p>
+                                <a href="collection.html" class="text-emerald-800 font-semibold text-sm tracking-wider">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="py-20 md:py-32 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="animated-section opacity-0 translate-y-10 transition-all duration-1000">
+                    <div class="grid md:grid-cols-2 gap-12 items-center">
+                        <div class="md:pr-12">
+                            <h2 class="text-3xl md:text-4xl font-serif text-stone-900 mb-4">Calgary's Heart, Canada's Soul</h2>
+                            <div class="w-24 h-px bg-emerald-700 mb-6"></div>
+                            <div class="space-y-4 text-stone-600 leading-relaxed">
+                                <p>At Calgary Emeralds, we celebrate the raw, untamed beauty of Canadian gemstones. Each emerald is a testament to our nation's geological wonders, ethically sourced and selected for its exceptional colour and clarity.</p>
+                                <p>Our master jewellers in Calgary transform these natural treasures into timeless heirlooms.</p>
+                                <a href="about.html" class="text-emerald-800 font-semibold text-sm tracking-wider inline-block mt-2">Read Our Full Story</a>
+                            </div>
+                        </div>
+                        <div>
+                            <img src="https://placehold.co/800x900/111111/FFFFFF?text=Atelier" alt="Craftsman working on a jewelry piece" class=""/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20 md:py-32 bg-stone-800 text-stone-100">
+            <div class="container mx-auto px-6 text-center">
+                <div class="animated-section opacity-0 translate-y-10 transition-all duration-1000">
+                    <h2 class="text-3xl md:text-4xl font-serif mb-4">Bespoke Creations</h2>
+                    <p class="max-w-2xl mx-auto text-stone-300 mb-8">Your story is unique. Your jewelry should be too. Collaborate with our designers to bring your vision to life, crafting a one-of-a-kind piece that is exclusively yours.</p>
+                    <a href="bespoke.html" class="group inline-flex items-center text-white uppercase tracking-widest font-semibold text-sm border border-stone-500 px-8 py-3 hover:bg-white hover:text-stone-900 transition-colors">
+                        Discover The Process
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20 md:py-32 bg-stone-50">
+            <div class="container mx-auto px-6 text-center">
+                <div class="animated-section opacity-0 translate-y-10 transition-all duration-1000">
+                    <h2 class="text-3xl md:text-4xl font-serif text-stone-900 mb-3">Words of Esteem</h2>
+                    <div class="w-24 h-px bg-emerald-700 mx-auto mb-12"></div>
+                    <div class="relative h-40">
+                         <div class="testimonial-item absolute inset-0 transition-opacity duration-1000 ease-in-out opacity-100">
+                            <p class="text-xl md:text-2xl font-serif text-stone-700 mb-4">"The bespoke ring created for our anniversary is beyond anything I could have imagined. A true work of art."</p>
+                            <p class="text-sm uppercase tracking-wider text-stone-500">- Eleanor Vance</p>
+                        </div>
+                        <div class="testimonial-item absolute inset-0 transition-opacity duration-1000 ease-in-out opacity-0">
+                            <p class="text-xl md:text-2xl font-serif text-stone-700 mb-4">"From the initial consultation to the final reveal, the process was seamless and deeply personal."</p>
+                            <p class="text-sm uppercase tracking-wider text-stone-500">- James McGregor</p>
+                        </div>
+                        <div class="testimonial-item absolute inset-0 transition-opacity duration-1000 ease-in-out opacity-0">
+                            <p class="text-xl md:text-2xl font-serif text-stone-700 mb-4">"My emerald necklace is a statement of elegance and craftsmanship. I receive compliments every time I wear it."</p>
+                            <p class="text-sm uppercase tracking-wider text-stone-500">- Sophia Chen</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer class="bg-white text-stone-600 border-t border-stone-200">
+        <div class="container mx-auto px-6 py-16">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 text-center md:text-left">
+                <div class="md:col-span-1">
+                    <h3 class="text-lg font-serif text-stone-800 tracking-widest mb-4">CALGARY EMERALDS</h3>
+                    <p class="text-sm">123 Luxury Row SW<br/>Calgary, AB T2P 2L7</p>
+                </div>
+                <div class="md:col-span-2 grid grid-cols-2 md:grid-cols-3 gap-8">
+                    <div>
+                        <h3 class="text-base font-semibold text-stone-800 tracking-wider mb-4">Explore</h3>
+                        <ul class="space-y-3 text-sm">
+                            <li><a href="collection.html" class="hover:text-stone-900 transition-colors">Collection</a></li>
+                            <li><a href="about.html" class="hover:text-stone-900 transition-colors">Our Story</a></li>
+                            <li><a href="bespoke.html" class="hover:text-stone-900 transition-colors">Bespoke</a></li>
+                            <li><a href="#" class="hover:text-stone-900 transition-colors">Journal</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-base font-semibold text-stone-800 tracking-wider mb-4">Connect</h3>
+                        <ul class="space-y-3 text-sm">
+                            <li><a href="#" class="hover:text-stone-900 transition-colors">Instagram</a></li>
+                            <li><a href="#" class="hover:text-stone-900 transition-colors">Pinterest</a></li>
+                            <li><a href="contact.html" class="hover:text-stone-900 transition-colors">Contact Us</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                         <h3 class="text-base font-semibold text-stone-800 tracking-wider mb-4">Legal</h3>
+                        <ul class="space-y-3 text-sm">
+                            <li><a href="#" class="hover:text-stone-900 transition-colors">Privacy Policy</a></li>
+                            <li><a href="#" class="hover:text-stone-900 transition-colors">Terms of Service</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-16 border-t border-stone-200 pt-8 text-center text-xs text-stone-400">
+                <p>&copy; <span id="current-year"></span> Calgary Emeralds. A Canadian Jeweller.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const header = document.getElementById('header');
+            const headerLogo = header.querySelector('a.uppercase');
+            const headerNavLinks = header.querySelectorAll('nav.hidden a');
+            const headerButtons = header.querySelectorAll('div.flex > button');
+
+            window.addEventListener('scroll', () => {
+                const isScrolled = window.scrollY > 10;
+                header.classList.toggle('bg-stone-50/80', isScrolled);
+                header.classList.toggle('backdrop-blur-sm', isScrolled);
+                header.classList.toggle('border-b', isScrolled);
+                header.classList.toggle('border-stone-200', isScrolled);
+                headerLogo.classList.toggle('text-white', !isScrolled);
+                headerLogo.classList.toggle('[text-shadow:0_1px_2px_rgba(0,0,0,0.6)]', !isScrolled);
+                headerLogo.classList.toggle('text-stone-800', isScrolled);
+
+                headerNavLinks.forEach(link => {
+                    link.classList.toggle('text-stone-200', !isScrolled);
+                    link.classList.toggle('hover:text-white', !isScrolled);
+                    link.classList.toggle('[text-shadow:0_1px_2px_rgba(0,0,0,0.6)]', !isScrolled);
+                    link.classList.toggle('text-stone-600', isScrolled);
+                    link.classList.toggle('hover:text-stone-900', isScrolled);
+                });
+                
+                headerButtons.forEach(button => {
+                    button.classList.toggle('text-white', !isScrolled);
+                    button.classList.toggle('text-stone-800', isScrolled);
+                    button.querySelector('svg').classList.toggle('text-stone-200', !isScrolled);
+                    button.querySelector('svg').classList.toggle('text-stone-600', isScrolled);
+                });
+            });
+
+            const menuToggle = document.getElementById('menu-toggle');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuIconOpen = document.getElementById('menu-icon-open');
+            const menuIconClose = document.getElementById('menu-icon-close');
+            if(menuToggle) {
+                menuToggle.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                    menuIconOpen.classList.toggle('hidden');
+                    menuIconClose.classList.toggle('hidden');
+                });
+            }
+
+            const animatedSections = document.querySelectorAll('.animated-section');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in-up');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+            animatedSections.forEach(section => observer.observe(section));
+            
+            const testimonials = document.querySelectorAll('.testimonial-item');
+            if (testimonials.length > 0) {
+                let currentTestimonialIndex = 0;
+                setInterval(() => {
+                    testimonials[currentTestimonialIndex].classList.remove('opacity-100');
+                    testimonials[currentTestimonialIndex].classList.add('opacity-0');
+                    currentTestimonialIndex = (currentTestimonialIndex + 1) % testimonials.length;
+                    testimonials[currentTestimonialIndex].classList.remove('opacity-0');
+                    testimonials[currentTestimonialIndex].classList.add('opacity-100');
+                }, 5000);
+            }
+
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+        });
+    </script>
+</body>
+</html>
+
