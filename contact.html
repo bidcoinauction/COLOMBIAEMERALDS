@@ -7,11 +7,11 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         :root {
-            --color-1: color(display-p3 0.103 0.267 0.121);
-            --color-2: color(display-p3 0.895 0.984 0.776);
+            --color-1: color(display-p3 0.135 0.351 0.129);
+            --color-2: color(display-p3 0.99 0.996 0.884);
             /* Fallback colors for browsers that don't support display-p3 */
-            --fallback-color-1: #1A441F;
-            --fallback-color-2: #E4FAE0;
+            --fallback-color-1: #225A20;
+            --fallback-color-2: #FDFEE2;
         }
 
         /* Normal theme */
@@ -36,26 +36,46 @@
         .font-serif {
             font-family: 'Playfair Display', serif;
         }
+        .subtle-shadow {
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+        .hover-lift {
+            transition: all 0.3s ease;
+        }
+        .hover-lift:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+        }
+        .luxury-border {
+            border: 1px solid rgba(34, 90, 32, 0.1);
+        }
+        .form-input {
+            transition: all 0.3s ease;
+        }
+        .form-input:focus {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 20px rgba(34, 90, 32, 0.1);
+        }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body class="bg-white font-sans text-stone-800 antialiased">
 
-    <header id="header" class="sticky top-0 z-50 transition-all duration-300 bg-white/80 backdrop-blur-sm border-b border-stone-200">
+    <header id="header" class="sticky top-0 z-50 transition-all duration-300 bg-white/90 backdrop-blur-md border-b border-stone-200 subtle-shadow">
         <div class="container mx-auto px-6 py-5 flex justify-between items-center">
-            <a href="index.html" class="text-xl font-serif tracking-widest uppercase text-stone-800">
+            <a href="index.html" class="text-xl font-serif tracking-widest uppercase text-stone-800 font-medium">
                 Canadian Emeralds
             </a>
             <nav class="hidden md:flex items-center space-x-10">
-                <a href="collection.html" class="text-sm uppercase tracking-wider text-stone-600 hover:text-stone-900 transition-colors">Collection</a>
-                <a href="about.html" class="text-sm uppercase tracking-wider text-stone-600 hover:text-stone-900 transition-colors">Our Story</a>
-                <a href="bespoke.html" class="text-sm uppercase tracking-wider text-stone-600 hover:text-stone-900 transition-colors">Bespoke</a>
-                <a href="contact.html" class="text-sm uppercase tracking-wider font-semibold" style="color: var(--color-1);">Contact</a>
+                <a href="collection.html" class="text-sm uppercase tracking-wider text-stone-600 hover:text-stone-900 transition-all duration-200 font-medium">Collection</a>
+                <a href="about.html" class="text-sm uppercase tracking-wider text-stone-600 hover:text-stone-900 transition-all duration-200 font-medium">Our Story</a>
+                <a href="bespoke.html" class="text-sm uppercase tracking-wider text-stone-600 hover:text-stone-900 transition-all duration-200 font-medium">Bespoke</a>
+                <a href="contact.html" class="text-sm uppercase tracking-wider font-semibold font-medium" style="color: var(--color-1);">Contact</a>
             </nav>
             <div class="flex items-center space-x-6">
-                <button class="text-stone-600 hover:text-stone-900 transition-colors">
+                <button class="text-stone-600 hover:text-stone-900 transition-all duration-200 hover:scale-105">
                     <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
                 </button>
                 <button id="menu-toggle" class="md:hidden text-stone-800">
@@ -64,12 +84,12 @@
                 </button>
             </div>
         </div>
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-stone-200">
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-stone-200 subtle-shadow">
             <nav class="flex flex-col">
-                <a href="collection.html" class="mobile-nav-link py-4 px-6 text-center uppercase tracking-wider text-stone-600 hover:bg-stone-100 transition-colors">Collection</a>
-                <a href="about.html" class="mobile-nav-link py-4 px-6 text-center uppercase tracking-wider text-stone-600 hover:bg-stone-100 transition-colors">Our Story</a>
-                <a href="bespoke.html" class="mobile-nav-link py-4 px-6 text-center uppercase tracking-wider text-stone-600 hover:bg-stone-100 transition-colors">Bespoke</a>
-                <a href="contact.html" class="mobile-nav-link py-4 px-6 text-center uppercase tracking-wider text-stone-600 hover:bg-stone-100 transition-colors">Contact</a>
+                <a href="collection.html" class="mobile-nav-link py-4 px-6 text-center uppercase tracking-wider text-stone-600 hover:bg-stone-100 transition-all duration-200 font-medium">Collection</a>
+                <a href="about.html" class="mobile-nav-link py-4 px-6 text-center uppercase tracking-wider text-stone-600 hover:bg-stone-100 transition-all duration-200 font-medium">Our Story</a>
+                <a href="bespoke.html" class="mobile-nav-link py-4 px-6 text-center uppercase tracking-wider text-stone-600 hover:bg-stone-100 transition-all duration-200 font-medium">Bespoke</a>
+                <a href="contact.html" class="mobile-nav-link py-4 px-6 text-center uppercase tracking-wider text-stone-600 hover:bg-stone-100 transition-all duration-200 font-medium">Contact</a>
             </nav>
         </div>
     </header>
@@ -77,54 +97,62 @@
     <main>
         <section class="py-24 md:py-32 bg-white">
             <div class="container mx-auto px-6 text-center">
-                <h1 class="text-4xl md:text-5xl font-serif text-stone-900 mb-3">Get in Touch</h1>
-                <p class="text-stone-600 max-w-2xl mx-auto">We would love to hear from you. Whether you have a question about our collection or wish to begin a bespoke journey, please reach out.</p>
-                <div class="w-24 h-px mx-auto mt-6" style="background-color: var(--color-1);"></div>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-serif text-stone-900 mb-4 font-medium">Get in Touch</h1>
+                <p class="text-stone-600 max-w-3xl mx-auto text-lg font-light leading-relaxed">We would love to hear from you. Whether you have a question about our collection or wish to begin a bespoke journey, please reach out.</p>
+                <div class="w-24 h-px mx-auto mt-8 luxury-border" style="background-color: var(--color-1);"></div>
             </div>
         </section>
 
         <section class="py-20 md:py-24 combo-1">
             <div class="container mx-auto px-6">
-                <div class="grid lg:grid-cols-2 gap-16">
-                    <div class="space-y-8 opacity-80">
-                        <div>
-                            <h2 class="text-2xl font-serif opacity-100 mb-3">Visit Our Atelier</h2>
-                            <p>123 Luxury Row SW<br>Calgary, AB T2P 2L7</p>
+                <div class="grid lg:grid-cols-2 gap-20">
+                    <div class="space-y-10 opacity-80">
+                        <div class="hover-lift p-8 subtle-shadow luxury-border bg-white/50">
+                            <h2 class="text-2xl md:text-3xl font-serif opacity-100 mb-4 font-medium">Visit Our Atelier</h2>
+                            <p class="font-light text-lg leading-relaxed">123 Luxury Row SW<br>Calgary, AB T2P 2L7</p>
                         </div>
-                        <div>
-                            <h2 class="text-2xl font-serif opacity-100 mb-3">Contact Details</h2>
-                            <p>Email: inquiries@canadianemeralds.ca</p>
-                            <p>Phone: +1 (403) 555-0123</p>
+                        <div class="hover-lift p-8 subtle-shadow luxury-border bg-white/50">
+                            <h2 class="text-2xl md:text-3xl font-serif opacity-100 mb-4 font-medium">Contact Details</h2>
+                            <p class="font-light text-lg leading-relaxed">Email: inquiries@canadianemeralds.ca</p>
+                            <p class="font-light text-lg leading-relaxed">Phone: +1 (403) 555-0123</p>
                         </div>
-                        <div>
-                            <h2 class="text-2xl font-serif opacity-100 mb-3">Hours</h2>
-                            <p>Tuesday - Saturday: 10am - 6pm</p>
-                            <p>Sunday & Monday: Closed</p>
+                        <div class="hover-lift p-8 subtle-shadow luxury-border bg-white/50">
+                            <h2 class="text-2xl md:text-3xl font-serif opacity-100 mb-4 font-medium">Hours</h2>
+                            <p class="font-light text-lg leading-relaxed">Tuesday - Saturday: 10am - 6pm</p>
+                            <p class="font-light text-lg leading-relaxed">Sunday & Monday: Closed</p>
                         </div>
                     </div>
-                    <div>
-                         <h2 class="text-2xl font-serif mb-6">Send an Inquiry</h2>
+                    <div class="hover-lift">
+                         <h2 class="text-2xl md:text-3xl font-serif mb-8 font-medium">Send an Inquiry</h2>
                          <div id="form-container">
-                             <form id="contact-form" class="space-y-4">
+                             <form id="contact-form" class="space-y-6">
                                 <div>
                                     <label for="name" class="sr-only">Name</label>
-                                    <input type="text" id="name" name="name" placeholder="Your Name" required class="w-full bg-white border-stone-200/50 px-4 py-3 text-sm focus:outline-none focus:ring-1" style="--tw-ring-color: var(--color-1);"/>
+                                    <input type="text" id="name" name="name" placeholder="Your Name" required class="w-full bg-white border luxury-border px-6 py-4 text-sm focus:outline-none focus:ring-2 form-input font-light" style="--tw-ring-color: var(--color-1);"/>
                                 </div>
                                 <div>
                                     <label for="email" class="sr-only">Email</label>
-                                    <input type="email" id="email" name="email" placeholder="Your Email" required class="w-full bg-white border-stone-200/50 px-4 py-3 text-sm focus:outline-none focus:ring-1" style="--tw-ring-color: var(--color-1);"/>
+                                    <input type="email" id="email" name="email" placeholder="Your Email" required class="w-full bg-white border luxury-border px-6 py-4 text-sm focus:outline-none focus:ring-2 form-input font-light" style="--tw-ring-color: var(--color-1);"/>
                                 </div>
                                 <div>
                                     <label for="message" class="sr-only">Message</label>
-                                    <textarea id="message" name="message" rows="5" placeholder="Your Message" required class="w-full bg-white border-stone-200/50 px-4 py-3 text-sm focus:outline-none focus:ring-1" style="--tw-ring-color: var(--color-1);"></textarea>
+                                    <textarea id="message" name="message" rows="6" placeholder="Your Message" required class="w-full bg-white border luxury-border px-6 py-4 text-sm focus:outline-none focus:ring-2 form-input font-light resize-none" style="--tw-ring-color: var(--color-1);"></textarea>
                                 </div>
-                                <button type="submit" class="w-full combo-2 text-white py-3 text-sm font-semibold tracking-wider uppercase hover:bg-opacity-90 transition-opacity">
+                                <button type="submit" class="w-full combo-2 text-white py-4 text-sm font-semibold tracking-wider uppercase hover:bg-opacity-90 transition-all duration-300 hover:scale-105 hover-lift">
                                     Send Message
                                 </button>
                              </form>
                          </div>
                          <div id="form-success-message" class="hidden">
-                            <p class="h-full flex items-center justify-center text-center p-8 bg-emerald-50 border border-emerald-200">Thank you for your message. We will be in touch shortly.</p>
+                            <div class="h-full flex items-center justify-center text-center p-12 bg-emerald-50 border border-emerald-200 luxury-border subtle-shadow">
+                                <div>
+                                    <div class="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-emerald-600"><polyline points="20 6 9 17 4 12"/></svg>
+                                    </div>
+                                    <h3 class="text-lg font-serif font-medium mb-2">Message Sent Successfully</h3>
+                                    <p class="text-sm font-light">Thank you for your message. We will be in touch shortly.</p>
+                                </div>
+                            </div>
                          </div>
                     </div>
                 </div>
@@ -132,8 +160,45 @@
         </section>
     </main>
     
-    <footer class="bg-white text-stone-600 border-t border-stone-200">
-        </footer>
+    <footer class="bg-white text-stone-600 border-t border-stone-200 subtle-shadow">
+        <div class="container mx-auto px-6 py-20">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center md:text-left">
+                <div class="md:col-span-1">
+                    <h3 class="text-lg font-serif text-stone-800 tracking-widest mb-6 font-medium">CANADIAN EMERALDS</h3>
+                    <p class="text-sm font-light leading-relaxed">123 Luxury Row SW<br/>Calgary, AB T2P 2L7</p>
+                </div>
+                <div class="md:col-span-2 grid grid-cols-2 md:grid-cols-3 gap-10">
+                    <div>
+                        <h3 class="text-base font-semibold text-stone-800 tracking-wider mb-6">Explore</h3>
+                        <ul class="space-y-4 text-sm">
+                            <li><a href="collection.html" class="hover:text-stone-900 transition-all duration-200 font-light">Collection</a></li>
+                            <li><a href="about.html" class="hover:text-stone-900 transition-all duration-200 font-light">Our Story</a></li>
+                            <li><a href="bespoke.html" class="hover:text-stone-900 transition-all duration-200 font-light">Bespoke</a></li>
+                            <li><a href="#" class="hover:text-stone-900 transition-all duration-200 font-light">Journal</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-base font-semibold text-stone-800 tracking-wider mb-6">Connect</h3>
+                        <ul class="space-y-4 text-sm">
+                            <li><a href="#" class="hover:text-stone-900 transition-all duration-200 font-light">Instagram</a></li>
+                            <li><a href="#" class="hover:text-stone-900 transition-all duration-200 font-light">Pinterest</a></li>
+                            <li><a href="contact.html" class="hover:text-stone-900 transition-all duration-200 font-light">Contact Us</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                         <h3 class="text-base font-semibold text-stone-800 tracking-wider mb-6">Legal</h3>
+                        <ul class="space-y-4 text-sm">
+                            <li><a href="#" class="hover:text-stone-900 transition-all duration-200 font-light">Privacy Policy</a></li>
+                            <li><a href="#" class="hover:text-stone-900 transition-all duration-200 font-light">Terms of Service</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-20 border-t border-stone-200 pt-10 text-center text-xs text-stone-400">
+                <p class="font-light">&copy; <span id="current-year"></span> Canadian Emeralds. A Canadian Jeweller.</p>
+            </div>
+        </div>
+    </footer>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -141,31 +206,37 @@
             const mobileMenu = document.getElementById('mobile-menu');
             const menuIconOpen = document.getElementById('menu-icon-open');
             const menuIconClose = document.getElementById('menu-icon-close');
-            
-            if(menuToggle) {
-                menuToggle.addEventListener('click', () => {
-                    mobileMenu.classList.toggle('hidden');
-                    menuIconOpen.classList.toggle('hidden');
-                    menuIconClose.classList.toggle('hidden');
-                });
-            }
-
+            const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
             const contactForm = document.getElementById('contact-form');
             const formContainer = document.getElementById('form-container');
             const successMessage = document.getElementById('form-success-message');
+            
+            const toggleMenu = () => {
+                mobileMenu.classList.toggle('hidden');
+                menuIconOpen.classList.toggle('hidden');
+                menuIconClose.classList.toggle('hidden');
+            };
+            
+            if(menuToggle){
+                menuToggle.addEventListener('click', toggleMenu);
+            }
+            mobileNavLinks.forEach(link => {
+                link.addEventListener('click', toggleMenu);
+            });
 
+            // Form submission handler
             if(contactForm) {
                 contactForm.addEventListener('submit', function(e) {
                     e.preventDefault();
-                    formContainer.classList.add('hidden');
-                    successMessage.classList.remove('hidden');
+                    
+                    // Simulate form submission
                     setTimeout(() => {
-                        successMessage.classList.add('hidden');
-                        formContainer.classList.remove('hidden');
-                        contactForm.reset();
-                    }, 4000);
+                        formContainer.classList.add('hidden');
+                        successMessage.classList.remove('hidden');
+                    }, 500);
                 });
             }
+
             document.getElementById('current-year').textContent = new Date().getFullYear();
         });
     </script>
