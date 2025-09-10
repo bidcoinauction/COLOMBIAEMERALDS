@@ -46,8 +46,9 @@
             left: 0;
             right: 0;
             z-index: 50;
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(250, 249, 245, 0.9); /* --cream-luxury with opacity */
             backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
             border-bottom: 1px solid #e5e7eb;
             transition: all 0.3s ease;
         }
@@ -90,15 +91,33 @@
             opacity: 0.7;
             font-weight: 300;
             transition: opacity 0.3s ease;
+            position: relative;
+            padding-bottom: 4px;
         }
 
+        .nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background-color: var(--gold-accent);
+            transition: width 0.3s ease;
+        }
+        
+        .nav a:hover::after,
+        .nav a.active::after {
+            width: 100%;
+        }
+        
         .nav a:hover {
             opacity: 1;
         }
 
         .nav a.active {
             font-weight: 500;
-            color: var(--gold-accent);
+            color: var(--emerald-deep);
             opacity: 1;
         }
 
@@ -111,13 +130,13 @@
         .header-icons button {
             background: none;
             border: none;
-            color: #6b7280;
+            color: var(--emerald-soft);
             cursor: pointer;
             transition: all 0.2s ease;
         }
 
         .header-icons button:hover {
-            color: #111827;
+            color: var(--emerald-deep);
             transform: scale(1.05);
         }
 
@@ -230,17 +249,17 @@
         }
 
         .stat-card {
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7));
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.2);
             padding: 2rem;
             text-align: center;
-            border: 1px solid rgba(212, 175, 55, 0.2);
             transition: all 0.3s ease;
         }
 
         .stat-card:hover {
             transform: translateY(-2px);
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.1));
             box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
         }
 
@@ -256,13 +275,13 @@
             font-size: 1.125rem;
             letter-spacing: 0.1em;
             font-weight: 500;
-            color: var(--emerald-deep);
+            color: white;
             margin-bottom: 0.5rem;
         }
 
         .stat-description {
             font-size: 0.875rem;
-            opacity: 0.7;
+            color: rgba(255,255,255,0.7);
         }
 
         /* Performance Grid */
@@ -276,18 +295,18 @@
         .chart-placeholder {
             height: 400px;
             background: white;
-            border-radius: 8px;
             padding: 1.25rem;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
             display: flex;
             align-items: center;
             justify-content: center;
-            border: 2px dashed var(--gold-accent);
+            border: 1px solid rgba(0,0,0,0.08);
             text-align: center;
         }
 
-        .chart-icon {
-            font-size: 3rem;
+        .chart-icon-svg {
+            width: 3rem;
+            height: 3rem;
             margin-bottom: 1rem;
             color: var(--gold-accent);
         }
@@ -344,7 +363,7 @@
             width: 3rem;
             height: 3rem;
             border-radius: 50%;
-            background-color: var(--gold-accent);
+            background-color: rgba(212, 175, 55, 0.1);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -354,7 +373,7 @@
         .analysis-icon svg {
             width: 1.5rem;
             height: 1.5rem;
-            color: white;
+            color: var(--gold-accent);
         }
 
         .analysis-point h3 {
@@ -380,21 +399,22 @@
         .trend-card {
             text-align: center;
             background: white;
-            padding: 2rem;
-            border: 1px solid rgba(212, 175, 55, 0.2);
+            padding: 2.5rem 2rem;
+            border: 1px solid rgba(0,0,0,0.08);
             transition: all 0.3s ease;
         }
 
         .trend-card:hover {
-            transform: translateY(-2px);
+            transform: translateY(-4px);
             box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+            border-color: rgba(212, 175, 55, 0.3);
         }
 
         .trend-icon {
             width: 4rem;
             height: 4rem;
             border-radius: 50%;
-            background-color: var(--gold-accent);
+            background-color: rgba(212, 175, 55, 0.1);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -404,7 +424,7 @@
         .trend-icon svg {
             width: 2rem;
             height: 2rem;
-            color: white;
+            color: var(--gold-accent);
         }
 
         .trend-card h3 {
@@ -454,7 +474,7 @@
             display: inline-flex;
             align-items: center;
             background: white;
-            color: black;
+            color: var(--emerald-deep);
             padding: 1rem 3rem;
             font-size: 0.875rem;
             letter-spacing: 0.15em;
@@ -465,6 +485,8 @@
 
         .btn-primary:hover {
             background: rgba(255, 255, 255, 0.9);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
 
         .btn-secondary {
@@ -573,6 +595,10 @@
                 grid-template-columns: 1fr;
                 gap: 2rem;
             }
+            
+            .analysis-grid .chart-placeholder {
+                order: -1;
+            }
 
             .cta-buttons {
                 flex-direction: column;
@@ -612,28 +638,28 @@
                 </nav>
                 <div class="header-icons">
                     <button>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <circle cx="11" cy="11" r="8"/>
-                            <path d="m21 21-4.35-4.35"/>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
                         </svg>
                     </button>
                     <button>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
                         </svg>
                     </button>
                     <button>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
-                            <line x1="3" y1="6" x2="21" y2="6"/>
-                            <path d="M16 10a4 4 0 0 1-8 0"/>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                            <line x1="3" y1="6" x2="21" y2="6"></line>
+                            <path d="M16 10a4 4 0 0 1-8 0"></path>
                         </svg>
                     </button>
                     <button class="mobile-menu-btn">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
-                            <line x1="3" y1="6" x2="21" y2="6"/>
-                            <line x1="3" y1="12" x2="21" y2="12"/>
-                            <line x1="3" y1="18" x2="21" y2="18"/>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="3" y1="12" x2="21" y2="12"></line>
+                            <line x1="3" y1="6" x2="21" y2="6"></line>
+                            <line x1="3" y1="18" x2="21" y2="18"></line>
                         </svg>
                     </button>
                 </div>
@@ -713,16 +739,23 @@
                     <!-- Performance Chart Placeholder -->
                     <div class="chart-placeholder">
                         <div>
-                            <div class="chart-icon"></div>
+                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="chart-icon-svg">
+                                <path d="M3 3v18h18"></path>
+                                <path d="m19 9-5 5-4-4-3 3"></path>
+                             </svg>
                             <h3 class="chart-title">10-Year Performance Comparison</h3>
-                            <p class="chart-data">Emeralds: +187% | Gold: +54% | S&P 500: +101% | Diamonds: +38%</p>
+                            <p class="chart-data">Emeralds: +187% | Gold: +54% | S&P 500: +101%</p>
                         </div>
                     </div>
 
                     <!-- Market Growth Placeholder -->
                     <div class="chart-placeholder">
                         <div>
-                            <div class="chart-icon"></div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="chart-icon-svg">
+                                <path d="M3 3v18h18"></path>
+                                <rect width="4" height="7" x="7" y="10" rx="1"></rect>
+                                <rect width="4" height="12" x="15" y="5" rx="1"></rect>
+                            </svg>
                             <h3 class="chart-title">Global Emerald Market Growth</h3>
                             <p class="chart-data">$2.1B (2020) → $3.37B (2029F) | 6.1% CAGR</p>
                         </div>
@@ -742,42 +775,43 @@
                         <div class="analysis-points">
                             <div class="analysis-point">
                                 <div class="analysis-icon">
-                                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M2.5 14.5A2.5 2.5 0 0 1 5 12h14a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2H5a2.5 2.5 0 0 1 0-5z"></path>
+                                        <path d="M4.5 5.5A2.5 2.5 0 0 1 7 3h10a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2H7a2.5 2.5 0 0 1 0-5z"></path>
                                     </svg>
                                 </div>
                                 <div>
                                     <h3>Geological Scarcity</h3>
                                     <p>
-                                        Emeralds are 30 times rarer than diamonds, with only three major producing regions worldwide. Colombian emeralds represent less than 1% of global gemstone production.
+                                        Emeralds are up to 30 times rarer than diamonds, with only a few major producing regions worldwide. Colombian emeralds represent the pinnacle of this rarity.
                                     </p>
                                 </div>
                             </div>
 
                             <div class="analysis-point">
                                 <div class="analysis-icon">
-                                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m-3-6h6"/>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
                                     </svg>
                                 </div>
                                 <div>
                                     <h3>Consistent Appreciation</h3>
                                     <p>
-                                        High-quality emeralds have appreciated at 5-8% annually since 1995, significantly outperforming inflation and many traditional investments.
+                                        High-quality emeralds have appreciated consistently, significantly outperforming inflation and many traditional investments over the long term.
                                     </p>
                                 </div>
                             </div>
 
                             <div class="analysis-point">
                                 <div class="analysis-icon">
-                                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
                                     </svg>
                                 </div>
                                 <div>
                                     <h3>Market Stability</h3>
                                     <p>
-                                        Unlike stocks or bonds, emeralds show low volatility and maintain value during economic uncertainty, serving as an effective hedge against market downturns.
+                                        Unlike volatile stocks, emeralds maintain value during economic uncertainty, serving as an effective hedge against market downturns.
                                     </p>
                                 </div>
                             </div>
@@ -787,24 +821,27 @@
                     <!-- Price Distribution Chart Placeholder -->
                     <div class="chart-placeholder">
                         <div>
-                            <div class="chart-icon"></div>
+                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="chart-icon-svg">
+                                <path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path>
+                                <path d="M22 12A10 10 0 0 0 12 2v10z"></path>
+                             </svg>
                             <h3 class="chart-title">Emerald Price by Quality Grade</h3>
-                            <div style="text-align: left; margin-top: 1rem; font-size: 0.875rem;">
+                            <div style="text-align: left; margin-top: 1rem; font-size: 0.875rem; opacity: 0.8">
                                 <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
                                     <span>Commercial Grade ($100-1K)</span>
-                                    <span style="font-weight: 500;">35%</span>
+                                    <span style="font-weight: 500;">~35%</span>
                                 </div>
                                 <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
                                     <span>Fine Quality ($1K-10K)</span>
-                                    <span style="font-weight: 500;">40%</span>
+                                    <span style="font-weight: 500;">~40%</span>
                                 </div>
                                 <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
                                     <span>Investment Grade ($10K-50K)</span>
-                                    <span style="font-weight: 500;">20%</span>
+                                    <span style="font-weight: 500;">~20%</span>
                                 </div>
                                 <div style="display: flex; justify-content: space-between;">
                                     <span>Museum Quality ($50K+)</span>
-                                    <span style="font-weight: 500;">5%</span>
+                                    <span style="font-weight: 500;">&lt;5%</span>
                                 </div>
                             </div>
                         </div>
@@ -824,12 +861,93 @@
                 <div class="trends-grid">
                     <div class="trend-card">
                         <div class="trend-icon">
-                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z"/>
+                           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20z"></path>
+                                <path d="M2 12h20"></path>
                             </svg>
                         </div>
-                        <h3>Growing Demand</h3>
+                        <h3>Growing Global Demand</h3>
                         <p>
-                            Increasing global demand for colored gemstones, particularly in Asia-Pacific markets, driving sustained price growth for premium specimens.
+                            Increasing appetite for colored gemstones, particularly in emerging Asia-Pacific markets, is driving sustained price growth for premium, investment-grade specimens.
                         </p>
-                    </div
+                    </div>
+                     <div class="trend-card">
+                        <div class="trend-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path>
+                                <polyline points="14 2 14 8 20 8"></polyline><path d="m9 15 2 2 4-4"></path>
+                            </svg>
+                        </div>
+                        <h3>Traceability & Provenance</h3>
+                        <p>
+                            A rising emphasis on ethical sourcing and documented provenance is increasing the value of certified Colombian emeralds with a clear chain of custody.
+                        </p>
+                    </div>
+                     <div class="trend-card">
+                        <div class="trend-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M15 11V5l-3-3-3 3v6l6 6V11z"></path><path d="M9 11H3v10h6V11z"></path><path d="M15 11h6v10h-6V11z"></path>
+                            </svg>
+                        </div>
+                        <h3>Shift to Hard Assets</h3>
+                        <p>
+                            Investors continue to diversify portfolios with tangible, high-value hard assets like rare gemstones, which serve as a stable store of value in uncertain economies.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="section luxury-gradient cta">
+            <div class="container">
+                <h2>Begin Your Investment Journey</h2>
+                <div class="cta-description">
+                    Our specialists provide discreet, data-driven consultations to help you acquire investment-grade Colombian emeralds that align with your portfolio goals.
+                </div>
+                <div class="cta-buttons">
+                    <a href="contact.html" class="btn-primary">SCHEDULE A CONSULTATION</a>
+                    <a href="specimens.html" class="btn-secondary">Explore Current Specimens</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <div class="footer-brand">COLOMBIAEMERLDS.CA</div>
+                    <div class="footer-subtitle">EST. 1952</div>
+                    <p class="footer-description">Purveyors of the world's finest investment-grade Colombian emeralds. Our heritage is built on a legacy of rarity, beauty, and trust.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>EXPLORE</h4>
+                    <ul class="footer-links">
+                        <li><a href="specimens.html">Emerald Specimens</a></li>
+                        <li><a href="investment.html">Investment Analysis</a></li>
+                        <li><a href="about.html">Our Heritage</a></li>
+                        <li><a href="contact.html">Private Consultations</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>LEGAL</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Shipping & Returns</a></li>
+                        <li><a href="#">Authenticity Guarantee</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 COLOMBIAEMERALDS.CA. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
+
