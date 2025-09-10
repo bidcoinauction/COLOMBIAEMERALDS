@@ -109,6 +109,28 @@
             transform: translateY(0);
         }
 
+        .chart-visual {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        overflow: visible; /* Changed from hidden to visible */
+        border-radius: 0.5rem;
+    }
+    
+    .chart-content {
+        position: relative;
+        z-index: 2;
+        text-align: center;
+    }
+    
+    .performance-metric {
+        font-size: clamp(2.5rem, 5vw, 3.5rem);
+        line-height: 1;
+        font-weight: 300;
+    }
+
         @media (max-width: 768px) {
             .hero-text {
                 font-size: clamp(2rem, 12vw, 4rem);
