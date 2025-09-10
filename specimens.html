@@ -89,6 +89,13 @@
             height: 100%;
             object-fit: cover;
         }
+        .hover-lift {
+    transition: all 0.3s ease;
+}
+.hover-lift:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -281,57 +288,62 @@
     </footer>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Animated sections on scroll
-            const animatedSections = document.querySelectorAll('.fade-in-up');
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.1 });
-            
-            animatedSections.forEach(section => observer.observe(section));
-
-            // Mobile menu toggle
-            const menuToggleBtn = document.getElementById('menu-toggle-btn');
-            const mobileMenu = document.getElementById('mobile-menu');
-            
-            if (menuToggleBtn && mobileMenu) {
-                menuToggleBtn.addEventListener('click', () => {
-                    mobileMenu.classList.toggle('hidden');
-                });
+document.addEventListener('DOMContentLoaded', function() {
+    // Animated sections on scroll - combined observer for both classes
+    const animatedSections = document.querySelectorAll('.fade-in-up, .animated-section');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                // Handle animated-section elements specifically
+                if (entry.target.classList.contains('animated-section')) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+                observer.unobserve(entry.target);
             }
-
-            // "Private Viewing" button functionality
-            const viewingButtons = document.querySelectorAll('.private-viewing-btn');
-            viewingButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    window.location.href = 'contact.html';
-                });
-            });
-
-             // Ensure videos autoplay when they come into view
-            const videos = document.querySelectorAll('video');
-            const videoObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    const video = entry.target;
-                    if (entry.isIntersecting) {
-                        video.play().catch(e => console.log('Autoplay was prevented.', e));
-                    } else {
-                        video.pause();
-                    }
-                });
-            }, { threshold: 0.5 }); // Start playing when 50% of the video is visible
-            
-            videos.forEach(video => {
-                video.setAttribute('playsinline', ''); // Essential for iOS autoplay
-                video.setAttribute('webkit-playsinline', '');
-                videoObserver.observe(video);
-            });
         });
-    </script>
+    }, { threshold: 0.1 });
+    
+    animatedSections.forEach(section => observer.observe(section));
+
+    // Mobile menu toggle
+    const menuToggleBtn = document.getElementById('menu-toggle-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    if (menuToggleBtn && mobileMenu) {
+        menuToggleBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    }
+
+    // "Private Viewing" button functionality
+    const viewingButtons = document.querySelectorAll('.private-viewing-btn');
+    viewingButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            window.location.href = 'contact.html';
+        });
+    });
+
+    // Video autoplay handling
+    const videos = document.querySelectorAll('video');
+    const videoObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            const video = entry.target;
+            if (entry.isIntersecting) {
+                video.play().catch(e => console.log('Autoplay was prevented.', e));
+            } else {
+                video.pause();
+            }
+        });
+    }, { threshold: 0.5 });
+    
+    videos.forEach(video => {
+        video.setAttribute('playsinline', '');
+        video.setAttribute('webkit-playsinline', '');
+        videoObserver.observe(video);
+    });
+});
+</script>
 </body>
 </html>
