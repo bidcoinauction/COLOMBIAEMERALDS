@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>COLOMBIAEMERALDS.CA - Where Geological Rarity Meets Generational Mastery</title>
+    <title>Investment Analysis - COLOMBIAEMERLDS.CA</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         :root {
@@ -14,375 +14,139 @@
             --gold-accent: #D4AF37;
             --platinum: #E5E4E2;
         }
-
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            font-weight: 200;
-        }
-
-        .font-display {
-            font-family: 'Playfair Display', serif;
             font-weight: 300;
+            background-color: var(--cream-luxury);
+            color: var(--emerald-deep);
+            line-height: 1.6;
         }
-
-        .hero-text {
-            font-size: clamp(2.5rem, 8vw, 9rem);
-            line-height: 0.9;
-            letter-spacing: -0.02em;
-        }
-
-        .luxury-gradient {
-            background: linear-gradient(135deg, var(--emerald-deep) 0%, var(--emerald-rich) 50%, var(--emerald-soft) 100%);
-        }
-
-        .specimen-card {
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .specimen-card:hover {
-            transform: translateY(-8px) scale(1.02);
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
-        }
-
-        .parallax-bg {
-            background-attachment: fixed;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
-
-        .floating {
-            animation: float 6s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-        }
-
-        .fade-in-up {
-            opacity: 1 !important;
-            transform: translateY(0) !important;
-        }
-
-        .text-shadow-luxury {
-            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-        }
-
-        .investment-badge {
-            background: linear-gradient(135deg, var(--gold-accent), #B8860B);
-            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
-        }
-
-        .geological-data {
-            font-family: 'SF Mono', 'Monaco', 'Inconsolata', monospace;
-            font-size: 0.75rem;
-            letter-spacing: 0.5px;
-        }
-
-        .luxury-border {
-            border: 1px solid rgba(212, 175, 55, 0.2);
-        }
-
-        @media (max-width: 768px) {
-            .hero-text {
-                font-size: clamp(2rem, 12vw, 4rem);
-            }
-        }
+        .font-display { font-family: 'Playfair Display', serif; font-weight: 300; }
+        .section { padding: 5rem 0; }
+        .section-header { text-align: center; margin-bottom: 4rem; }
+        .section-title { font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 5vw, 3rem); font-weight: 300; margin-bottom: 1.5rem; }
+        .section-divider { width: 8rem; height: 1px; background-color: var(--gold-accent); margin: 0 auto 2rem; }
+        .section-description { font-size: 1.125rem; max-width: 48rem; margin: 0 auto; opacity: 0.8; font-weight: 300; line-height: 1.7; }
+        .chart-placeholder { min-height: 300px; background: white; border-radius: 8px; padding: 2rem; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); display: flex; flex-direction: column; align-items: center; justify-content: center; border: 1px solid rgba(0,0,0,0.05); text-align: center; }
+        .chart-icon { font-size: 3rem; margin-bottom: 1rem; color: var(--gold-accent); }
+        .chart-title { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 400; margin-bottom: 0.5rem; }
+        .chart-data { font-size: 1rem; opacity: 0.7; }
+        .analysis-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 4rem; align-items: center; max-width: 1200px; margin: 0 auto; }
+        .analysis-content h2 { font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 5vw, 3rem); font-weight: 300; margin-bottom: 1.5rem; }
+        .analysis-divider { width: 8rem; height: 1px; background-color: var(--gold-accent); margin-bottom: 2rem; }
+        .analysis-point { display: flex; align-items: flex-start; gap: 1.5rem; }
+        .analysis-icon { width: 3rem; height: 3rem; border-radius: 50%; background-color: var(--emerald-rich); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+        .analysis-icon svg { width: 1.5rem; height: 1.5rem; color: white; }
+        .analysis-point h3 { font-family: 'Playfair Display', serif; font-size: 1.25rem; font-weight: 400; margin-bottom: 0.5rem; }
+        .analysis-point p { font-weight: 300; opacity: 0.8; line-height: 1.7; }
+        .fade-in-up { opacity: 0; transform: translateY(40px); transition: opacity 1s cubic-bezier(0.4, 0, 0.2, 1), transform 1s cubic-bezier(0.4, 0, 0.2, 1); }
+        .fade-in-up.visible { opacity: 1; transform: translateY(0); }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800;900&family=Playfair+Display:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
-<body class="antialiased text-white" style="background-color: var(--emerald-deep);">
+<body class="antialiased">
 
-    <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-500">
+    <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 bg-white/95 backdrop-blur-md border-b border-gray-200">
         <div class="container mx-auto px-8 py-6 flex justify-between items-center">
-            <div class="font-display text-2xl tracking-[0.2em] text-white text-shadow-luxury font-light">
-                COLOMBIAEMERALDS.CA
-                <div class="text-xs tracking-[0.3em] text-white/70 mt-1 font-light">EST. 1952</div>
-            </div>
+             <a href="index.html" class="font-display text-xl tracking-[0.2em] font-light" style="color: var(--emerald-deep);">
+                COLOMBIAEMERLDS.CA
+            </a>
             <nav class="hidden md:flex items-center space-x-12">
-                <a href="specimens.html" class="text-sm tracking-[0.15em] text-white/90 hover:text-white transition-all duration-300 font-light">EMERALDS</a>
-                <a href="investment.html" class="text-sm tracking-[0.15em] text-white/90 hover:text-white transition-all duration-300 font-light">INVESTMENT</a>
-                <a href="about.html" class="text-sm tracking-[0.15em] text-white/90 hover:text-white transition-all duration-300 font-light">HERITAGE</a>
-                <a href="contact.html" class="text-sm tracking-[0.15em] text-white/90 hover:text-white transition-all duration-300 font-light">PRIVATE CONSULTATIONS</a>
+                <a href="index.html" class="text-sm tracking-[0.15em] opacity-70 hover:opacity-100 transition-all duration-300 font-light">THE HOUSE</a>
+                <a href="specimens.html" class="text-sm tracking-[0.15em] opacity-70 hover:opacity-100 transition-all duration-300 font-light">SPECIMENS</a>
+                <a href="investment.html" class="text-sm tracking-[0.15em] font-medium" style="color: var(--gold-accent);">INVESTMENT</a>
+                <a href="contact.html" class="text-sm tracking-[0.15em] opacity-70 hover:opacity-100 transition-all duration-300 font-light">PRIVATE CONSULTATIONS</a>
             </nav>
-            <button class="md:hidden text-white">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="3" y1="6" x2="21" y2="6"/>
-                    <line x1="3" y1="12" x2="21" y2="12"/>
-                    <line x1="3" y1="18" x2="21" y2="18"/>
-                </svg>
+            <button id="menu-toggle-btn" class="md:hidden" style="color: var(--emerald-deep);">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
             </button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-white/95 border-t border-gray-200">
+            <nav class="flex flex-col p-4">
+                <a href="index.html" class="py-3 px-4 text-center tracking-wider opacity-80">THE HOUSE</a>
+                <a href="specimens.html" class="py-3 px-4 text-center tracking-wider opacity-80">SPECIMENS</a>
+                <a href="investment.html" class="py-3 px-4 text-center tracking-wider" style="color: var(--gold-accent);">INVESTMENT</a>
+                <a href="contact.html" class="py-3 px-4 text-center tracking-wider opacity-80">PRIVATE CONSULTATIONS</a>
+            </nav>
         </div>
     </header>
 
-    <main>
-        <!-- Hero Section -->
-        <section class="relative min-h-screen flex items-center justify-center overflow-hidden parallax-bg" style="background-image: linear-gradient(rgba(10, 46, 27, 0.4), rgba(27, 67, 50, 0.6)), url('https://updatedcardscript.standard.us-east-1.oortstorages.com/canada_emeralds/raw-emerald-crystals.jpg');">
-            <div class="absolute inset-0 luxury-gradient opacity-70"></div>
-            <div class="relative container mx-auto px-8 text-center">
-                <div class="animated-section opacity-0 translate-y-20 transition-all duration-1000">
-                    <h1 class="hero-text font-display text-white mb-8 text-shadow-luxury">
-                        WHERE GEOLOGICAL<br>
-                        <span style="color: var(--gold-accent);">RARITY</span> MEETS<br>
-                        GENERATIONAL<br>
-                        <span class="italic">MASTERY</span>
-                    </h1>
-                    <p class="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto mb-16 font-light leading-relaxed text-shadow-luxury">
-                        Exceptional Colombian emerald crystals formed over 65 million years, sourced directly from the legendary Gad family mines and presented as investment-grade geological specimens.
+    <main class="pt-24">
+        <!-- Market Performance Section -->
+        <section class="section">
+            <div class="container">
+                <div class="section-header fade-in-up">
+                    <h2 class="section-title">MARKET PERFORMANCE</h2>
+                    <div class="section-divider"></div>
+                    <p class="section-description">
+                        Real market data showcasing emerald investment performance compared to traditional asset classes.
                     </p>
-                    <div class="flex flex-col md:flex-row items-center justify-center gap-8">
-                        <a href="specimens.html" class="group inline-flex items-center bg-white text-black px-12 py-4 text-sm tracking-[0.15em] font-medium hover:bg-opacity-90 transition-all duration-300">
-                            VIEW SPECIMENS
-                            <svg class="ml-3 w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-                            </svg>
-                        </a>
-                        <a href="#investment" class="text-white/90 hover:text-white text-sm tracking-[0.15em] font-light transition-all duration-300 underline underline-offset-4">
-                            INVESTMENT ANALYSIS
-                        </a>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="chart-placeholder fade-in-up">
+                        <div>
+                            <div class="chart-icon"></div>
+                            <h3 class="chart-title">10-Year Performance Comparison</h3>
+                            <p class="chart-data">Emeralds: +187% | Gold: +54% | S&P 500: +101% | Diamonds: +38%</p>
+                        </div>
+                    </div>
+                    <div class="chart-placeholder fade-in-up" style="transition-delay: 150ms;">
+                        <div>
+                            <div class="chart-icon"></div>
+                            <h3 class="chart-title">Global Emerald Market Growth</h3>
+                            <p class="chart-data">$2.1B (2020) → $3.37B (2029F) | 6.1% CAGR</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Geological Specimens Collection -->
-        <section id="specimens" class="py-32" style="background-color: var(--cream-luxury); color: var(--emerald-deep);">
-            <div class="container mx-auto px-8">
-                <div class="animated-section opacity-0 translate-y-20 transition-all duration-1000">
-                    <div class="text-center mb-20">
-                        <h2 class="text-6xl md:text-8xl font-display font-light mb-6">RARE GEOLOGICAL SPECIMENS</h2>
-                        <div class="w-32 h-px mx-auto mb-8" style="background-color: var(--gold-accent);"></div>
-                        <p class="text-xl max-w-4xl mx-auto font-light leading-relaxed" style="color: var(--emerald-soft);">
-                            Each specimen represents millions of years of geological formation, certified with complete scientific documentation and investment-grade provenance.
-                        </p>
-                    </div>
-
-                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
-                        <!-- Specimen 1 -->
-                        <div class="specimen-card bg-white/90 p-8 hover:bg-white transition-all duration-500">
-                            <div class="aspect-[4/5] bg-gray-100 mb-6 overflow-hidden">
-                                <img src="https://updatedcardscript.standard.us-east-1.oortstorages.com/canada_emeralds/2025-09-09%2018.29.39.jpg" alt="Raw Muzo Emerald Crystal" class="w-full h-full object-cover transition-transform duration-700 hover:scale-110"/>
+        <!-- Investment Analysis Section -->
+        <section class="section bg-white">
+            <div class="container">
+                <div class="analysis-grid">
+                    <div class="analysis-content fade-in-up">
+                        <h2>WHY EMERALDS OUTPERFORM</h2>
+                        <div class="analysis-divider"></div>
+                        <div class="space-y-8">
+                            <div class="analysis-point">
+                                <div class="analysis-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg></div>
+                                <div><h3>Geological Scarcity</h3><p>Emeralds are 30 times rarer than diamonds, with only three major producing regions worldwide. Colombian emeralds represent less than 1% of global gemstone production.</p></div>
                             </div>
-                            <div class="space-y-4">
-                                <div class="flex justify-between items-start">
-                                    <h3 class="text-2xl font-display font-light">Muzo Formation Crystal</h3>
-                                    <span class="investment-badge text-white px-3 py-1 rounded text-xs tracking-wider">INVESTMENT GRADE</span>
-                                </div>
-                                
-                                <div class="geological-data space-y-2 p-4 bg-gray-50 luxury-border">
-                                    <div class="grid grid-cols-2 gap-2 text-xs">
-                                        <span class="font-medium">CARAT WEIGHT:</span>
-                                        <span>23.47 ct</span>
-                                        <span class="font-medium">FORMATION AGE:</span>
-                                        <span>65M years</span>
-                                        <span class="font-medium">MINE SOURCE:</span>
-                                        <span>Muzo, Colombia</span>
-                                        <span class="font-medium">CLARITY TYPE:</span>
-                                        <span>Type I (Minor inclusions)</span>
-                                        <span class="font-medium">SPECIFIC GRAVITY:</span>
-                                        <span>2.70-2.78</span>
-                                        <span class="font-medium">HARDNESS:</span>
-                                        <span>7.5-8 Mohs</span>
-                                        <span class="font-medium">CRYSTAL SYSTEM:</span>
-                                        <span>Hexagonal</span>
-                                        <span class="font-medium">COMPOSITION:</span>
-                                        <span>Be₃Al₂(SiO₃)₆</span>
-                                    </div>
-                                </div>
-
-                                <div class="space-y-2">
-                                    <div class="flex justify-between items-center">
-                                        <span class="text-sm tracking-wider" style="color: var(--gold-accent);">CERTIFIED PROVENANCE</span>
-                                        <span class="text-sm font-light">GIA • SSEF</span>
-                                    </div>
-                                    <div class="flex justify-between items-center">
-                                        <span class="text-sm tracking-wider" style="color: var(--gold-accent);">10-YEAR APPRECIATION</span>
-                                        <span class="text-sm font-medium">+187%</span>
-                                    </div>
-                                </div>
-
-                                <div class="pt-4 border-t border-gray-200">
-                                    <div class="flex justify-between items-center">
-                                        <span class="text-2xl font-display font-light">$89,500</span>
-                                        <button class="text-sm tracking-wider hover:underline transition-all duration-300" style="color: var(--emerald-rich);">
-                                            PRIVATE VIEWING
-                                        </button>
-                                    </div>
-                                </div>
+                            <div class="analysis-point">
+                                <div class="analysis-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m-3-6h6"/></svg></div>
+                                <div><h3>Consistent Appreciation</h3><p>High-quality emeralds have appreciated at 5-8% annually since 1995, significantly outperforming inflation and many traditional investments.</p></div>
                             </div>
-                        </div>
-
-                        <!-- Specimen 2 -->
-                        <div class="specimen-card bg-white/90 p-8 hover:bg-white transition-all duration-500">
-                            <div class="aspect-[4/5] bg-gray-100 mb-6 overflow-hidden">
-                                <img src="https://updatedcardscript.standard.us-east-1.oortstorages.com/canada_emeralds/2025-09-09%2016.19.32.jpg" alt="Chivor Trapiche Emerald" class="w-full h-full object-cover transition-transform duration-700 hover:scale-110"/>
-                            </div>
-                            <div class="space-y-4">
-                                <div class="flex justify-between items-start">
-                                    <h3 class="text-2xl font-display font-light">Chivor Trapiche Specimen</h3>
-                                    <span class="investment-badge text-white px-3 py-1 rounded text-xs tracking-wider">MUSEUM QUALITY</span>
-                                </div>
-                                
-                                <div class="geological-data space-y-2 p-4 bg-gray-50 luxury-border">
-                                    <div class="grid grid-cols-2 gap-2 text-xs">
-                                        <span class="font-medium">CARAT WEIGHT:</span>
-                                        <span>18.92 ct</span>
-                                        <span class="font-medium">FORMATION AGE:</span>
-                                        <span>38M years</span>
-                                        <span class="font-medium">MINE SOURCE:</span>
-                                        <span>Chivor, Colombia</span>
-                                        <span class="font-medium">CLARITY TYPE:</span>
-                                        <span>Trapiche Formation</span>
-                                        <span class="font-medium">RAY PATTERN:</span>
-                                        <span>Six-ray star</span>
-                                        <span class="font-medium">CARBON CONTENT:</span>
-                                        <span>0.003% (Rare)</span>
-                                        <span class="font-medium">CHROMOPHORE:</span>
-                                        <span>Chromium/Vanadium</span>
-                                        <span class="font-medium">RARITY INDEX:</span>
-                                        <span>1:10,000</span>
-                                    </div>
-                                </div>
-
-                                <div class="space-y-2">
-                                    <div class="flex justify-between items-center">
-                                        <span class="text-sm tracking-wider" style="color: var(--gold-accent);">CERTIFIED PROVENANCE</span>
-                                        <span class="text-sm font-light">Gübelin • AGL</span>
-                                    </div>
-                                    <div class="flex justify-between items-center">
-                                        <span class="text-sm tracking-wider" style="color: var(--gold-accent);">COLLECTOR PREMIUM</span>
-                                        <span class="text-sm font-medium">+240%</span>
-                                    </div>
-                                </div>
-
-                                <div class="pt-4 border-t border-gray-200">
-                                    <div class="flex justify-between items-center">
-                                        <span class="text-2xl font-display font-light">$156,000</span>
-                                        <button class="text-sm tracking-wider hover:underline transition-all duration-300" style="color: var(--emerald-rich);">
-                                            PRIVATE VIEWING
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Specimen 3 -->
-                        <div class="specimen-card bg-white/90 p-8 hover:bg-white transition-all duration-500">
-                            <div class="aspect-[4/5] bg-gray-100 mb-6 overflow-hidden">
-                                <img src="https://updatedcardscript.standard.us-east-1.oortstorages.com/canada_emeralds/2025-09-09%2016.17.02.jpg" alt="Coscuez Emerald in Matrix" class="w-full h-full object-cover transition-transform duration-700 hover:scale-110"/>
-                            </div>
-                            <div class="space-y-4">
-                                <div class="flex justify-between items-start">
-                                    <h3 class="text-2xl font-display font-light">Coscuez Matrix Specimen</h3>
-                                    <span class="investment-badge text-white px-3 py-1 rounded text-xs tracking-wider">EXHIBITION GRADE</span>
-                                </div>
-                                
-                                <div class="geological-data space-y-2 p-4 bg-gray-50 luxury-border">
-                                    <div class="grid grid-cols-2 gap-2 text-xs">
-                                        <span class="font-medium">CARAT WEIGHT:</span>
-                                        <span>31.25 ct</span>
-                                        <span class="font-medium">FORMATION AGE:</span>
-                                        <span>45M years</span>
-                                        <span class="font-medium">MINE SOURCE:</span>
-                                        <span>Coscuez, Colombia</span>
-                                        <span class="font-medium">MATRIX TYPE:</span>
-                                        <span>Calcite/Pyrite</span>
-                                        <span class="font-medium">CRYSTAL QUALITY:</span>
-                                        <span>Exceptional</span>
-                                        <span class="font-medium">FLUORESCENCE:</span>
-                                        <span>Moderate Red</span>
-                                        <span class="font-medium">PLEOCHROISM:</span>
-                                        <span>Weak to Distinct</span>
-                                        <span class="font-medium">ORIGIN MARKERS:</span>
-                                        <span>Jagged inclusions</span>
-                                    </div>
-                                </div>
-
-                                <div class="space-y-2">
-                                    <div class="flex justify-between items-center">
-                                        <span class="text-sm tracking-wider" style="color: var(--gold-accent);">CERTIFIED PROVENANCE</span>
-                                        <span class="text-sm font-light">SSEF • Lotus</span>
-                                    </div>
-                                    <div class="flex justify-between items-center">
-                                        <span class="text-sm tracking-wider" style="color: var(--gold-accent);">HERITAGE PREMIUM</span>
-                                        <span class="text-sm font-medium">+312%</span>
-                                    </div>
-                                </div>
-
-                                <div class="pt-4 border-t border-gray-200">
-                                    <div class="flex justify-between items-center">
-                                        <span class="text-2xl font-display font-light">$312,000</span>
-                                        <button class="text-sm tracking-wider hover:underline transition-all duration-300" style="color: var(--emerald-rich);">
-                                            PRIVATE VIEWING
-                                        </button>
-                                    </div>
-                                </div>
+                            <div class="analysis-point">
+                                <div class="analysis-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
+                                <div><h3>Market Stability</h3><p>Unlike stocks or bonds, emeralds show low volatility and maintain value during economic uncertainty, serving as an effective hedge against market downturns.</p></div>
                             </div>
                         </div>
                     </div>
-
-                    <div class="text-center mt-20">
-                        <a href="specimens.html" class="inline-flex items-center text-lg tracking-[0.1em] font-light hover:underline transition-all duration-300" style="color: var(--emerald-rich);">
-                            VIEW COMPLETE SPECIMEN COLLECTION
-                            <svg class="ml-3 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-                            </svg>
-                        </a>
+                    <div class="chart-placeholder fade-in-up" style="transition-delay: 150ms;">
+                        <div>
+                            <div class="chart-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"/><path d="M22 12A10 10 0 0 0 12 2v10z"/></svg>
+                            </div>
+                            <h3 class="chart-title">Emerald Price by Quality Grade</h3>
+                            <div class="text-left mt-4 text-sm w-full max-w-xs mx-auto">
+                                <div class="flex justify-between mb-2"><span class="opacity-70">Commercial Grade ($100-1K)</span><span class="font-medium">35%</span></div>
+                                <div class="flex justify-between mb-2"><span class="opacity-70">Fine Quality ($1K-10K)</span><span class="font-medium">40%</span></div>
+                                <div class="flex justify-between mb-2"><span class="opacity-70">Investment Grade ($10K-50K)</span><span class="font-medium">20%</span></div>
+                                <div class="flex justify-between"><span class="opacity-70">Museum Quality ($50K+)</span><span class="font-medium">5%</span></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
+    </main>
 
-        <!-- Investment Section -->
-        <section id="investment" class="py-32 luxury-gradient">
-            <div class="container mx-auto px-8">
-                <div class="animated-section opacity-0 translate-y-20 transition-all duration-1000">
-                    <div class="text-center mb-20">
-                        <h2 class="text-6xl md:text-8xl font-display font-light text-white mb-6">INVESTMENT ANALYSIS</h2>
-                        <div class="w-32 h-px mx-auto mb-8" style="background-color: var(--gold-accent);"></div>
-                        <p class="text-xl max-w-4xl mx-auto text-white/90 font-light leading-relaxed">
-                            Comprehensive market analysis and performance data for discerning collectors and institutional investors.
-                        </p>
-                    </div>
-
-                    <div class="grid md:grid-cols-3 gap-12 mb-20">
-                        <div class="text-center">
-                            <div class="text-5xl md:text-6xl font-display font-light text-white mb-4">+187%</div>
-                            <div class="text-lg tracking-[0.1em] text-white/80 font-light">10-YEAR APPRECIATION</div>
-                            <div class="text-sm text-white/60 mt-2">Colombian emerald specimens</div>
-                        </div>
-                        <div class="text-center">
-                            <div class="text-5xl md:text-6xl font-display font-light text-white mb-4">30×</div>
-                            <div class="text-lg tracking-[0.1em] text-white/80 font-light">RARER THAN DIAMONDS</div>
-                            <div class="text-sm text-white/60 mt-2">Geological scarcity factor</div>
-                        </div>
-                        <div class="text-center">
-                            <div class="text-5xl md:text-6xl font-display font-light text-white mb-4">1952</div>
-                            <div class="text-lg tracking-[0.1em] text-white/80 font-light">HERITAGE ESTABLISHED</div>
-                            <div class="text-sm text-white/60 mt-2">Three generations of expertise</div>
-                        </div>
-                    </div>
-
-                    <div class="text-center">
-                        <a href="contact.html" class="inline-flex items-center bg-white text-black px-12 py-4 text-sm tracking-[0.15em] font-medium hover:bg-opacity-90 transition-all duration-300">
-                            SCHEDULE INVESTMENT CONSULTATION
-                            <svg class="ml-3 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Footer -->
-        <footer class="py-20" style="background-color: var(--emerald-deep); color: white;">
-            <div class="container mx-auto px-8">
+    <footer class="py-20" style="background-color: var(--emerald-deep); color: white;">
+                   <div class="container mx-auto px-8">
                 <div class="grid md:grid-cols-4 gap-12">
                     <div class="md:col-span-2">
                         <div class="font-display text-2xl tracking-[0.2em] mb-4 font-light">
@@ -416,25 +180,21 @@
                     <p class="text-white/50 text-sm font-light">© 2025 COLOMBIAEMERALDS.CA . All rights reserved.</p>
                 </div>
             </div>
-        </footer>
-    </main>
-
+    </footer>
+    
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Animated sections on scroll
-            const animatedSections = document.querySelectorAll('.animated-section');
+            const animatedSections = document.querySelectorAll('.fade-in-up');
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        entry.target.classList.add('fade-in-up');
+                        entry.target.classList.add('visible');
                         observer.unobserve(entry.target);
                     }
                 });
             }, { threshold: 0.1 });
-            
-            animatedSections.forEach(section => observer.observe(section));
-
-            // Header background on scroll
+                // Header background on scroll
             const header = document.querySelector('header');
             window.addEventListener('scroll', () => {
                 if (window.scrollY > 100) {
@@ -456,9 +216,18 @@
                             behavior: 'smooth',
                             block: 'start'
                         });
-                    }
+            
+            animatedSections.forEach(section => observer.observe(section));
+
+            // Mobile menu toggle
+            const menuToggleBtn = document.getElementById('menu-toggle-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            if (menuToggleBtn && mobileMenu) {
+                menuToggleBtn.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
                 });
-            });
+            }
         });
     </script>
 </body>
