@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Investment Analysis - COLOMBIAEMERLDS.CA</title>
+    <title>Investment Analysis - COLOMBIAEMERALDS.CA</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
         :root {
             --emerald-deep: #0A2E1B;
@@ -14,18 +15,9 @@
             --platinum: #E5E4E2;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             font-weight: 200;
-            background-color: var(--cream-luxury);
-            color: var(--emerald-deep);
-            line-height: 1.6;
         }
 
         .font-display {
@@ -33,586 +25,88 @@
             font-weight: 300;
         }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
+        .hero-text {
+            font-size: clamp(3rem, 8vw, 8rem);
+            line-height: 0.9;
+            letter-spacing: -0.02em;
         }
 
-        /* Header Styles */
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 50;
-            background: rgba(250, 249, 245, 0.9); /* --cream-luxury with opacity */
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border-bottom: 1px solid #e5e7eb;
-            transition: all 0.3s ease;
+        .luxury-gradient {
+            background: linear-gradient(135deg, var(--emerald-deep) 0%, var(--emerald-rich) 50%, var(--emerald-soft) 100%);
         }
 
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1.5rem 2rem;
-        }
-
-        .logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            letter-spacing: 0.2em;
-            font-weight: 300;
-            color: var(--emerald-deep);
-            text-decoration: none;
-        }
-
-        .logo-subtitle {
-            font-size: 0.75rem;
-            letter-spacing: 0.3em;
-            opacity: 0.6;
-            margin-top: 0.25rem;
-            font-weight: 300;
-        }
-
-        .nav {
-            display: flex;
-            align-items: center;
-            gap: 3rem;
-        }
-
-        .nav a {
-            font-size: 0.875rem;
-            letter-spacing: 0.15em;
-            text-decoration: none;
-            color: var(--emerald-deep);
-            opacity: 0.7;
-            font-weight: 300;
-            transition: opacity 0.3s ease;
-            position: relative;
-            padding-bottom: 4px;
-        }
-
-        .nav a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 1px;
-            background-color: var(--gold-accent);
-            transition: width 0.3s ease;
-        }
-        
-        .nav a:hover::after,
-        .nav a.active::after {
-            width: 100%;
-        }
-        
-        .nav a:hover {
-            opacity: 1;
-        }
-
-        .nav a.active {
-            font-weight: 500;
-            color: var(--emerald-deep);
-            opacity: 1;
-        }
-
-        .header-icons {
-            display: flex;
-            align-items: center;
-            gap: 1.5rem;
-        }
-
-        .header-icons button {
-            background: none;
-            border: none;
-            color: var(--emerald-soft);
-            cursor: pointer;
-            transition: all 0.2s ease;
-        }
-
-        .header-icons button:hover {
-            color: var(--emerald-deep);
-            transform: scale(1.05);
-        }
-
-        /* Mobile Menu */
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            color: var(--emerald-deep);
-            cursor: pointer;
-        }
-
-        /* Main Content */
-        main {
-            padding-top: 8rem;
-        }
-
-        /* Hero Section */
-        .hero {
-            padding: 6rem 0;
-            text-align: center;
+        .fade-in-up {
+            opacity: 1 !important;
+            transform: translateY(0) !important;
         }
 
         .investment-badge {
             background: linear-gradient(135deg, var(--gold-accent), #B8860B);
             box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
-            color: white;
-            padding: 0.75rem 1.5rem;
-            border-radius: 9999px;
-            font-size: 0.875rem;
-            letter-spacing: 0.2em;
-            font-weight: 300;
-            margin-bottom: 3rem;
-            display: inline-block;
         }
 
-        .hero-text {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(3rem, 8vw, 8rem);
+        .luxury-border {
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .hover-lift {
+            transition: all 0.3s ease;
+        }
+        .hover-lift:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .performance-metric {
+            font-size: clamp(3rem, 6vw, 5rem);
             line-height: 0.9;
-            letter-spacing: -0.02em;
-            margin-bottom: 2rem;
-        }
-
-        .hero-text .accent {
-            color: var(--gold-accent);
-        }
-
-        .hero-description {
-            font-size: 1.25rem;
-            opacity: 0.8;
-            max-width: 64rem;
-            margin: 0 auto 4rem;
             font-weight: 300;
-            line-height: 1.7;
         }
 
-        /* Section Styles */
-        .section {
-            padding: 5rem 0;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-
-        .section-title {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(2.5rem, 5vw, 3rem);
-            font-weight: 300;
-            margin-bottom: 1.5rem;
-        }
-
-        .section-divider {
-            width: 8rem;
-            height: 1px;
-            background-color: var(--gold-accent);
-            margin: 0 auto 2rem;
-        }
-
-        .section-description {
-            font-size: 1.125rem;
-            max-width: 48rem;
-            margin: 0 auto;
-            opacity: 0.8;
-            font-weight: 300;
-            line-height: 1.7;
-        }
-
-        /* Luxury Gradient */
-        .luxury-gradient {
-            background: linear-gradient(135deg, var(--emerald-deep) 0%, var(--emerald-rich) 50%, var(--emerald-soft) 100%);
-        }
-
-        .luxury-gradient .section-title,
-        .luxury-gradient .section-description {
-            color: white;
-        }
-
-        .luxury-gradient .section-description {
-            color: rgba(255, 255, 255, 0.9);
-        }
-
-        /* Stats Grid */
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-        }
-
-        .stat-card {
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            padding: 2rem;
-            text-align: center;
-            transition: all 0.3s ease;
-        }
-
-        .stat-card:hover {
-            transform: translateY(-2px);
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.1));
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
-        }
-
-        .stat-number {
-            font-family: 'Playfair Display', serif;
-            font-size: 3rem;
-            font-weight: 300;
-            color: var(--gold-accent);
-            margin-bottom: 1rem;
-        }
-
-        .stat-label {
-            font-size: 1.125rem;
-            letter-spacing: 0.1em;
-            font-weight: 500;
-            color: white;
-            margin-bottom: 0.5rem;
-        }
-
-        .stat-description {
-            font-size: 0.875rem;
-            color: rgba(255,255,255,0.7);
-        }
-
-        /* Performance Grid */
-        .performance-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-bottom: 4rem;
-        }
-
-        .chart-placeholder {
+        .chart-visual {
             height: 400px;
-            background: white;
-            padding: 1.25rem;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 1px solid rgba(0,0,0,0.08);
-            text-align: center;
-        }
-
-        .chart-icon-svg {
-            width: 3rem;
-            height: 3rem;
-            margin-bottom: 1rem;
-            color: var(--gold-accent);
-        }
-
-        .chart-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.25rem;
-            font-weight: 300;
-            margin-bottom: 0.5rem;
-        }
-
-        .chart-data {
-            font-size: 0.875rem;
-            opacity: 0.6;
-        }
-
-        /* Analysis Grid */
-        .analysis-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-            max-width: 6xl;
-            margin: 0 auto;
-        }
-
-        .analysis-content h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(2.5rem, 5vw, 3rem);
-            font-weight: 300;
-            margin-bottom: 1.5rem;
-        }
-
-        .analysis-divider {
-            width: 8rem;
-            height: 1px;
-            background-color: var(--gold-accent);
-            margin-bottom: 2rem;
-        }
-
-        .analysis-points {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(212, 175, 55, 0.05));
+            border: 1px solid rgba(212, 175, 55, 0.2);
             display: flex;
             flex-direction: column;
-            gap: 2rem;
-        }
-
-        .analysis-point {
-            display: flex;
-            align-items: flex-start;
-            gap: 1rem;
-        }
-
-        .analysis-icon {
-            width: 3rem;
-            height: 3rem;
-            border-radius: 50%;
-            background-color: rgba(212, 175, 55, 0.1);
-            display: flex;
-            align-items: center;
             justify-content: center;
-            flex-shrink: 0;
-        }
-
-        .analysis-icon svg {
-            width: 1.5rem;
-            height: 1.5rem;
-            color: var(--gold-accent);
-        }
-
-        .analysis-point h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.25rem;
-            font-weight: 300;
-            margin-bottom: 0.5rem;
-        }
-
-        .analysis-point p {
-            font-weight: 300;
-            opacity: 0.8;
-            line-height: 1.7;
-        }
-
-        /* Trends Grid */
-        .trends-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 3rem;
-        }
-
-        .trend-card {
-            text-align: center;
-            background: white;
-            padding: 2.5rem 2rem;
-            border: 1px solid rgba(0,0,0,0.08);
-            transition: all 0.3s ease;
-        }
-
-        .trend-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
-            border-color: rgba(212, 175, 55, 0.3);
-        }
-
-        .trend-icon {
-            width: 4rem;
-            height: 4rem;
-            border-radius: 50%;
-            background-color: rgba(212, 175, 55, 0.1);
-            display: flex;
             align-items: center;
-            justify-content: center;
-            margin: 0 auto 1.5rem;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
         }
 
-        .trend-icon svg {
-            width: 2rem;
-            height: 2rem;
-            color: var(--gold-accent);
+        .chart-visual::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 10px,
+                rgba(212, 175, 55, 0.05) 10px,
+                rgba(212, 175, 55, 0.05) 20px
+            );
         }
 
-        .trend-card h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.25rem;
-            font-weight: 300;
-            margin-bottom: 1rem;
-        }
-
-        .trend-card p {
-            font-weight: 300;
-            opacity: 0.8;
-            line-height: 1.7;
-        }
-
-        /* CTA Section */
-        .cta {
+        .chart-content {
+            position: relative;
+            z-index: 2;
             text-align: center;
         }
 
-        .cta h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(2.5rem, 5vw, 3rem);
-            font-weight: 300;
-            color: white;
-            margin-bottom: 1.5rem;
+        .animated-section {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 1s ease;
         }
 
-        .cta-description {
-            max-width: 48rem;
-            margin: 0 auto 2.5rem;
-            color: rgba(255, 255, 255, 0.9);
-            font-size: 1.125rem;
-            font-weight: 300;
-            line-height: 1.7;
-        }
-
-        .cta-buttons {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 1.5rem;
-        }
-
-        .btn-primary {
-            display: inline-flex;
-            align-items: center;
-            background: white;
-            color: var(--emerald-deep);
-            padding: 1rem 3rem;
-            font-size: 0.875rem;
-            letter-spacing: 0.15em;
-            font-weight: 500;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        .btn-primary:hover {
-            background: rgba(255, 255, 255, 0.9);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        }
-
-        .btn-secondary {
-            color: rgba(255, 255, 255, 0.9);
-            font-size: 0.875rem;
-            letter-spacing: 0.15em;
-            font-weight: 300;
-            text-decoration: underline;
-            text-underline-offset: 4px;
-            transition: all 0.3s ease;
-        }
-
-        .btn-secondary:hover {
-            color: white;
-        }
-
-        /* Footer */
-        footer {
-            padding: 5rem 0;
-            background-color: var(--emerald-deep);
-            color: white;
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr;
-            gap: 3rem;
-            margin-bottom: 4rem;
-        }
-
-        .footer-brand {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            letter-spacing: 0.2em;
-            font-weight: 300;
-            margin-bottom: 1rem;
-        }
-
-        .footer-subtitle {
-            font-size: 0.875rem;
-            color: rgba(255, 255, 255, 0.6);
-            font-weight: 300;
-            margin-bottom: 1.5rem;
-        }
-
-        .footer-description {
-            color: rgba(255, 255, 255, 0.8);
-            font-weight: 300;
-            line-height: 1.7;
-        }
-
-        .footer-section h4 {
-            font-size: 0.875rem;
-            letter-spacing: 0.15em;
-            font-weight: 500;
-            margin-bottom: 1.5rem;
-        }
-
-        .footer-links {
-            list-style: none;
-        }
-
-        .footer-links li {
-            margin-bottom: 0.75rem;
-        }
-
-        .footer-links a {
-            font-size: 0.875rem;
-            color: rgba(255, 255, 255, 0.7);
-            font-weight: 300;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .footer-links a:hover {
-            color: white;
-        }
-
-        .footer-bottom {
-            border-top: 1px solid rgba(255, 255, 255, 0.2);
-            padding-top: 2rem;
-            text-align: center;
-        }
-
-        .footer-bottom p {
-            color: rgba(255, 255, 255, 0.5);
-            font-size: 0.875rem;
-            font-weight: 300;
-        }
-
-        /* Responsive Design */
         @media (max-width: 768px) {
-            .nav {
-                display: none;
-            }
-
-            .mobile-menu-btn {
-                display: block;
-            }
-
             .hero-text {
                 font-size: clamp(2rem, 12vw, 4rem);
-            }
-
-            .analysis-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-            
-            .analysis-grid .chart-placeholder {
-                order: -1;
-            }
-
-            .cta-buttons {
-                flex-direction: column;
-            }
-
-            .footer-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-        }
-
-        @media (min-width: 769px) {
-            .cta-buttons {
-                flex-direction: row;
             }
         }
     </style>
@@ -620,228 +114,246 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800;900&family=Playfair+Display:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="antialiased" style="background-color: var(--cream-luxury); color: var(--emerald-deep);">
 
-    <header>
-        <div class="container">
-            <div class="header-content">
-                <a href="index.html" class="logo">
-                    COLOMBIAEMERLDS.CA
-                    <div class="logo-subtitle">EST. 1952</div>
-                </a>
-                <nav class="nav">
-                    <a href="index.html">THE HOUSE</a>
-                    <a href="specimens.html">EMERALDS</a>
-                    <a href="about.html">HERITAGE</a>
-                    <a href="investment.html" class="active">INVESTMENT</a>
-                    <a href="contact.html">PRIVATE CONSULTATIONS</a>
-                </nav>
-                <div class="header-icons">
-                    <button>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <circle cx="11" cy="11" r="8"></circle>
-                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                        </svg>
-                    </button>
-                    <button>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
-                        </svg>
-                    </button>
-                    <button>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
-                            <line x1="3" y1="6" x2="21" y2="6"></line>
-                            <path d="M16 10a4 4 0 0 1-8 0"></path>
-                        </svg>
-                    </button>
-                    <button class="mobile-menu-btn">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <line x1="3" y1="12" x2="21" y2="12"></line>
-                            <line x1="3" y1="6" x2="21" y2="6"></line>
-                            <line x1="3" y1="18" x2="21" y2="18"></line>
-                        </svg>
-                    </button>
-                </div>
-            </div>
+    <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 bg-white/95 backdrop-blur-md border-b border-gray-200">
+        <div class="container mx-auto px-8 py-6 flex justify-between items-center">
+            <a href="https://bidcoinauction.github.io/COLOMBIAEMERALDS" class="font-display text-2xl tracking-[0.2em] font-light" style="color: var(--emerald-deep);">
+                COLOMBIAEMERALDS.CA
+                <div class="text-xs tracking-[0.3em] opacity-60 mt-1 font-light">EST. 1952</div>
+            </a>
+            <nav class="hidden md:flex items-center space-x-12">
+                <a href="https://bidcoinauction.github.io/COLOMBIAEMERALDS" class="text-sm tracking-[0.15em] opacity-70 hover:opacity-100 transition-all duration-300 font-light">THE HOUSE</a>
+                <a href="specimens.html" class="text-sm tracking-[0.15em] opacity-70 hover:opacity-100 transition-all duration-300 font-light">EMERALDS</a>
+                <a href="about.html" class="text-sm tracking-[0.15em] opacity-70 hover:opacity-100 transition-all duration-300 font-light">HERITAGE</a>
+                <a href="investment.html" class="text-sm tracking-[0.15em] font-medium" style="color: var(--gold-accent);">INVESTMENT</a>
+                <a href="contact.html" class="text-sm tracking-[0.15em] opacity-70 hover:opacity-100 transition-all duration-300 font-light">PRIVATE CONSULTATIONS</a>
+            </nav>
         </div>
     </header>
 
-    <main>
+    <main class="pt-32">
         <!-- Hero Section -->
-        <section class="hero">
-            <div class="container">
-                <div class="investment-badge">
-                    DATA-DRIVEN INVESTMENT ANALYSIS
-                </div>
-                <h1 class="hero-text">
-                    EMERALD<br>
-                    <span class="accent">INVESTMENT</span><br>
-                    PERFORMANCE
-                </h1>
-                <p class="hero-description">
-                    Comprehensive market analysis and performance data for investment-grade Colombian emerald specimens. Discover why emeralds have outperformed traditional investments over the past decade.
-                </p>
-            </div>
-        </section>
-
-        <!-- Key Statistics Section -->
-        <section class="section luxury-gradient">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">INVESTMENT INSIGHTS</h2>
-                    <div class="section-divider"></div>
-                    <p class="section-description">
-                        Key market indicators and performance metrics for emerald investments.
+        <section class="py-24 text-center">
+            <div class="container mx-auto px-8">
+                <div class="animated-section opacity-0 translate-y-20 transition-all duration-1000">
+                    <div class="investment-badge text-white px-6 py-3 rounded-full text-sm tracking-[0.2em] font-light mb-12 inline-block">
+                        DATA-DRIVEN INVESTMENT ANALYSIS
+                    </div>
+                    <h1 class="hero-text font-display mb-8">
+                        EMERALD<br>
+                        <span style="color: var(--gold-accent);">INVESTMENT</span><br>
+                        PERFORMANCE
+                    </h1>
+                    <p class="text-xl md:text-2xl opacity-80 max-w-4xl mx-auto mb-16 font-light leading-relaxed">
+                        Comprehensive market analysis and performance data for investment-grade Colombian emerald specimens. Discover why emeralds have outperformed traditional investments over the past decade.
                     </p>
-                </div>
-
-                <div class="stats-grid">
-                    <div class="stat-card">
-                        <div class="stat-number">+187%</div>
-                        <div class="stat-label">10-Year Appreciation</div>
-                        <div class="stat-description">High-quality Colombian emeralds</div>
-                    </div>
-
-                    <div class="stat-card">
-                        <div class="stat-number">$3.37B</div>
-                        <div class="stat-label">Market Value 2029</div>
-                        <div class="stat-description">Global emerald jewelry market</div>
-                    </div>
-
-                    <div class="stat-card">
-                        <div class="stat-number">6.1%</div>
-                        <div class="stat-label">Annual Growth Rate</div>
-                        <div class="stat-description">2024-2029 CAGR projection</div>
-                    </div>
-
-                    <div class="stat-card">
-                        <div class="stat-number">30×</div>
-                        <div class="stat-label">Rarer Than Diamonds</div>
-                        <div class="stat-description">Geological scarcity factor</div>
-                    </div>
                 </div>
             </div>
         </section>
 
         <!-- Market Performance Section -->
-        <section class="section">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">MARKET PERFORMANCE</h2>
-                    <div class="section-divider"></div>
-                    <p class="section-description">
-                        Real market data showcasing emerald investment performance compared to traditional asset classes.
-                    </p>
-                </div>
-
-                <div class="performance-grid">
-                    <!-- Performance Chart Placeholder -->
-                    <div class="chart-placeholder">
-                        <div>
-                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="chart-icon-svg">
-                                <path d="M3 3v18h18"></path>
-                                <path d="m19 9-5 5-4-4-3 3"></path>
-                             </svg>
-                            <h3 class="chart-title">10-Year Performance Comparison</h3>
-                            <p class="chart-data">Emeralds: +187% | Gold: +54% | S&P 500: +101%</p>
-                        </div>
+        <section class="py-32 luxury-gradient">
+            <div class="container mx-auto px-8">
+                <div class="animated-section opacity-0 translate-y-20 transition-all duration-1000">
+                    <div class="text-center mb-20">
+                        <h2 class="text-5xl md:text-7xl font-display font-light text-white mb-6">MARKET PERFORMANCE</h2>
+                        <div class="w-32 h-px mx-auto mb-8" style="background-color: var(--gold-accent);"></div>
+                        <p class="text-xl max-w-4xl mx-auto text-white/90 font-light leading-relaxed">
+                            Real market data showcasing emerald investment performance compared to traditional asset classes.
+                        </p>
                     </div>
 
-                    <!-- Market Growth Placeholder -->
-                    <div class="chart-placeholder">
-                        <div>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="chart-icon-svg">
-                                <path d="M3 3v18h18"></path>
-                                <rect width="4" height="7" x="7" y="10" rx="1"></rect>
-                                <rect width="4" height="12" x="15" y="5" rx="1"></rect>
-                            </svg>
-                            <h3 class="chart-title">Global Emerald Market Growth</h3>
-                            <p class="chart-data">$2.1B (2020) → $3.37B (2029F) | 6.1% CAGR</p>
+                    <div class="grid md:grid-cols-2 gap-16 mb-20">
+                        <!-- 10-Year Performance Comparison -->
+                        <div class="chart-visual">
+                            <div class="chart-content">
+                                <h3 class="text-3xl font-display font-light mb-8 text-white">10-YEAR PERFORMANCE COMPARISON</h3>
+                                <div class="space-y-6">
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-xl font-light text-white">EMERALDS</span>
+                                        <span class="performance-metric text-white" style="color: var(--gold-accent);">+187%</span>
+                                    </div>
+                                    <div class="w-full h-2 bg-white/20 rounded-full">
+                                        <div class="h-full rounded-full" style="width: 100%; background: linear-gradient(90deg, var(--gold-accent), #B8860B);"></div>
+                                    </div>
+                                    
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-xl font-light text-white/80">S&P 500</span>
+                                        <span class="text-4xl font-display font-light text-white/80">+101%</span>
+                                    </div>
+                                    <div class="w-full h-2 bg-white/20 rounded-full">
+                                        <div class="h-full bg-white/60 rounded-full" style="width: 54%;"></div>
+                                    </div>
+                                    
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-xl font-light text-white/70">GOLD</span>
+                                        <span class="text-4xl font-display font-light text-white/70">+54%</span>
+                                    </div>
+                                    <div class="w-full h-2 bg-white/20 rounded-full">
+                                        <div class="h-full bg-white/40 rounded-full" style="width: 29%;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Global Emerald Market Growth -->
+                        <div class="chart-visual">
+                            <div class="chart-content">
+                                <h3 class="text-3xl font-display font-light mb-8 text-white">GLOBAL EMERALD MARKET GROWTH</h3>
+                                <div class="space-y-6">
+                                    <div class="text-center">
+                                        <div class="text-5xl font-display font-light text-white mb-2">$2.1B</div>
+                                        <div class="text-lg text-white/80 font-light">2020 Market Value</div>
+                                    </div>
+                                    
+                                    <div class="flex items-center justify-center space-x-4">
+                                        <div class="w-16 h-px bg-white/40"></div>
+                                        <svg class="w-8 h-8 text-white/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                                        </svg>
+                                        <div class="w-16 h-px bg-white/40"></div>
+                                    </div>
+                                    
+                                    <div class="text-center">
+                                        <div class="performance-metric text-white mb-2" style="color: var(--gold-accent);">$3.37B</div>
+                                        <div class="text-lg text-white/80 font-light">2029 Forecast</div>
+                                    </div>
+                                    
+                                    <div class="pt-4 border-t border-white/20">
+                                        <div class="text-center">
+                                            <span class="text-2xl font-display font-light text-white">6.1% CAGR</span>
+                                            <div class="text-sm text-white/70 mt-1">Compound Annual Growth Rate</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Investment Analysis Section -->
-        <section class="section">
-            <div class="container">
-                <div class="analysis-grid">
-                    <div class="analysis-content">
-                        <h2>WHY EMERALDS OUTPERFORM</h2>
-                        <div class="analysis-divider"></div>
-                        
-                        <div class="analysis-points">
-                            <div class="analysis-point">
-                                <div class="analysis-icon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M2.5 14.5A2.5 2.5 0 0 1 5 12h14a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2H5a2.5 2.5 0 0 1 0-5z"></path>
-                                        <path d="M4.5 5.5A2.5 2.5 0 0 1 7 3h10a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2H7a2.5 2.5 0 0 1 0-5z"></path>
-                                    </svg>
-                                </div>
-                                <div>
-                                    <h3>Geological Scarcity</h3>
-                                    <p>
-                                        Emeralds are up to 30 times rarer than diamonds, with only a few major producing regions worldwide. Colombian emeralds represent the pinnacle of this rarity.
-                                    </p>
+        <!-- Why Emeralds Outperform Section -->
+        <section class="py-32">
+            <div class="container mx-auto px-8">
+                <div class="animated-section opacity-0 translate-y-20 transition-all duration-1000">
+                    <div class="text-center mb-20">
+                        <h2 class="text-5xl md:text-7xl font-display font-light mb-6">WHY EMERALDS OUTPERFORM</h2>
+                        <div class="w-32 h-px mx-auto mb-8" style="background-color: var(--gold-accent);"></div>
+                        <p class="text-xl max-w-4xl mx-auto opacity-80 font-light leading-relaxed">
+                            Three fundamental factors that drive emerald investment performance.
+                        </p>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-16 items-center max-w-6xl mx-auto">
+                        <!-- Analysis Points -->
+                        <div class="space-y-12">
+                            <div class="hover-lift bg-white p-8 luxury-border">
+                                <div class="flex items-start space-x-6">
+                                    <div class="w-16 h-16 rounded-full flex items-center justify-center" style="background-color: var(--gold-accent);">
+                                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4"/>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-3xl font-display font-light mb-4">Geological Scarcity</h3>
+                                        <p class="font-light leading-relaxed opacity-80 text-lg">
+                                            Emeralds are up to 30 times rarer than diamonds, with only a few major producing regions worldwide. Colombian emeralds represent the pinnacle of this rarity.
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
 
-                            <div class="analysis-point">
-                                <div class="analysis-icon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                                    </svg>
-                                </div>
-                                <div>
-                                    <h3>Consistent Appreciation</h3>
-                                    <p>
-                                        High-quality emeralds have appreciated consistently, significantly outperforming inflation and many traditional investments over the long term.
-                                    </p>
+                            <div class="hover-lift bg-white p-8 luxury-border">
+                                <div class="flex items-start space-x-6">
+                                    <div class="w-16 h-16 rounded-full flex items-center justify-center" style="background-color: var(--gold-accent);">
+                                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-3xl font-display font-light mb-4">Consistent Appreciation</h3>
+                                        <p class="font-light leading-relaxed opacity-80 text-lg">
+                                            High-quality emeralds have appreciated consistently, significantly outperforming inflation and many traditional investments over the long term.
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
 
-                            <div class="analysis-point">
-                                <div class="analysis-icon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-                                    </svg>
-                                </div>
-                                <div>
-                                    <h3>Market Stability</h3>
-                                    <p>
-                                        Unlike volatile stocks, emeralds maintain value during economic uncertainty, serving as an effective hedge against market downturns.
-                                    </p>
+                            <div class="hover-lift bg-white p-8 luxury-border">
+                                <div class="flex items-start space-x-6">
+                                    <div class="w-16 h-16 rounded-full flex items-center justify-center" style="background-color: var(--gold-accent);">
+                                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-3xl font-display font-light mb-4">Market Stability</h3>
+                                        <p class="font-light leading-relaxed opacity-80 text-lg">
+                                            Unlike volatile stocks, emeralds maintain value during economic uncertainty, serving as an effective hedge against market downturns.
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
 
-                    <!-- Price Distribution Chart Placeholder -->
-                    <div class="chart-placeholder">
-                        <div>
-                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="chart-icon-svg">
-                                <path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path>
-                                <path d="M22 12A10 10 0 0 0 12 2v10z"></path>
-                             </svg>
-                            <h3 class="chart-title">Emerald Price by Quality Grade</h3>
-                            <div style="text-align: left; margin-top: 1rem; font-size: 0.875rem; opacity: 0.8">
-                                <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
-                                    <span>Commercial Grade ($100-1K)</span>
-                                    <span style="font-weight: 500;">~35%</span>
-                                </div>
-                                <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
-                                    <span>Fine Quality ($1K-10K)</span>
-                                    <span style="font-weight: 500;">~40%</span>
-                                </div>
-                                <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
-                                    <span>Investment Grade ($10K-50K)</span>
-                                    <span style="font-weight: 500;">~20%</span>
-                                </div>
-                                <div style="display: flex; justify-content: space-between;">
-                                    <span>Museum Quality ($50K+)</span>
-                                    <span style="font-weight: 500;">&lt;5%</span>
+                        <!-- Price Distribution Chart -->
+                        <div class="chart-visual">
+                            <div class="chart-content">
+                                <h3 class="text-3xl font-display font-light mb-8">EMERALD PRICE BY QUALITY GRADE</h3>
+                                <div class="space-y-6">
+                                    <div class="flex justify-between items-center">
+                                        <div class="text-left">
+                                            <div class="text-lg font-light">Commercial Grade</div>
+                                            <div class="text-sm opacity-60">($100-1K)</div>
+                                        </div>
+                                        <div class="text-right">
+                                            <div class="text-2xl font-display font-light">~35%</div>
+                                        </div>
+                                    </div>
+                                    <div class="w-full h-3 bg-gray-200 rounded-full">
+                                        <div class="h-full bg-gray-400 rounded-full" style="width: 35%;"></div>
+                                    </div>
+                                    
+                                    <div class="flex justify-between items-center">
+                                        <div class="text-left">
+                                            <div class="text-lg font-light">Fine Quality</div>
+                                            <div class="text-sm opacity-60">($1K-10K)</div>
+                                        </div>
+                                        <div class="text-right">
+                                            <div class="text-2xl font-display font-light">~40%</div>
+                                        </div>
+                                    </div>
+                                    <div class="w-full h-3 bg-gray-200 rounded-full">
+                                        <div class="h-full rounded-full" style="width: 40%; background-color: var(--emerald-soft);"></div>
+                                    </div>
+                                    
+                                    <div class="flex justify-between items-center">
+                                        <div class="text-left">
+                                            <div class="text-lg font-light">Investment Grade</div>
+                                            <div class="text-sm opacity-60">($10K-50K)</div>
+                                        </div>
+                                        <div class="text-right">
+                                            <div class="text-2xl font-display font-light">~20%</div>
+                                        </div>
+                                    </div>
+                                    <div class="w-full h-3 bg-gray-200 rounded-full">
+                                        <div class="h-full rounded-full" style="width: 20%; background-color: var(--emerald-rich);"></div>
+                                    </div>
+                                    
+                                    <div class="flex justify-between items-center">
+                                        <div class="text-left">
+                                            <div class="text-lg font-light">Museum Quality</div>
+                                            <div class="text-sm opacity-60">($50K+)</div>
+                                        </div>
+                                        <div class="text-right">
+                                            <div class="text-2xl font-display font-light">&lt;5%</div>
+                                        </div>
+                                    </div>
+                                    <div class="w-full h-3 bg-gray-200 rounded-full">
+                                        <div class="h-full rounded-full" style="width: 5%; background: linear-gradient(90deg, var(--gold-accent), #B8860B);"></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -851,102 +363,137 @@
         </section>
 
         <!-- Market Trends Section -->
-        <section class="section">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">MARKET TRENDS & OUTLOOK</h2>
-                    <div class="section-divider"></div>
-                </div>
+        <section class="py-32 luxury-gradient">
+            <div class="container mx-auto px-8">
+                <div class="animated-section opacity-0 translate-y-20 transition-all duration-1000">
+                    <div class="text-center mb-20">
+                        <h2 class="text-5xl md:text-7xl font-display font-light text-white mb-6">MARKET TRENDS & OUTLOOK</h2>
+                        <div class="w-32 h-px mx-auto mb-8" style="background-color: var(--gold-accent);"></div>
+                        <p class="text-xl max-w-4xl mx-auto text-white/90 font-light leading-relaxed">
+                            Key market drivers shaping the future of emerald investments.
+                        </p>
+                    </div>
 
-                <div class="trends-grid">
-                    <div class="trend-card">
-                        <div class="trend-icon">
-                           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                                <circle cx="12" cy="12" r="10"></circle>
-                                <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20z"></path>
-                                <path d="M2 12h20"></path>
-                            </svg>
+                    <div class="grid md:grid-cols-3 gap-12">
+                        <div class="text-center">
+                            <div class="w-20 h-20 mx-auto mb-8 rounded-full flex items-center justify-center" style="background-color: var(--gold-accent);">
+                                <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20z"/>
+                                    <path d="M2 12h20"/>
+                                </svg>
+                            </div>
+                            <h3 class="text-2xl font-display font-light text-white mb-6">Growing Global Demand</h3>
+                            <p class="text-white/80 font-light leading-relaxed text-lg">
+                                Increasing appetite for colored gemstones, particularly in emerging Asia-Pacific markets, is driving sustained price growth for premium specimens.
+                            </p>
                         </div>
-                        <h3>Growing Global Demand</h3>
-                        <p>
-                            Increasing appetite for colored gemstones, particularly in emerging Asia-Pacific markets, is driving sustained price growth for premium, investment-grade specimens.
-                        </p>
-                    </div>
-                     <div class="trend-card">
-                        <div class="trend-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path>
-                                <polyline points="14 2 14 8 20 8"></polyline><path d="m9 15 2 2 4-4"></path>
-                            </svg>
+
+                        <div class="text-center">
+                            <div class="w-20 h-20 mx-auto mb-8 rounded-full flex items-center justify-center" style="background-color: var(--gold-accent);">
+                                <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                </svg>
+                            </div>
+                            <h3 class="text-2xl font-display font-light text-white mb-6">Traceability & Provenance</h3>
+                            <p class="text-white/80 font-light leading-relaxed text-lg">
+                                Rising emphasis on ethical sourcing and documented provenance is increasing the value of certified Colombian emeralds with clear chain of custody.
+                            </p>
                         </div>
-                        <h3>Traceability & Provenance</h3>
-                        <p>
-                            A rising emphasis on ethical sourcing and documented provenance is increasing the value of certified Colombian emeralds with a clear chain of custody.
-                        </p>
-                    </div>
-                     <div class="trend-card">
-                        <div class="trend-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M15 11V5l-3-3-3 3v6l6 6V11z"></path><path d="M9 11H3v10h6V11z"></path><path d="M15 11h6v10h-6V11z"></path>
-                            </svg>
+
+                        <div class="text-center">
+                            <div class="w-20 h-20 mx-auto mb-8 rounded-full flex items-center justify-center" style="background-color: var(--gold-accent);">
+                                <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+                                </svg>
+                            </div>
+                            <h3 class="text-2xl font-display font-light text-white mb-6">Shift to Hard Assets</h3>
+                            <p class="text-white/80 font-light leading-relaxed text-lg">
+                                Investors continue to diversify portfolios with tangible, high-value hard assets like rare gemstones as stable stores of value.
+                            </p>
                         </div>
-                        <h3>Shift to Hard Assets</h3>
-                        <p>
-                            Investors continue to diversify portfolios with tangible, high-value hard assets like rare gemstones, which serve as a stable store of value in uncertain economies.
-                        </p>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- CTA Section -->
-        <section class="section luxury-gradient cta">
-            <div class="container">
-                <h2>Begin Your Investment Journey</h2>
-                <div class="cta-description">
-                    Our specialists provide discreet, data-driven consultations to help you acquire investment-grade Colombian emeralds that align with your portfolio goals.
-                </div>
-                <div class="cta-buttons">
-                    <a href="contact.html" class="btn-primary">SCHEDULE A CONSULTATION</a>
-                    <a href="specimens.html" class="btn-secondary">Explore Current Specimens</a>
+        <section class="py-32">
+            <div class="container mx-auto px-8 text-center">
+                <div class="animated-section opacity-0 translate-y-20 transition-all duration-1000">
+                    <h2 class="text-5xl md:text-7xl font-display font-light mb-6">BEGIN YOUR INVESTMENT JOURNEY</h2>
+                    <div class="w-32 h-px mx-auto mb-8" style="background-color: var(--gold-accent);"></div>
+                    <p class="max-w-4xl mx-auto opacity-80 mb-16 text-xl font-light leading-relaxed">
+                        Our specialists provide discreet, data-driven consultations to help you acquire investment-grade Colombian emeralds that align with your portfolio goals.
+                    </p>
+                    <div class="flex flex-col md:flex-row items-center justify-center gap-8">
+                        <a href="contact.html" class="inline-flex items-center text-white px-12 py-4 text-sm tracking-[0.15em] font-medium transition-all duration-300 hover:opacity-90" style="background-color: var(--emerald-rich);">
+                            SCHEDULE CONSULTATION
+                            <svg class="ml-3 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                            </svg>
+                        </a>
+                        <a href="specimens.html" class="text-sm tracking-[0.15em] font-light transition-all duration-300 underline underline-offset-4 hover:opacity-70" style="color: var(--emerald-rich);">
+                            EXPLORE CURRENT SPECIMENS
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
-
     </main>
-    
-    <footer>
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-section">
-                    <div class="footer-brand">COLOMBIAEMERLDS.CA</div>
-                    <div class="footer-subtitle">EST. 1952</div>
-                    <p class="footer-description">Purveyors of the world's finest investment-grade Colombian emeralds. Our heritage is built on a legacy of rarity, beauty, and trust.</p>
+
+    <!-- Footer -->
+    <footer class="py-20" style="background-color: var(--emerald-deep); color: white;">
+        <div class="container mx-auto px-8">
+            <div class="grid md:grid-cols-4 gap-12">
+                <div class="md:col-span-2">
+                    <div class="font-display text-2xl tracking-[0.2em] mb-4 font-light">
+                        COLOMBIAEMERALDS.CA
+                    </div>
+                    <div class="text-sm text-white/60 mb-6 font-light">Est. 1952 • Calgary, Alberta</div>
+                    <p class="text-white/80 font-light leading-relaxed">
+                        Where geological rarity meets generational mastery. Three generations of emerald expertise, bringing the world's finest Colombian emerald to discerning collectors.
+                    </p>
                 </div>
-                <div class="footer-section">
-                    <h4>EXPLORE</h4>
-                    <ul class="footer-links">
-                        <li><a href="specimens.html">Emerald Specimens</a></li>
-                        <li><a href="investment.html">Investment Analysis</a></li>
-                        <li><a href="about.html">Our Heritage</a></li>
-                        <li><a href="contact.html">Private Consultations</a></li>
+                <div>
+                    <h4 class="text-sm tracking-[0.15em] mb-6 font-medium">SHOP</h4>
+                    <ul class="space-y-3 text-sm text-white/70 font-light">
+                        <li><a href="specimens.html" class="hover:text-white transition-colors">All Emeralds</a></li>
+                        <li><a href="specimens.html" class="hover:text-white transition-colors">Investment Grade</a></li>
+                        <li><a href="specimens.html" class="hover:text-white transition-colors">Museum Quality</a></li>
                     </ul>
                 </div>
-                <div class="footer-section">
-                    <h4>LEGAL</h4>
-                    <ul class="footer-links">
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Terms of Service</a></li>
-                        <li><a href="#">Shipping & Returns</a></li>
-                        <li><a href="#">Authenticity Guarantee</a></li>
+                <div>
+                    <h4 class="text-sm tracking-[0.15em] mb-6 font-medium">SERVICES</h4>
+                    <ul class="space-y-3 text-sm text-white/70 font-light">
+                        <li><a href="contact.html" class="hover:text-white transition-colors">Private Consultations</a></li>
+                        <li><a href="investment.html" class="hover:text-white transition-colors">Investment Analysis</a></li>
+                        <li><a href="about.html" class="hover:text-white transition-colors">Authentication</a></li>
                     </ul>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 COLOMBIAEMERALDS.CA. All Rights Reserved.</p>
+            <div class="border-t border-white/20 mt-16 pt-8 text-center">
+                <p class="text-white/50 text-sm font-light">© 2025 COLOMBIAEMERALDS.CA. All rights reserved.</p>
             </div>
         </div>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animated sections on scroll
+            const animatedSections = document.querySelectorAll('.animated-section');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in-up');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            animatedSections.forEach(section => observer.observe(section));
+        });
+    </script>
 
 </body>
 </html>
