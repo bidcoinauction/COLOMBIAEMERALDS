@@ -238,6 +238,24 @@ img.loaded {
     text-shadow: 0 0 20px rgba(212, 175, 55, 0.6);
     transform: scale(1.05);
 }
+
+/* Custom cursor styles */
+* {
+    cursor: none !important;
+}
+
+.custom-cursor {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    background: var(--gold-accent);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    mix-blend-mode: difference;
+    transition: all 0.1s ease;
+    opacity: 0.8;
+}
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -280,7 +298,7 @@ img.loaded {
                         RARE GEOLOGICAL<br>
                         <span style="color: var(--gold-accent);">SPECIMENS</span>
                     </h1>
-                    <p class="text-lg md:text-xl opacity-80 max-w-4xl mx-auto font-light leading-relaxed highlight-keywords">
+                    <p class="text-lg md:text-xl opacity-80 max-w-4xl mx-auto font-light leading-relaxed">
                         Each specimen represents millions of years of geological formation, certified with complete scientific documentation and investment-grade provenance.
                     </p>
                 </div>

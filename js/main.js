@@ -389,6 +389,61 @@ class ColombiaEmeraldsApp {
         }, { threshold: 0.5 });
         
         counters.forEach(counter => counterObserver.observe(counter));
+
+        // Setup performance bar animations
+        this.setupPerformanceBars();
+    }
+
+    /**
+     * Setup performance bar animations
+     */
+    setupPerformanceBars() {
+        const performanceBars = document.querySelectorAll('.performance-bar');
+        
+        const barObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    this.animatePerformanceBar(entry.target);
+                    barObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+        
+        performanceBars.forEach(bar => barObserver.observe(bar));
+    }
+
+    /**
+     * Animate performance bar
+     */
+    animatePerformanceBar(bar) {
+        // Get the target width based on the data attribute or calculate from counter
+        const parentItem = bar.closest('.performance-item');
+        const counter = parentItem?.querySelector('.counter');
+        let targetWidth = '100%';
+        
+        if (counter) {
+            const target = parseFloat(counter.dataset.target);
+            if (target === 187) targetWidth = '100%';
+            else if (target === 101) targetWidth = '54%';
+            else if (target === 54) targetWidth = '29%';
+        }
+        
+        const duration = 2000;
+        const startTime = performance.now();
+        
+        const animate = (currentTime) => {
+            const elapsed = currentTime - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            
+            const widthValue = parseFloat(targetWidth);
+            bar.style.width = `${progress * widthValue}%`;
+            
+            if (progress < 1) {
+                requestAnimationFrame(animate);
+            }
+        };
+        
+        requestAnimationFrame(animate);
     }
 
     /**
@@ -539,15 +594,30 @@ class ColombiaEmeraldsApp {
      * Setup cursor effects
      */
     setupCursorEffects() {
+        // Hide default cursor
+        document.body.style.cursor = 'none';
+        
         // Create custom cursor
         const cursor = document.createElement('div');
         cursor.className = 'custom-cursor';
+        cursor.style.cssText = `
+            position: fixed;
+            width: 20px;
+            height: 20px;
+            background: var(--gold-accent);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+            mix-blend-mode: difference;
+            transition: transform 0.1s ease;
+            opacity: 0.8;
+        `;
         document.body.appendChild(cursor);
         
         // Update cursor position
         document.addEventListener('mousemove', (e) => {
-            cursor.style.left = e.clientX + 'px';
-            cursor.style.top = e.clientY + 'px';
+            cursor.style.left = e.clientX - 10 + 'px';
+            cursor.style.top = e.clientY - 10 + 'px';
         });
         
         // Add hover effects
@@ -555,12 +625,25 @@ class ColombiaEmeraldsApp {
         
         hoverElements.forEach(element => {
             element.addEventListener('mouseenter', () => {
-                cursor.classList.add('cursor-hover');
+                cursor.style.transform = 'scale(2)';
+                cursor.style.background = 'var(--emerald-rich)';
+                cursor.style.opacity = '1';
             });
             
             element.addEventListener('mouseleave', () => {
-                cursor.classList.remove('cursor-hover');
+                cursor.style.transform = 'scale(1)';
+                cursor.style.background = 'var(--gold-accent)';
+                cursor.style.opacity = '0.8';
             });
+        });
+
+        // Hide cursor when mouse leaves window
+        document.addEventListener('mouseleave', () => {
+            cursor.style.opacity = '0';
+        });
+
+        document.addEventListener('mouseenter', () => {
+            cursor.style.opacity = '0.8';
         });
     }
 
