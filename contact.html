@@ -88,6 +88,121 @@
             color: white !important;
         }
 
+        /* Webflow-style animations and effects */
+        .stagger-animate {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: staggerFadeIn 0.8s ease forwards;
+        }
+
+        @keyframes staggerFadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .reveal-on-scroll.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .typing-cursor::after {
+            content: '|';
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+
+        .parallax-element {
+            will-change: transform;
+        }
+
+        .ripple {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(0);
+            animation: ripple 0.6s linear;
+            pointer-events: none;
+        }
+
+        @keyframes ripple {
+            to {
+                transform: scale(4);
+                opacity: 0;
+            }
+        }
+
+        .magnetic {
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .custom-cursor {
+            position: fixed;
+            width: 20px;
+            height: 20px;
+            background: var(--gold-accent);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+            mix-blend-mode: difference;
+            transition: transform 0.1s ease;
+        }
+
+        .custom-cursor.cursor-hover {
+            transform: scale(2);
+            background: white;
+        }
+
+        .counter {
+            font-weight: 600;
+        }
+
+        img {
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        img.loaded {
+            opacity: 1;
+        }
+
+        .skeleton {
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+            background-size: 200% 100%;
+            animation: loading 1.5s infinite;
+        }
+
+        @keyframes loading {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+
+        .skeleton.loaded {
+            animation: none;
+            background: transparent;
+        }
+
+        /* Enhanced hover effects */
+        .hover-lift {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .hover-lift:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
         @media (max-width: 768px) {
             .hero-text {
                 font-size: clamp(2rem, 12vw, 4rem);
@@ -140,7 +255,7 @@
                     <div class="investment-badge text-white px-6 py-3 rounded-full text-sm tracking-[0.2em] font-light mb-12 inline-block">
                         EXCLUSIVE ACCESS • PERSONALIZED SERVICE
                     </div>
-                    <h1 class="hero-text font-display mb-8">
+                    <h1 class="hero-text font-display mb-8 typing-effect">
                         PRIVATE<br>
                         <span style="color: var(--gold-accent);">CONSULTATIONS</span>
                     </h1>
@@ -176,10 +291,10 @@
                                             </svg>
                                         </div>
                                         <div>
-                                            <h3 class="text-xl font-display font-light mb-2">Calgary Showroom</h3>
+                                            <h3 class="text-xl font-display font-light mb-2">New York Office</h3>
                                             <p class="font-light opacity-80 leading-relaxed">
-                                                1952 Heritage Way SW<br>
-                                                Calgary, Alberta T2P 4R7<br>
+                                                589 Fifth Avenue<br>
+                                                New York, NY 10017<br>
                                                 By appointment only
                                             </p>
                                         </div>
@@ -196,8 +311,8 @@
                                         <div>
                                             <h3 class="text-xl font-display font-light mb-2">Direct Contact</h3>
                                             <p class="font-light opacity-80 leading-relaxed">
-                                                Phone: +1 (403) 555-GEMS<br>
-                                                Email: consultations@colombiaemeralds.ca<br>
+                                                Phone: +1-212-840-4800<br>
+                                                Email: info@josephgad.com<br>
                                                 Response within 24 hours
                                             </p>
                                         </div>
@@ -212,11 +327,11 @@
                                             </svg>
                                         </div>
                                         <div>
-                                            <h3 class="text-xl font-display font-light mb-2">Consultation Hours</h3>
+                                            <h3 class="text-xl font-display font-light mb-2">Office Hours</h3>
                                             <p class="font-light opacity-80 leading-relaxed">
-                                                Monday - Friday: 10:00 AM - 6:00 PM MST<br>
-                                                Saturday: 11:00 AM - 4:00 PM MST<br>
-                                                Evening appointments available
+                                                Monday - Friday: 9:00 AM - 6:00 PM ET<br>
+                                                By appointment only<br>
+                                                Evening consultations available
                                             </p>
                                         </div>
                                     </div>
@@ -277,7 +392,7 @@
                                 </div>
 
                                 <div class="pt-4">
-                                    <button type="submit" class="w-full text-white py-4 text-sm tracking-[0.15em] font-medium transition-all duration-300 hover:opacity-90" style="background-color: var(--emerald-rich);">
+                                    <button type="submit" class="w-full text-white py-4 text-sm tracking-[0.15em] font-medium transition-all duration-300 hover:opacity-90 hoverable" style="background-color: var(--emerald-rich);">
                                         SCHEDULE PRIVATE CONSULTATION
                                     </button>
                                     <p class="text-xs opacity-60 mt-4 font-light text-center">
@@ -354,7 +469,7 @@
                     <div class="font-display text-2xl tracking-[0.2em] mb-4 font-light">
                         COLOMBIAEMERALDS.CA
                     </div>
-                    <div class="text-sm text-white/60 mb-6 font-light">Est. 1952 • Calgary, Alberta</div>
+                    <div class="text-sm text-white/60 mb-6 font-light">Est. 1952 • New York, NY</div>
                     <p class="text-white/80 font-light leading-relaxed">
                         Where geological rarity meets generational mastery. Three generations of emerald expertise, bringing the world's finest Colombian specimens to discerning collectors.
                     </p>

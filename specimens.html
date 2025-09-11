@@ -110,6 +110,121 @@ header.scrolled nav a[style*="gold"] {
 header.scrolled a[href*="index"] {
     color: white !important;
 }
+
+/* Webflow-style animations and effects */
+.stagger-animate {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: staggerFadeIn 0.8s ease forwards;
+}
+
+@keyframes staggerFadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reveal-on-scroll.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.typing-cursor::after {
+    content: '|';
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+}
+
+.parallax-element {
+    will-change: transform;
+}
+
+.ripple {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(0);
+    animation: ripple 0.6s linear;
+    pointer-events: none;
+}
+
+@keyframes ripple {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+.magnetic {
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.custom-cursor {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    background: var(--gold-accent);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    mix-blend-mode: difference;
+    transition: transform 0.1s ease;
+}
+
+.custom-cursor.cursor-hover {
+    transform: scale(2);
+    background: white;
+}
+
+.counter {
+    font-weight: 600;
+}
+
+img {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+img.loaded {
+    opacity: 1;
+}
+
+.skeleton {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+.skeleton.loaded {
+    animation: none;
+    background: transparent;
+}
+
+/* Enhanced hover effects */
+.specimen-card {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.specimen-card:hover {
+    transform: translateY(-12px) scale(1.02);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+}
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -148,7 +263,7 @@ header.scrolled a[href*="index"] {
         <section class="py-20 text-center">
             <div class="container mx-auto px-8">
                 <div class="fade-in-up">
-                    <h1 class="hero-text font-display mb-8" style="color: var(--emerald-rich);">
+                    <h1 class="hero-text font-display mb-8 typing-effect" style="color: var(--emerald-rich);">
                         RARE GEOLOGICAL<br>
                         <span style="color: var(--gold-accent);">SPECIMENS</span>
                     </h1>
@@ -171,7 +286,7 @@ header.scrolled a[href*="index"] {
                                 <div class="geological-data space-y-2 p-4 bg-gray-50 luxury-border text-xs mb-4"><div class="grid grid-cols-2 gap-x-4 gap-y-2"><strong class="opacity-60">CARAT WEIGHT:</strong><span class="font-medium text-right">23.47 ct</span><strong class="opacity-60">FORMATION AGE:</strong><span class="font-medium text-right">65M years</span><strong class="opacity-60">MINE SOURCE:</strong><span class="font-medium text-right">Muzo, Colombia</span><strong class="opacity-60">CLARITY TYPE:</strong><span class="font-medium text-right">Type I (Minor inclusions)</span><strong class="opacity-60">SPECIFIC GRAVITY:</strong><span class="font-medium text-right">2.70-2.78</span><strong class="opacity-60">HARDNESS:</strong><span class="font-medium text-right">7.5-8 Mohs</span><strong class="opacity-60">CRYSTAL SYSTEM:</strong><span class="font-medium text-right">Hexagonal</span><strong class="opacity-60">COMPOSITION:</strong><span class="font-medium text-right">Be₃Al₂(SiO₃)₆</span></div></div>
                                 <div class="space-y-2 text-xs border-t pt-4 mb-4"><div class="flex justify-between"><strong style="color: var(--gold-accent);">CERTIFIED PROVENANCE</strong><span>GIA • SSEF</span></div><div class="flex justify-between"><strong style="color: var(--gold-accent);">10-YEAR APPRECIATION</strong><span class="font-medium text-green-600">+187%</span></div></div>
                             </div>
-                            <div class="mt-auto"><div class="flex justify-between items-center mb-4"><span class="text-3xl font-display font-light">$89,500</span></div><button class="private-viewing-btn w-full text-sm tracking-wider py-3 text-white transition-all duration-300 hover:opacity-90" style="background-color: var(--emerald-rich);">PRIVATE VIEWING</button></div>
+                            <div class="mt-auto"><div class="flex justify-between items-center mb-4"><span class="text-3xl font-display font-light">$89,500</span></div><button class="private-viewing-btn w-full text-sm tracking-wider py-3 text-white transition-all duration-300 hover:opacity-90 hoverable" style="background-color: var(--emerald-rich);">PRIVATE VIEWING</button></div>
                         </div>
                     </div>
 
@@ -245,7 +360,7 @@ header.scrolled a[href*="index"] {
             <div class="grid md:grid-cols-4 gap-12">
                 <div class="md:col-span-2">
                     <div class="font-display text-2xl tracking-[0.2em] mb-4 font-light">COLOMBIAEMERLDS.CA</div>
-                    <div class="text-sm text-white/60 mb-6 font-light">Est. 1952 • Calgary, Alberta</div>
+                    <div class="text-sm text-white/60 mb-6 font-light">Est. 1952 • New York, NY</div>
                     <p class="text-white/80 font-light leading-relaxed">Where geological rarity meets generational mastery. Three generations of emerald expertise, bringing the world's finest Colombian specimens to discerning collectors.</p>
                 </div>
                 <div>

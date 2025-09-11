@@ -17,6 +17,10 @@ class ColombiaEmeraldsApp {
         this.setupVideoHandling();
         this.setupPrivateViewingButtons();
         this.setupLazyLoading();
+        this.setupWebflowFeatures();
+        this.setupParallaxEffects();
+        this.setupMicroInteractions();
+        this.setupLoadingStates();
     }
 
     /**
@@ -320,6 +324,289 @@ class ColombiaEmeraldsApp {
             clearTimeout(timeout);
             timeout = setTimeout(later, wait);
         };
+    }
+
+    /**
+     * Setup Webflow-style features
+     */
+    setupWebflowFeatures() {
+        // Add stagger animations to cards
+        this.setupStaggerAnimations();
+        
+        // Add reveal animations
+        this.setupRevealAnimations();
+        
+        // Add counter animations
+        this.setupCounterAnimations();
+        
+        // Add typing effect for hero text
+        this.setupTypingEffect();
+    }
+
+    /**
+     * Setup stagger animations for cards
+     */
+    setupStaggerAnimations() {
+        const cardGroups = document.querySelectorAll('.specimen-card, .hover-lift');
+        
+        cardGroups.forEach((group, index) => {
+            group.style.animationDelay = `${index * 0.1}s`;
+            group.classList.add('stagger-animate');
+        });
+    }
+
+    /**
+     * Setup reveal animations
+     */
+    setupRevealAnimations() {
+        const revealElements = document.querySelectorAll('.reveal-on-scroll');
+        
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        revealElements.forEach(element => revealObserver.observe(element));
+    }
+
+    /**
+     * Setup counter animations
+     */
+    setupCounterAnimations() {
+        const counters = document.querySelectorAll('.counter');
+        
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    this.animateCounter(entry.target);
+                    counterObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+        
+        counters.forEach(counter => counterObserver.observe(counter));
+    }
+
+    /**
+     * Animate counter numbers
+     */
+    animateCounter(element) {
+        const target = parseInt(element.dataset.target);
+        const duration = parseInt(element.dataset.duration) || 2000;
+        const start = performance.now();
+        
+        const updateCounter = (currentTime) => {
+            const elapsed = currentTime - start;
+            const progress = Math.min(elapsed / duration, 1);
+            
+            const current = Math.floor(progress * target);
+            element.textContent = current.toLocaleString();
+            
+            if (progress < 1) {
+                requestAnimationFrame(updateCounter);
+            }
+        };
+        
+        requestAnimationFrame(updateCounter);
+    }
+
+    /**
+     * Setup typing effect for hero text
+     */
+    setupTypingEffect() {
+        const typingElements = document.querySelectorAll('.typing-effect');
+        
+        typingElements.forEach(element => {
+            const text = element.textContent;
+            element.textContent = '';
+            element.classList.add('typing-cursor');
+            
+            let i = 0;
+            const typeWriter = () => {
+                if (i < text.length) {
+                    element.textContent += text.charAt(i);
+                    i++;
+                    setTimeout(typeWriter, 100);
+                } else {
+                    element.classList.remove('typing-cursor');
+                }
+            };
+            
+            // Start typing after a delay
+            setTimeout(typeWriter, 1000);
+        });
+    }
+
+    /**
+     * Setup parallax effects
+     */
+    setupParallaxEffects() {
+        const parallaxElements = document.querySelectorAll('.parallax-element');
+        
+        if (parallaxElements.length === 0) return;
+        
+        const parallaxObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    this.handleParallax(entry.target);
+                }
+            });
+        });
+        
+        parallaxElements.forEach(element => {
+            parallaxObserver.observe(element);
+        });
+    }
+
+    /**
+     * Handle parallax scrolling
+     */
+    handleParallax(element) {
+        const speed = element.dataset.speed || 0.5;
+        
+        const updateParallax = () => {
+            const scrolled = window.pageYOffset;
+            const rate = scrolled * -speed;
+            element.style.transform = `translateY(${rate}px)`;
+        };
+        
+        window.addEventListener('scroll', this.throttle(updateParallax, 16));
+    }
+
+    /**
+     * Setup micro-interactions
+     */
+    setupMicroInteractions() {
+        // Add ripple effect to buttons
+        this.setupRippleEffect();
+        
+        // Add magnetic hover effects
+        this.setupMagneticHover();
+        
+        // Add cursor following effects
+        this.setupCursorEffects();
+    }
+
+    /**
+     * Setup ripple effect for buttons
+     */
+    setupRippleEffect() {
+        const buttons = document.querySelectorAll('button, .btn, .private-viewing-btn');
+        
+        buttons.forEach(button => {
+            button.addEventListener('click', (e) => {
+                const ripple = document.createElement('span');
+                const rect = button.getBoundingClientRect();
+                const size = Math.max(rect.width, rect.height);
+                const x = e.clientX - rect.left - size / 2;
+                const y = e.clientY - rect.top - size / 2;
+                
+                ripple.style.width = ripple.style.height = size + 'px';
+                ripple.style.left = x + 'px';
+                ripple.style.top = y + 'px';
+                ripple.classList.add('ripple');
+                
+                button.appendChild(ripple);
+                
+                setTimeout(() => ripple.remove(), 600);
+            });
+        });
+    }
+
+    /**
+     * Setup magnetic hover effects
+     */
+    setupMagneticHover() {
+        const magneticElements = document.querySelectorAll('.magnetic');
+        
+        magneticElements.forEach(element => {
+            element.addEventListener('mousemove', (e) => {
+                const rect = element.getBoundingClientRect();
+                const x = e.clientX - rect.left - rect.width / 2;
+                const y = e.clientY - rect.top - rect.height / 2;
+                
+                element.style.transform = `translate(${x * 0.1}px, ${y * 0.1}px)`;
+            });
+            
+            element.addEventListener('mouseleave', () => {
+                element.style.transform = 'translate(0, 0)';
+            });
+        });
+    }
+
+    /**
+     * Setup cursor effects
+     */
+    setupCursorEffects() {
+        // Create custom cursor
+        const cursor = document.createElement('div');
+        cursor.className = 'custom-cursor';
+        document.body.appendChild(cursor);
+        
+        // Update cursor position
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        });
+        
+        // Add hover effects
+        const hoverElements = document.querySelectorAll('a, button, .hoverable');
+        
+        hoverElements.forEach(element => {
+            element.addEventListener('mouseenter', () => {
+                cursor.classList.add('cursor-hover');
+            });
+            
+            element.addEventListener('mouseleave', () => {
+                cursor.classList.remove('cursor-hover');
+            });
+        });
+    }
+
+    /**
+     * Setup loading states
+     */
+    setupLoadingStates() {
+        // Add loading animation to images
+        this.setupImageLoading();
+        
+        // Add skeleton screens
+        this.setupSkeletonScreens();
+    }
+
+    /**
+     * Setup image loading states
+     */
+    setupImageLoading() {
+        const images = document.querySelectorAll('img');
+        
+        images.forEach(img => {
+            img.addEventListener('load', () => {
+                img.classList.add('loaded');
+            });
+            
+            if (img.complete) {
+                img.classList.add('loaded');
+            }
+        });
+    }
+
+    /**
+     * Setup skeleton screens
+     */
+    setupSkeletonScreens() {
+        const skeletonElements = document.querySelectorAll('.skeleton');
+        
+        // Simulate loading
+        setTimeout(() => {
+            skeletonElements.forEach(element => {
+                element.classList.add('loaded');
+            });
+        }, 2000);
     }
 
     /**
