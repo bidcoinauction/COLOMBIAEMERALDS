@@ -244,18 +244,201 @@ img.loaded {
     cursor: none !important;
 }
 
-.custom-cursor {
-    position: fixed;
-    width: 20px;
-    height: 20px;
-    background: var(--gold-accent);
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 9999;
-    mix-blend-mode: difference;
-    transition: all 0.1s ease;
-    opacity: 0.8;
-}
+        .custom-cursor {
+            position: fixed;
+            width: 20px;
+            height: 20px;
+            background: var(--gold-accent);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+            mix-blend-mode: difference;
+            transition: all 0.1s ease;
+            opacity: 0.8;
+        }
+
+        /* LUXURY MICRO-ANIMATIONS */
+        .luxury-hover {
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .luxury-hover:hover {
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .luxury-button {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .luxury-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .luxury-button:hover::before {
+            left: 100%;
+        }
+
+        .luxury-card {
+            backdrop-filter: blur(20px);
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .luxury-card:hover {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: rgba(212, 175, 55, 0.3);
+            transform: translateY(-5px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+        }
+
+        /* LUXURY TYPOGRAPHY */
+        .luxury-heading {
+            font-family: 'Playfair Display', serif;
+            font-weight: 300;
+            letter-spacing: -0.02em;
+            line-height: 0.9;
+        }
+
+        .luxury-subheading {
+            font-family: 'Inter', sans-serif;
+            font-weight: 200;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        .luxury-body {
+            font-family: 'Inter', sans-serif;
+            font-weight: 300;
+            letter-spacing: 0.01em;
+            line-height: 1.6;
+        }
+
+        /* ADVANCED PARALLAX */
+        .parallax-container {
+            perspective: 1000px;
+            transform-style: preserve-3d;
+        }
+
+        .parallax-layer {
+            transform: translateZ(0);
+            will-change: transform;
+        }
+
+        .parallax-slow {
+            transform: translateZ(-2px) scale(1.02);
+        }
+
+        .parallax-medium {
+            transform: translateZ(-1px) scale(1.01);
+        }
+
+        .parallax-fast {
+            transform: translateZ(0px) scale(1);
+        }
+
+        /* PREMIUM GRADIENTS */
+        .luxury-gradient-primary {
+            background: linear-gradient(135deg, 
+                rgba(10, 46, 27, 0.95) 0%, 
+                rgba(27, 67, 50, 0.9) 25%, 
+                rgba(45, 90, 61, 0.85) 50%, 
+                rgba(27, 67, 50, 0.9) 75%, 
+                rgba(10, 46, 27, 0.95) 100%);
+        }
+
+        .luxury-gradient-gold {
+            background: linear-gradient(135deg, 
+                rgba(212, 175, 55, 0.1) 0%, 
+                rgba(212, 175, 55, 0.2) 25%, 
+                rgba(184, 134, 11, 0.3) 50%, 
+                rgba(212, 175, 55, 0.2) 75%, 
+                rgba(212, 175, 55, 0.1) 100%);
+        }
+
+        .luxury-gradient-overlay {
+            background: linear-gradient(135deg, 
+                rgba(255, 255, 255, 0.05) 0%, 
+                rgba(255, 255, 255, 0.1) 25%, 
+                rgba(212, 175, 55, 0.05) 50%, 
+                rgba(255, 255, 255, 0.1) 75%, 
+                rgba(255, 255, 255, 0.05) 100%);
+        }
+
+        /* GLASS MORPHISM */
+        .glass-morphism {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        .glass-morphism-dark {
+            background: rgba(10, 46, 27, 0.2);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        /* LOADING STATES */
+        .luxury-loading {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .luxury-loading::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.3), transparent);
+            animation: luxury-shimmer 2s infinite;
+        }
+
+        @keyframes luxury-shimmer {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        /* PREMIUM HOVER EFFECTS */
+        .premium-hover {
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            position: relative;
+        }
+
+        .premium-hover::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(255, 255, 255, 0.1));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            border-radius: inherit;
+        }
+
+        .premium-hover:hover::before {
+            opacity: 1;
+        }
+
+        .premium-hover:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -294,11 +477,11 @@ img.loaded {
         <section class="py-20 text-center">
             <div class="container mx-auto px-8">
                 <div class="fade-in-up">
-                    <h1 class="hero-text font-display mb-8 highlight-keywords" style="color: var(--emerald-rich);">
+                    <h1 class="hero-text luxury-heading mb-8 highlight-keywords" style="color: var(--emerald-rich);">
                         RARE GEOLOGICAL<br>
                         <span style="color: var(--gold-accent);">SPECIMENS</span>
                     </h1>
-                    <p class="text-lg md:text-xl opacity-80 max-w-4xl mx-auto font-light leading-relaxed">
+                    <p class="text-lg md:text-xl opacity-80 max-w-4xl mx-auto luxury-body">
                         Each specimen represents millions of years of geological formation, certified with complete scientific documentation and investment-grade provenance.
                     </p>
                 </div>
@@ -309,7 +492,7 @@ img.loaded {
             <div class="container mx-auto px-8">
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     
-                    <div class="specimen-card bg-white p-6 shadow-lg fade-in-up">
+                    <div class="specimen-card glass-morphism p-6 shadow-lg fade-in-up luxury-card premium-hover">
                         <div class="specimen-content">
                             <div class="media-container mb-6"><img src="https://updatedcardscript.standard.us-east-1.oortstorages.com/canada_emeralds/2025-09-09%2018.29.39.jpg" alt="Muzo Formation Crystal"/></div>
                             <div class="specimen-details">
@@ -317,7 +500,7 @@ img.loaded {
                                 <div class="geological-data space-y-2 p-4 bg-gray-50 luxury-border text-xs mb-4"><div class="grid grid-cols-2 gap-x-4 gap-y-2"><strong class="opacity-60">CARAT WEIGHT:</strong><span class="font-medium text-right">23.47 ct</span><strong class="opacity-60">FORMATION AGE:</strong><span class="font-medium text-right">65M years</span><strong class="opacity-60">MINE SOURCE:</strong><span class="font-medium text-right">Muzo, Colombia</span><strong class="opacity-60">CLARITY TYPE:</strong><span class="font-medium text-right">Type I (Minor inclusions)</span><strong class="opacity-60">SPECIFIC GRAVITY:</strong><span class="font-medium text-right">2.70-2.78</span><strong class="opacity-60">HARDNESS:</strong><span class="font-medium text-right">7.5-8 Mohs</span><strong class="opacity-60">CRYSTAL SYSTEM:</strong><span class="font-medium text-right">Hexagonal</span><strong class="opacity-60">COMPOSITION:</strong><span class="font-medium text-right">Be₃Al₂(SiO₃)₆</span></div></div>
                                 <div class="space-y-2 text-xs border-t pt-4 mb-4"><div class="flex justify-between"><strong style="color: var(--gold-accent);">CERTIFIED PROVENANCE</strong><span>GIA • SSEF</span></div><div class="flex justify-between"><strong style="color: var(--gold-accent);">10-YEAR APPRECIATION</strong><span class="font-medium text-green-600">+187%</span></div></div>
                             </div>
-                            <div class="mt-auto"><div class="flex justify-between items-center mb-4"><span class="text-3xl font-display font-light">$89,500</span></div><button class="private-viewing-btn w-full text-sm tracking-wider py-3 text-white transition-all duration-300 hover:opacity-90 hoverable" style="background-color: var(--emerald-rich);">PRIVATE VIEWING</button></div>
+                            <div class="mt-auto"><div class="flex justify-between items-center mb-4"><span class="text-3xl font-display font-light">$89,500</span></div><button class="private-viewing-btn w-full text-sm tracking-wider py-3 text-white transition-all duration-300 hover:opacity-90 hoverable luxury-button premium-hover" style="background-color: var(--emerald-rich);">PRIVATE VIEWING</button></div>
                         </div>
                     </div>
 
@@ -329,7 +512,7 @@ img.loaded {
                                 <div class="geological-data space-y-2 p-4 bg-gray-50 luxury-border text-xs mb-4"><div class="grid grid-cols-2 gap-x-4 gap-y-2"><strong class="opacity-60">CARAT WEIGHT:</strong><span class="font-medium text-right">18.92 ct</span><strong class="opacity-60">FORMATION AGE:</strong><span class="font-medium text-right">38M years</span><strong class="opacity-60">MINE SOURCE:</strong><span class="font-medium text-right">Chivor, Colombia</span><strong class="opacity-60">CLARITY TYPE:</strong><span class="font-medium text-right">Trapiche Formation</span><strong class="opacity-60">RAY PATTERN:</strong><span class="font-medium text-right">Six-ray star</span><strong class="opacity-60">CARBON CONTENT:</strong><span class="font-medium text-right">0.003% (Rare)</span><strong class="opacity-60">CHROMOPHORE:</strong><span class="font-medium text-right">Chromium/Vanadium</span><strong class="opacity-60">RARITY INDEX:</strong><span class="font-medium text-right">1:10,000</span></div></div>
                                 <div class="space-y-2 text-xs border-t pt-4 mb-4"><div class="flex justify-between"><strong style="color: var(--gold-accent);">CERTIFIED PROVENANCE</strong><span>Gübelin • AGL</span></div><div class="flex justify-between"><strong style="color: var(--gold-accent);">COLLECTOR PREMIUM</strong><span class="font-medium text-green-600">+240%</span></div></div>
                             </div>
-                            <div class="mt-auto"><div class="flex justify-between items-center mb-4"><span class="text-3xl font-display font-light">$156,000</span></div><button class="private-viewing-btn w-full text-sm tracking-wider py-3 text-white transition-all duration-300 hover:opacity-90" style="background-color: var(--emerald-rich);">PRIVATE VIEWING</button></div>
+                            <div class="mt-auto"><div class="flex justify-between items-center mb-4"><span class="text-3xl font-display font-light">$156,000</span></div><button class="private-viewing-btn w-full text-sm tracking-wider py-3 text-white transition-all duration-300 hover:opacity-90 luxury-button premium-hover" style="background-color: var(--emerald-rich);">PRIVATE VIEWING</button></div>
                         </div>
                     </div>
 
@@ -341,7 +524,7 @@ img.loaded {
                                 <div class="geological-data space-y-2 p-4 bg-gray-50 luxury-border text-xs mb-4"><div class="grid grid-cols-2 gap-x-4 gap-y-2"><strong class="opacity-60">CARAT WEIGHT:</strong><span class="font-medium text-right">31.25 ct</span><strong class="opacity-60">FORMATION AGE:</strong><span class="font-medium text-right">45M years</span><strong class="opacity-60">MINE SOURCE:</strong><span class="font-medium text-right">Coscuez, Colombia</span><strong class="opacity-60">MATRIX TYPE:</strong><span class="font-medium text-right">Calcite/Pyrite</span><strong class="opacity-60">CRYSTAL QUALITY:</strong><span class="font-medium text-right">Exceptional</span><strong class="opacity-60">FLUORESCENCE:</strong><span class="font-medium text-right">Moderate Red</span><strong class="opacity-60">PLEOCHROISM:</strong><span class="font-medium text-right">Weak to Distinct</span><strong class="opacity-60">ORIGIN MARKERS:</strong><span class="font-medium text-right">Jagged inclusions</span></div></div>
                                 <div class="space-y-2 text-xs border-t pt-4 mb-4"><div class="flex justify-between"><strong style="color: var(--gold-accent);">CERTIFIED PROVENANCE</strong><span>SSEF • Lotus</span></div><div class="flex justify-between"><strong style="color: var(--gold-accent);">HERITAGE PREMIUM</strong><span class="font-medium text-green-600">+312%</span></div></div>
                             </div>
-                            <div class="mt-auto"><div class="flex justify-between items-center mb-4"><span class="text-3xl font-display font-light">$312,000</span></div><button class="private-viewing-btn w-full text-sm tracking-wider py-3 text-white transition-all duration-300 hover:opacity-90" style="background-color: var(--emerald-rich);">PRIVATE VIEWING</button></div>
+                            <div class="mt-auto"><div class="flex justify-between items-center mb-4"><span class="text-3xl font-display font-light">$312,000</span></div><button class="private-viewing-btn w-full text-sm tracking-wider py-3 text-white transition-all duration-300 hover:opacity-90 luxury-button premium-hover" style="background-color: var(--emerald-rich);">PRIVATE VIEWING</button></div>
                         </div>
                     </div>
 
@@ -353,7 +536,7 @@ img.loaded {
                                 <div class="geological-data space-y-2 p-4 bg-gray-50 luxury-border text-xs mb-4"><div class="grid grid-cols-2 gap-x-4 gap-y-2"><strong class="opacity-60">CARAT WEIGHT:</strong><span class="font-medium text-right">42.15 ct</span><strong class="opacity-60">FORMATION AGE:</strong><span class="font-medium text-right">52M years</span><strong class="opacity-60">MINE SOURCE:</strong><span class="font-medium text-right">Chivor, Colombia</span><strong class="opacity-60">CLARITY TYPE:</strong><span class="font-medium text-right">Natural Formation</span><strong class="opacity-60">RAY PATTERN:</strong><span class="font-medium text-right">Six-ray star</span><strong class="opacity-60">CARBON CONTENT:</strong><span class="font-medium text-right">0.003% (Rare)</span><strong class="opacity-60">CHROMOPHORE:</strong><span class="font-medium text-right">Chromium/Vanadium</span><strong class="opacity-60">RARITY INDEX:</strong><span class="font-medium text-right">1:10,000</span></div></div>
                                 <div class="space-y-2 text-xs border-t pt-4 mb-4"><div class="flex justify-between"><strong style="color: var(--gold-accent);">CERTIFIED PROVENANCE</strong><span>Gübelin • AGL</span></div><div class="flex justify-between"><strong style="color: var(--gold-accent);">COLLECTOR PREMIUM</strong><span class="font-medium text-green-600">+280%</span></div></div>
                             </div>
-                            <div class="mt-auto"><div class="flex justify-between items-center mb-4"><span class="text-3xl font-display font-light">$245,000</span></div><button class="private-viewing-btn w-full text-sm tracking-wider py-3 text-white transition-all duration-300 hover:opacity-90" style="background-color: var(--emerald-rich);">PRIVATE VIEWING</button></div>
+                            <div class="mt-auto"><div class="flex justify-between items-center mb-4"><span class="text-3xl font-display font-light">$245,000</span></div><button class="private-viewing-btn w-full text-sm tracking-wider py-3 text-white transition-all duration-300 hover:opacity-90 luxury-button premium-hover" style="background-color: var(--emerald-rich);">PRIVATE VIEWING</button></div>
                         </div>
                     </div>
 
@@ -365,7 +548,7 @@ img.loaded {
                                 <div class="geological-data space-y-2 p-4 bg-gray-50 luxury-border text-xs mb-4"><div class="grid grid-cols-2 gap-x-4 gap-y-2"><strong class="opacity-60">CARAT WEIGHT:</strong><span class="font-medium text-right">35.68 ct</span><strong class="opacity-60">FORMATION AGE:</strong><span class="font-medium text-right">41M years</span><strong class="opacity-60">MINE SOURCE:</strong><span class="font-medium text-right">Chivor, Colombia</span><strong class="opacity-60">CLARITY TYPE:</strong><span class="font-medium text-right">Matrix Formation</span><strong class="opacity-60">RAY PATTERN:</strong><span class="font-medium text-right">Six-ray star</span><strong class="opacity-60">CARBON CONTENT:</strong><span class="font-medium text-right">0.003% (Rare)</span><strong class="opacity-60">CHROMOPHORE:</strong><span class="font-medium text-right">Chromium/Vanadium</span><strong class="opacity-60">RARITY INDEX:</strong><span class="font-medium text-right">1:10,000</span></div></div>
                                 <div class="space-y-2 text-xs border-t pt-4 mb-4"><div class="flex justify-between"><strong style="color: var(--gold-accent);">CERTIFIED PROVENANCE</strong><span>Gübelin • AGL</span></div><div class="flex justify-between"><strong style="color: var(--gold-accent);">COLLECTOR PREMIUM</strong><span class="font-medium text-green-600">+295%</span></div></div>
                             </div>
-                            <div class="mt-auto"><div class="flex justify-between items-center mb-4"><span class="text-3xl font-display font-light">$189,500</span></div><button class="private-viewing-btn w-full text-sm tracking-wider py-3 text-white transition-all duration-300 hover:opacity-90" style="background-color: var(--emerald-rich);">PRIVATE VIEWING</button></div>
+                            <div class="mt-auto"><div class="flex justify-between items-center mb-4"><span class="text-3xl font-display font-light">$189,500</span></div><button class="private-viewing-btn w-full text-sm tracking-wider py-3 text-white transition-all duration-300 hover:opacity-90 luxury-button premium-hover" style="background-color: var(--emerald-rich);">PRIVATE VIEWING</button></div>
                         </div>
                     </div>
 
@@ -377,7 +560,7 @@ img.loaded {
                                 <div class="geological-data space-y-2 p-4 bg-gray-50 luxury-border text-xs mb-4"><div class="grid grid-cols-2 gap-x-4 gap-y-2"><strong class="opacity-60">CARAT WEIGHT:</strong><span class="font-medium text-right">27.84 ct</span><strong class="opacity-60">FORMATION AGE:</strong><span class="font-medium text-right">39M years</span><strong class="opacity-60">MINE SOURCE:</strong><span class="font-medium text-right">Chivor, Colombia</span><strong class="opacity-60">CLARITY TYPE:</strong><span class="font-medium text-right">Pristine Formation</span><strong class="opacity-60">RAY PATTERN:</strong><span class="font-medium text-right">Six-ray star</span><strong class="opacity-60">CARBON CONTENT:</strong><span class="font-medium text-right">0.003% (Rare)</span><strong class="opacity-60">CHROMOPHORE:</strong><span class="font-medium text-right">Chromium/Vanadium</span><strong class="opacity-60">RARITY INDEX:</strong><span class="font-medium text-right">1:10,000</span></div></div>
                                 <div class="space-y-2 text-xs border-t pt-4 mb-4"><div class="flex justify-between"><strong style="color: var(--gold-accent);">CERTIFIED PROVENANCE</strong><span>Gübelin • AGL</span></div><div class="flex justify-between"><strong style="color: var(--gold-accent);">COLLECTOR PREMIUM</strong><span class="font-medium text-green-600">+325%</span></div></div>
                             </div>
-                            <div class="mt-auto"><div class="flex justify-between items-center mb-4"><span class="text-3xl font-display font-light">$167,000</span></div><button class="private-viewing-btn w-full text-sm tracking-wider py-3 text-white transition-all duration-300 hover:opacity-90" style="background-color: var(--emerald-rich);">PRIVATE VIEWING</button></div>
+                            <div class="mt-auto"><div class="flex justify-between items-center mb-4"><span class="text-3xl font-display font-light">$167,000</span></div><button class="private-viewing-btn w-full text-sm tracking-wider py-3 text-white transition-all duration-300 hover:opacity-90 luxury-button premium-hover" style="background-color: var(--emerald-rich);">PRIVATE VIEWING</button></div>
                         </div>
                     </div>
 
