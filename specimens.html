@@ -257,63 +257,6 @@
         </div>
     </footer>
 
-    <script>
-document.addEventListener('DOMContentLoaded', function() {
-    // Animated sections on scroll - combined observer for both classes
-    const animatedSections = document.querySelectorAll('.fade-in-up, .animated-section');
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                // Handle animated-section elements specifically
-                if (entry.target.classList.contains('animated-section')) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-                observer.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.1 });
-    
-    animatedSections.forEach(section => observer.observe(section));
-
-    // Mobile menu toggle
-    const menuToggleBtn = document.getElementById('menu-toggle-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
-    
-    if (menuToggleBtn && mobileMenu) {
-        menuToggleBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-    }
-
-    // "Private Viewing" button functionality
-    const viewingButtons = document.querySelectorAll('.private-viewing-btn');
-    viewingButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            window.location.href = 'contact.html';
-        });
-    });
-
-    // Video autoplay handling
-    const videos = document.querySelectorAll('video');
-    const videoObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            const video = entry.target;
-            if (entry.isIntersecting) {
-                video.play().catch(e => console.log('Autoplay was prevented.', e));
-            } else {
-                video.pause();
-            }
-        });
-    }, { threshold: 0.5 });
-    
-    videos.forEach(video => {
-        video.setAttribute('playsinline', '');
-        video.setAttribute('webkit-playsinline', '');
-        videoObserver.observe(video);
-    });
-});
-</script>
+    <script src="js/main.js"></script>
 </body>
 </html>
