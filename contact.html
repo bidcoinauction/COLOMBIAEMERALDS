@@ -208,6 +208,19 @@
                 font-size: clamp(2rem, 12vw, 4rem);
             }
         }
+
+        /* Gold highlight styles */
+        .gold-highlight {
+            color: var(--gold-accent);
+            font-weight: 600;
+            text-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .gold-highlight:hover {
+            text-shadow: 0 0 20px rgba(212, 175, 55, 0.6);
+            transform: scale(1.05);
+        }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -255,11 +268,11 @@
                     <div class="investment-badge text-white px-6 py-3 rounded-full text-sm tracking-[0.2em] font-light mb-12 inline-block">
                         EXCLUSIVE ACCESS • PERSONALIZED SERVICE
                     </div>
-                    <h1 class="hero-text font-display mb-8 typing-effect">
+                    <h1 class="hero-text font-display mb-8 highlight-keywords">
                         PRIVATE<br>
                         <span style="color: var(--gold-accent);">CONSULTATIONS</span>
                     </h1>
-                    <p class="text-xl md:text-2xl opacity-80 max-w-4xl mx-auto mb-16 font-light leading-relaxed">
+                    <p class="text-xl md:text-2xl opacity-80 max-w-4xl mx-auto mb-16 font-light leading-relaxed highlight-keywords">
                         Experience the world's finest Colombian emerald specimens through exclusive private viewings with our geological experts and investment specialists.
                     </p>
                 </div>

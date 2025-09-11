@@ -339,8 +339,8 @@ class ColombiaEmeraldsApp {
         // Add counter animations
         this.setupCounterAnimations();
         
-        // Add typing effect for hero text
-        this.setupTypingEffect();
+        // Add keyword highlighting
+        this.setupKeywordHighlighting();
     }
 
     /**
@@ -415,29 +415,26 @@ class ColombiaEmeraldsApp {
     }
 
     /**
-     * Setup typing effect for hero text
+     * Setup keyword highlighting
      */
-    setupTypingEffect() {
-        const typingElements = document.querySelectorAll('.typing-effect');
+    setupKeywordHighlighting() {
+        const highlightElements = document.querySelectorAll('.highlight-keywords');
         
-        typingElements.forEach(element => {
-            const text = element.textContent;
-            element.textContent = '';
-            element.classList.add('typing-cursor');
+        highlightElements.forEach(element => {
+            const keywords = [
+                'emerald', 'emeralds', 'colombian', 'muzo', 'chivor', 'coscuez',
+                'investment', 'specimen', 'crystal', 'gemstone', 'precious',
+                'rare', 'authentic', 'certified', 'museum', 'quality'
+            ];
             
-            let i = 0;
-            const typeWriter = () => {
-                if (i < text.length) {
-                    element.textContent += text.charAt(i);
-                    i++;
-                    setTimeout(typeWriter, 100);
-                } else {
-                    element.classList.remove('typing-cursor');
-                }
-            };
+            let text = element.innerHTML;
             
-            // Start typing after a delay
-            setTimeout(typeWriter, 1000);
+            keywords.forEach(keyword => {
+                const regex = new RegExp(`\\b(${keyword})\\b`, 'gi');
+                text = text.replace(regex, '<span class="gold-highlight">$1</span>');
+            });
+            
+            element.innerHTML = text;
         });
     }
 

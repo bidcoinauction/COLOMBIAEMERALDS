@@ -237,6 +237,19 @@
                 font-size: clamp(2rem, 12vw, 4rem);
             }
         }
+
+        /* Gold highlight styles */
+        .gold-highlight {
+            color: var(--gold-accent);
+            font-weight: 600;
+            text-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .gold-highlight:hover {
+            text-shadow: 0 0 20px rgba(212, 175, 55, 0.6);
+            transform: scale(1.05);
+        }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -280,13 +293,13 @@
             <div class="absolute inset-0 luxury-gradient opacity-70"></div>
             <div class="relative container mx-auto px-8 text-center">
                 <div class="animated-section opacity-0 translate-y-20 transition-all duration-1000">
-                    <h1 class="hero-text font-display text-white mb-8 text-shadow-luxury typing-effect">
+                    <h1 class="hero-text font-display text-white mb-8 text-shadow-luxury highlight-keywords">
                         WHERE GEOLOGICAL<br>
                         <span style="color: var(--gold-accent);">RARITY</span> MEETS<br>
                         GENERATIONAL<br>
                         <span style="color: var(--gold-accent);">MASTERY</span>
                     </h1>
-                    <p class="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto mb-16 font-light leading-relaxed text-shadow-luxury">
+                    <p class="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto mb-16 font-light leading-relaxed text-shadow-luxury highlight-keywords">
                         Exceptional Colombian emerald crystals formed over 65 million years, sourced directly from the legendary Gad family mines and presented as investment-grade geological specimens.
                     </p>
                     <div class="flex flex-col md:flex-row items-center justify-center gap-8">
