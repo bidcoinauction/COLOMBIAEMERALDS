@@ -1,0 +1,23 @@
+{
+  "name": "colombiaemeralds-webp-optimizer",
+  "version": "1.0.0",
+  "description": "WebP image optimization for Colombia Emeralds website",
+  "main": "generate-webp.js",
+  "scripts": {
+    "generate-webp": "node generate-webp.js",
+    "install-deps": "npm install sharp",
+    "optimize-images": "npm run install-deps && npm run generate-webp"
+  },
+  "dependencies": {
+    "sharp": "^0.32.6"
+  },
+  "devDependencies": {},
+  "keywords": [
+    "webp",
+    "image-optimization",
+    "sharp",
+    "colombia-emeralds"
+  ],
+  "author": "Colombia Emeralds",
+  "license": "MIT"
+}

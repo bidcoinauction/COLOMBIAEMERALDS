@@ -585,6 +585,9 @@ class ColombiaEmeraldsApp {
         const images = document.querySelectorAll('img');
         
         images.forEach(img => {
+            // Convert to WebP if supported
+            this.convertToWebP(img);
+            
             img.addEventListener('load', () => {
                 img.classList.add('loaded');
             });
@@ -593,6 +596,78 @@ class ColombiaEmeraldsApp {
                 img.classList.add('loaded');
             }
         });
+    }
+
+    /**
+     * Convert images to WebP format
+     */
+    convertToWebP(img) {
+        // Check if WebP is supported
+        if (!this.supportsWebP()) {
+            return;
+        }
+
+        const originalSrc = img.src;
+        const webpSrc = this.getWebPUrl(originalSrc);
+        
+        // Create a new image to test if WebP exists
+        const webpTest = new Image();
+        webpTest.onload = () => {
+            img.src = webpSrc;
+        };
+        webpTest.onerror = () => {
+            // WebP doesn't exist, keep original
+            console.log('WebP not available for:', originalSrc);
+        };
+        webpTest.src = webpSrc;
+    }
+
+    /**
+     * Check if browser supports WebP
+     */
+    supportsWebP() {
+        const canvas = document.createElement('canvas');
+        canvas.width = 1;
+        canvas.height = 1;
+        return canvas.toDataURL('image/webp').indexOf('data:image/webp') === 0;
+    }
+
+    /**
+     * Generate WebP URL from original image URL
+     */
+    getWebPUrl(originalUrl) {
+        // For your current setup, we'll use a service to convert images
+        // You can replace this with your own image processing service
+        if (originalUrl.includes('updatedcardscript.standard.us-east-1.oortstorages.com')) {
+            // Use a WebP conversion service or your own CDN
+            return originalUrl.replace(/\.(jpg|jpeg|png)$/i, '.webp');
+        }
+        return originalUrl;
+    }
+
+    /**
+     * Generate WebP images using Canvas API
+     */
+    generateWebPFromCanvas(img) {
+        if (!this.supportsWebP()) {
+            return;
+        }
+
+        const canvas = document.createElement('canvas');
+        const ctx = canvas.getContext('2d');
+        
+        canvas.width = img.naturalWidth;
+        canvas.height = img.naturalHeight;
+        
+        ctx.drawImage(img, 0, 0);
+        
+        // Convert to WebP
+        canvas.toBlob((blob) => {
+            if (blob) {
+                const webpUrl = URL.createObjectURL(blob);
+                img.src = webpUrl;
+            }
+        }, 'image/webp', 0.8);
     }
 
     /**
