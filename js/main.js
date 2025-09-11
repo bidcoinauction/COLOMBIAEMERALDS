@@ -450,16 +450,30 @@ class ColombiaEmeraldsApp {
      * Animate counter numbers
      */
     animateCounter(element) {
-        const target = parseInt(element.dataset.target);
+        const target = parseFloat(element.dataset.target);
         const duration = parseInt(element.dataset.duration) || 2000;
         const start = performance.now();
+        
+        // Determine formatting based on target value
+        const isPercentage = target === 187;
+        const isYear = target === 1952;
         
         const updateCounter = (currentTime) => {
             const elapsed = currentTime - start;
             const progress = Math.min(elapsed / duration, 1);
             
-            const current = Math.floor(progress * target);
-            element.textContent = current.toLocaleString();
+            let current = Math.floor(progress * target);
+            let formattedText;
+            
+            if (isPercentage) {
+                formattedText = `+${current}%`;
+            } else if (isYear) {
+                formattedText = current.toLocaleString();
+            } else {
+                formattedText = `${current}x`;
+            }
+            
+            element.textContent = formattedText;
             
             if (progress < 1) {
                 requestAnimationFrame(updateCounter);
