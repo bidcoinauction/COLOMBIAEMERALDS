@@ -276,6 +276,189 @@
             transition: all 0.1s ease;
             opacity: 0.8;
         }
+
+        /* LUXURY MICRO-ANIMATIONS */
+        .luxury-hover {
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .luxury-hover:hover {
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .luxury-button {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .luxury-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .luxury-button:hover::before {
+            left: 100%;
+        }
+
+        .luxury-card {
+            backdrop-filter: blur(20px);
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .luxury-card:hover {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: rgba(212, 175, 55, 0.3);
+            transform: translateY(-5px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+        }
+
+        /* LUXURY TYPOGRAPHY */
+        .luxury-heading {
+            font-family: 'Playfair Display', serif;
+            font-weight: 300;
+            letter-spacing: -0.02em;
+            line-height: 0.9;
+        }
+
+        .luxury-subheading {
+            font-family: 'Inter', sans-serif;
+            font-weight: 200;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        .luxury-body {
+            font-family: 'Inter', sans-serif;
+            font-weight: 300;
+            letter-spacing: 0.01em;
+            line-height: 1.6;
+        }
+
+        /* ADVANCED PARALLAX */
+        .parallax-container {
+            perspective: 1000px;
+            transform-style: preserve-3d;
+        }
+
+        .parallax-layer {
+            transform: translateZ(0);
+            will-change: transform;
+        }
+
+        .parallax-slow {
+            transform: translateZ(-2px) scale(1.02);
+        }
+
+        .parallax-medium {
+            transform: translateZ(-1px) scale(1.01);
+        }
+
+        .parallax-fast {
+            transform: translateZ(0px) scale(1);
+        }
+
+        /* PREMIUM GRADIENTS */
+        .luxury-gradient-primary {
+            background: linear-gradient(135deg, 
+                rgba(10, 46, 27, 0.95) 0%, 
+                rgba(27, 67, 50, 0.9) 25%, 
+                rgba(45, 90, 61, 0.85) 50%, 
+                rgba(27, 67, 50, 0.9) 75%, 
+                rgba(10, 46, 27, 0.95) 100%);
+        }
+
+        .luxury-gradient-gold {
+            background: linear-gradient(135deg, 
+                rgba(212, 175, 55, 0.1) 0%, 
+                rgba(212, 175, 55, 0.2) 25%, 
+                rgba(184, 134, 11, 0.3) 50%, 
+                rgba(212, 175, 55, 0.2) 75%, 
+                rgba(212, 175, 55, 0.1) 100%);
+        }
+
+        .luxury-gradient-overlay {
+            background: linear-gradient(135deg, 
+                rgba(255, 255, 255, 0.05) 0%, 
+                rgba(255, 255, 255, 0.1) 25%, 
+                rgba(212, 175, 55, 0.05) 50%, 
+                rgba(255, 255, 255, 0.1) 75%, 
+                rgba(255, 255, 255, 0.05) 100%);
+        }
+
+        /* GLASS MORPHISM */
+        .glass-morphism {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        .glass-morphism-dark {
+            background: rgba(10, 46, 27, 0.2);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        /* LOADING STATES */
+        .luxury-loading {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .luxury-loading::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.3), transparent);
+            animation: luxury-shimmer 2s infinite;
+        }
+
+        @keyframes luxury-shimmer {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        /* PREMIUM HOVER EFFECTS */
+        .premium-hover {
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            position: relative;
+        }
+
+        .premium-hover::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(255, 255, 255, 0.1));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            border-radius: inherit;
+        }
+
+        .premium-hover:hover::before {
+            opacity: 1;
+        }
+
+        .premium-hover:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -319,17 +502,17 @@
             <div class="absolute inset-0 luxury-gradient opacity-70"></div>
             <div class="relative container mx-auto px-8 text-center">
                 <div class="animated-section opacity-0 translate-y-20 transition-all duration-1000">
-                    <h1 class="hero-text font-display text-white mb-8 text-shadow-luxury highlight-keywords">
+                    <h1 class="hero-text luxury-heading text-white mb-8 text-shadow-luxury highlight-keywords">
                         WHERE GEOLOGICAL<br>
                         <span style="color: var(--gold-accent);">RARITY</span> MEETS<br>
                         GENERATIONAL<br>
                         <span style="color: var(--gold-accent);">MASTERY</span>
                     </h1>
-                    <p class="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto mb-16 font-light leading-relaxed text-shadow-luxury">
+                    <p class="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto mb-16 luxury-body text-shadow-luxury">
                         Exceptional Colombian emerald crystals formed over 65 million years, sourced directly from the legendary Gad family mines and presented as investment-grade geological specimens.
                     </p>
                     <div class="flex flex-col md:flex-row items-center justify-center gap-8">
-                        <a href="specimens.html" class="group inline-flex items-center bg-white text-black px-12 py-4 text-sm tracking-[0.15em] font-medium hover:bg-opacity-90 transition-all duration-300 magnetic hoverable">
+                        <a href="specimens.html" class="group inline-flex items-center bg-white text-black px-12 py-4 text-sm tracking-[0.15em] font-medium hover:bg-opacity-90 transition-all duration-300 magnetic hoverable luxury-button premium-hover">
                             VIEW SPECIMENS
                             <svg class="ml-3 w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
@@ -360,7 +543,7 @@
 
                     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
                         <!-- Specimen 1 -->
-                        <div class="specimen-card bg-white/90 p-8 hover:bg-white transition-all duration-500">
+                        <div class="specimen-card glass-morphism p-8 luxury-card premium-hover">
                             <div class="aspect-[4/5] bg-gray-100 mb-6 overflow-hidden">
                                 <img src="https://updatedcardscript.standard.us-east-1.oortstorages.com/canada_emeralds/2025-09-09%2018.29.39.jpg" alt="Raw Muzo Emerald Crystal" class="w-full h-full object-cover transition-transform duration-700 hover:scale-110"/>
                             </div>
@@ -414,7 +597,7 @@
                         </div>
 
                         <!-- Specimen 2 -->
-                        <div class="specimen-card bg-white/90 p-8 hover:bg-white transition-all duration-500">
+                        <div class="specimen-card glass-morphism p-8 luxury-card premium-hover">
                             <div class="aspect-[4/5] bg-gray-100 mb-6 overflow-hidden">
                                 <img src="https://updatedcardscript.standard.us-east-1.oortstorages.com/canada_emeralds/2025-09-09%2016.19.32.jpg" alt="Chivor Trapiche Emerald" class="w-full h-full object-cover transition-transform duration-700 hover:scale-110"/>
                             </div>
@@ -468,7 +651,7 @@
                         </div>
 
                         <!-- Specimen 3 -->
-                        <div class="specimen-card bg-white/90 p-8 hover:bg-white transition-all duration-500">
+                        <div class="specimen-card glass-morphism p-8 luxury-card premium-hover">
                             <div class="aspect-[4/5] bg-gray-100 mb-6 overflow-hidden">
                                 <img src="https://updatedcardscript.standard.us-east-1.oortstorages.com/canada_emeralds/2025-09-09%2016.17.02.jpg" alt="Coscuez Emerald in Matrix" class="w-full h-full object-cover transition-transform duration-700 hover:scale-110"/>
                             </div>
@@ -539,9 +722,9 @@
             <div class="container mx-auto px-8">
                 <div class="animated-section opacity-0 translate-y-20 transition-all duration-1000">
                     <div class="text-center mb-20">
-                        <h2 class="text-6xl md:text-8xl font-display font-light text-white mb-6">INVESTMENT ANALYSIS</h2>
+                        <h2 class="text-6xl md:text-8xl luxury-heading text-white mb-6">INVESTMENT ANALYSIS</h2>
                         <div class="w-32 h-px mx-auto mb-8" style="background-color: var(--gold-accent);"></div>
-                        <p class="text-xl max-w-4xl mx-auto text-white/90 font-light leading-relaxed">
+                        <p class="text-xl max-w-4xl mx-auto text-white/90 luxury-body">
                             Comprehensive market analysis and performance data for discerning collectors and institutional investors.
                         </p>
                     </div>
@@ -549,23 +732,23 @@
                     <div class="grid md:grid-cols-3 gap-12 mb-20">
                         <div class="text-center">
                             <div class="text-6xl md:text-7xl font-display font-light text-white mb-4 counter investment-numbers" data-target="187" data-duration="2000" style="color: var(--gold-accent);">0</div>
-                            <div class="text-lg tracking-[0.1em] text-white/80 font-light mb-2">10-YEAR APPRECIATION</div>
+                            <div class="text-lg tracking-[0.1em] text-white/80 luxury-subheading mb-2">10-YEAR APPRECIATION</div>
                             <div class="text-sm text-white/60">Colombian emerald specimens</div>
                         </div>
                         <div class="text-center">
                             <div class="text-6xl md:text-7xl font-display font-light text-white mb-4 counter investment-numbers" data-target="30" data-duration="1500" style="color: var(--gold-accent);">0</div>
-                            <div class="text-lg tracking-[0.1em] text-white/80 font-light mb-2">RARER THAN DIAMONDS</div>
+                            <div class="text-lg tracking-[0.1em] text-white/80 luxury-subheading mb-2">RARER THAN DIAMONDS</div>
                             <div class="text-sm text-white/60">Geological scarcity factor</div>
                         </div>
                         <div class="text-center">
                             <div class="text-6xl md:text-7xl font-display font-light text-white mb-4 investment-numbers" style="color: var(--gold-accent);">1952</div>
-                            <div class="text-lg tracking-[0.1em] text-white/80 font-light mb-2">HERITAGE ESTABLISHED</div>
+                            <div class="text-lg tracking-[0.1em] text-white/80 luxury-subheading mb-2">HERITAGE ESTABLISHED</div>
                             <div class="text-sm text-white/60">Three generations of expertise</div>
                         </div>
                     </div>
 
                     <div class="text-center">
-                        <a href="contact.html" class="inline-flex items-center bg-white text-black px-12 py-4 text-sm tracking-[0.15em] font-medium hover:bg-opacity-90 transition-all duration-300">
+                        <a href="contact.html" class="inline-flex items-center bg-white text-black px-12 py-4 text-sm tracking-[0.15em] font-medium hover:bg-opacity-90 transition-all duration-300 luxury-button premium-hover">
                             SCHEDULE INVESTMENT CONSULTATION
                             <svg class="ml-3 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
