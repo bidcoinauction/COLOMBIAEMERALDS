@@ -21,6 +21,7 @@ class ColombiaEmeraldsApp {
         this.setupParallaxEffects();
         this.setupMicroInteractions();
         this.setupLoadingStates();
+        this.setupAdvancedComponents();
     }
 
     /**
@@ -776,6 +777,129 @@ class ColombiaEmeraldsApp {
                 element.classList.add('loaded');
             });
         }, 2000);
+    }
+
+    /**
+     * Setup advanced React-style components
+     */
+    setupAdvancedComponents() {
+        // Initialize component manager if available
+        if (window.ComponentManager) {
+            this.componentManager = window.ComponentManager;
+            this.setupInteractiveElements();
+            this.setupComponentInstances();
+        }
+    }
+
+    /**
+     * Setup interactive elements with advanced functionality
+     */
+    setupInteractiveElements() {
+        // Add interactive classes to existing elements
+        const specimenCards = document.querySelectorAll('.specimen-card');
+        specimenCards.forEach(card => {
+            card.classList.add('interactive-card', 'hover-lift', 'ripple-effect');
+        });
+
+        const buttons = document.querySelectorAll('button, .btn, a[class*="btn"]');
+        buttons.forEach(btn => {
+            btn.classList.add('ripple-effect');
+        });
+
+        // Add magnetic effect to navigation items
+        const navItems = document.querySelectorAll('nav a');
+        navItems.forEach(item => {
+            item.classList.add('magnetic');
+        });
+    }
+
+    /**
+     * Setup component instances
+     */
+    setupComponentInstances() {
+        // Create interactive counters
+        this.setupInteractiveCounters();
+        
+        // Create progress bars
+        this.setupProgressBars();
+        
+        // Create tooltips
+        this.setupTooltips();
+        
+        // Create accordions
+        this.setupAccordions();
+    }
+
+    /**
+     * Setup interactive counters with animations
+     */
+    setupInteractiveCounters() {
+        const counters = document.querySelectorAll('.counter');
+        
+        counters.forEach(counter => {
+            const target = parseFloat(counter.dataset.target);
+            const duration = parseInt(counter.dataset.duration) || 2000;
+            
+            // Create animated counter
+            this.animateCounter(counter, target, duration);
+        });
+    }
+
+    /**
+     * Setup progress bars
+     */
+    setupProgressBars() {
+        const progressBars = document.querySelectorAll('.performance-bar');
+        
+        progressBars.forEach(bar => {
+            const targetWidth = bar.dataset.width || '100%';
+            
+            // Animate progress bar
+            setTimeout(() => {
+                bar.style.width = targetWidth;
+            }, 500);
+        });
+    }
+
+    /**
+     * Setup tooltips
+     */
+    setupTooltips() {
+        const tooltipElements = document.querySelectorAll('[data-tooltip]');
+        
+        tooltipElements.forEach(element => {
+            const tooltipText = element.dataset.tooltip;
+            element.classList.add('tooltip');
+            
+            const tooltip = document.createElement('div');
+            tooltip.className = 'tooltip-content';
+            tooltip.textContent = tooltipText;
+            element.appendChild(tooltip);
+        });
+    }
+
+    /**
+     * Setup accordions
+     */
+    setupAccordions() {
+        const accordionHeaders = document.querySelectorAll('.accordion-header');
+        
+        accordionHeaders.forEach(header => {
+            header.addEventListener('click', () => {
+                const item = header.parentElement;
+                const content = item.querySelector('.accordion-content');
+                
+                // Toggle active state
+                item.classList.toggle('active');
+                
+                // Animate content
+                if (item.classList.contains('active')) {
+                    content.style.maxHeight = content.scrollHeight + 'px';
+                } else {
+                    content.style.maxHeight = '0';
+                }
+            });
+        });
     }
 
     /**
