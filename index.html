@@ -86,6 +86,20 @@
             border: 1px solid rgba(212, 175, 55, 0.2);
         }
 
+        /* Header scrolled state */
+        header.scrolled nav a {
+            color: white !important;
+        }
+        
+        header.scrolled nav a.font-medium,
+        header.scrolled nav a[style*="gold"] {
+            color: var(--gold-accent) !important;
+        }
+        
+        header.scrolled a[href*="index"] {
+            color: white !important;
+        }
+
         @media (max-width: 768px) {
             .hero-text {
                 font-size: clamp(2rem, 12vw, 4rem);

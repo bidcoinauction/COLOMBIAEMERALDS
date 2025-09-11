@@ -62,15 +62,48 @@ class ColombiaEmeraldsApp {
 
         window.addEventListener('scroll', () => {
             const scrollY = window.scrollY;
+            const navLinks = header.querySelectorAll('nav a');
+            const logo = header.querySelector('a[href*="index"], a[href*="specimens"]');
             
             if (scrollY > 100) {
+                // Add scrolled class for styling
+                header.classList.add('scrolled');
+                
+                // Update background
                 header.style.backgroundColor = 'rgba(10, 46, 27, 0.95)';
                 header.style.backdropFilter = 'blur(10px)';
                 header.style.borderBottom = '1px solid rgba(212, 175, 55, 0.2)';
+                
+                // Update text colors for better contrast
+                if (logo) {
+                    logo.style.color = 'white';
+                }
+                
+                navLinks.forEach(link => {
+                    // Keep active page in gold, others in white
+                    if (link.classList.contains('font-medium') || link.style.color.includes('gold')) {
+                        link.style.color = 'var(--gold-accent)';
+                    } else {
+                        link.style.color = 'white';
+                    }
+                });
             } else {
+                // Remove scrolled class
+                header.classList.remove('scrolled');
+                
+                // Reset to original styling
                 header.style.backgroundColor = 'transparent';
                 header.style.backdropFilter = 'none';
                 header.style.borderBottom = 'none';
+                
+                // Reset text colors to original
+                if (logo) {
+                    logo.style.color = '';
+                }
+                
+                navLinks.forEach(link => {
+                    link.style.color = '';
+                });
             }
         });
     }
