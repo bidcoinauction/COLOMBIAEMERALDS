@@ -29,7 +29,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(27, 67, 50, 0.1));
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.02), rgba(27, 67, 50, 0.02));
     opacity: 0;
     transition: opacity 0.3s ease;
     z-index: 1;
