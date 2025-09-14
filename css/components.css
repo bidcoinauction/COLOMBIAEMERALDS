@@ -15,6 +15,21 @@
     transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     cursor: pointer;
     position: relative;
+    color: #0A2E1B !important;
+}
+
+/* Ensure dark text on interactive cards */
+.interactive-card h1,
+.interactive-card h2,
+.interactive-card h3,
+.interactive-card h4,
+.interactive-card h5,
+.interactive-card h6,
+.interactive-card p,
+.interactive-card span,
+.interactive-card div,
+.interactive-card strong {
+    color: #0A2E1B !important;
 }
 
 .interactive-card:hover {

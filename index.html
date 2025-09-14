@@ -316,10 +316,33 @@
         }
 
         .luxury-card:hover {
-            background: rgba(255, 255, 255, 1);
+            background: white !important;
             border-color: rgba(212, 175, 55, 0.3);
             transform: translateY(-5px);
             box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Ensure dark text on white backgrounds */
+        .specimen-card,
+        .specimen-card h1,
+        .specimen-card h2,
+        .specimen-card h3,
+        .specimen-card h4,
+        .specimen-card h5,
+        .specimen-card h6,
+        .specimen-card p,
+        .specimen-card span,
+        .specimen-card div,
+        .specimen-card strong {
+            color: var(--emerald-deep) !important;
+        }
+
+        .specimen-card .geological-data {
+            color: var(--emerald-deep) !important;
+        }
+
+        .specimen-card .geological-data strong {
+            color: var(--emerald-deep) !important;
         }
 
         /* LUXURY TYPOGRAPHY */
